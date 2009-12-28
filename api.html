@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>jsonpickle API &mdash; jsonpickle v0.3.1 documentation</title>
+    <title>jsonpickle API &mdash; jsonpickle v0.3.2 documentation</title>
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.1',
+        VERSION:     '0.3.2',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle v0.3.1 documentation" href="index.html" />
+    <link rel="top" title="jsonpickle v0.3.2 documentation" href="index.html" />
     <link rel="prev" title="jsonpickle Documentation" href="index.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="index.html" title="jsonpickle Documentation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">jsonpickle v0.3.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle v0.3.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -121,9 +121,8 @@ The prefered backend can be set via <a title="jsonpickle.set_preferred_backend" 
 Additional JSON backends can be used via <a title="jsonpickle.load_backend" class="reference internal" href="#jsonpickle.load_backend"><tt class="xref docutils literal"><span class="pre">jsonpickle.load_backend()</span></tt></a>.</p>
 <p>For example, users of <a class="reference external" href="http://www.djangoproject.com/">Django</a> can use the
 version of simplejson that is bundled in Django:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">jsonpickle</span><span class="o">.</span><span class="n">load_backend</span><span class="p">(</span><span class="s">&#39;django.util.simplejson&#39;</span><span class="p">)</span>
-<span class="n">jsonpickle</span><span class="o">.</span><span class="n">set_preferred_backend</span><span class="p">(</span><span class="s">&#39;django.util.simplejson&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-python"><pre>jsonpickle.load_backend('django.util.simplejson', 'dumps', 'loads', ValueError))
+jsonpickle.set_preferred_backend('django.util.simplejson')</pre>
 </div>
 <dl class="function">
 <dt id="jsonpickle.set_preferred_backend">
@@ -787,7 +786,7 @@ and will return True when passed into <em>is_primitive()</em></p>
         <li class="right" >
           <a href="index.html" title="jsonpickle Documentation"
              >previous</a> |</li>
-        <li><a href="index.html">jsonpickle v0.3.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle v0.3.2 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

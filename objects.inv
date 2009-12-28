@@ -1,6 +1,6 @@
 # Sphinx inventory version 1
 # Project: jsonpickle
-# Version: 0.3.1
+# Version: 0.3.2
 jsonpickle.pickler mod api.html
 jsonpickle.unpickler mod api.html
 jsonpickle.handlers mod api.html
