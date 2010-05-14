@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Contributing to jsonpickle &mdash; jsonpickle v0.4dev documentation</title>
+    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '0.4dev',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="top" title="jsonpickle v0.4dev documentation" href="index.html" />
+    <link rel="prev" title="jsonpickle API" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="jsonpickle API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">jsonpickle v0.4dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="contributing-to-jsonpickle">
+<h1>Contributing to jsonpickle<a class="headerlink" href="#contributing-to-jsonpickle" title="Permalink to this headline">¶</a></h1>
+<p>We welcome contributions from everyone.  Please fork jsonpickle on
+<a class="reference external" href="http://github.com/jsonpickle/jsonpickle">github</a>.</p>
+<div class="section" id="get-the-code">
+<h2>Get the Code<a class="headerlink" href="#get-the-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python" id="jsonpickle-contrib-checkout"><pre>git clone git://github.com/jsonpickle/jsonpickle.git</pre>
+</div>
+</div>
+<div class="section" id="run-the-test-suite">
+<h2>Run the Test Suite<a class="headerlink" href="#run-the-test-suite" title="Permalink to this headline">¶</a></h2>
+<p>Before code is pulled into the master jsonpickle branch, all tests should pass.
+If you are contributing an addition or a change in behavior, we ask that you
+document the change in the form of test cases.</p>
+<p>The jsonpickle test suite uses several JSON encoding libraries as well as
+several libraries for sample objects.  To simplify the process of setting up
+these libraries we recommend creating a <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> and using a <a class="reference external" href="http://pypi.python.org/pypi/pip">pip</a>
+requirements file to install the dependencies.  In the base jsonpickle
+directory:</p>
+<div class="highlight-python"><pre># create a virtualenv that is completely isolated from the
+# site-wide python install
+virtualenv --no-site-packages env
+
+# activate the virtualenv
+source env/bin/activate
+
+# install pip
+easy_install pip
+
+# use pip to install the dependencies listed in the requirements file
+env/bin/pip install --upgrade -r tests/test-req.txt</pre>
+</div>
+<p>To run the suite, simply invoke <tt class="docutils literal"><span class="pre">tests/runtests.py</span></tt>:</p>
+<div class="highlight-python"><pre>$ tests/runtests.py
+test_None (util_tests.IsPrimitiveTestCase) ... ok
+test_bool (util_tests.IsPrimitiveTestCase) ... ok
+test_dict (util_tests.IsPrimitiveTestCase) ... ok
+test_float (util_tests.IsPrimitiveTestCase) ... ok
+...</pre>
+</div>
+</div>
+<div class="section" id="generate-documentation">
+<h2>Generate Documentation<a class="headerlink" href="#generate-documentation" title="Permalink to this headline">¶</a></h2>
+<p>You do not need to generate the <a class="reference external" href="http://jsonpickle.github.com">documentation</a> when contributing, though, if
+you are interested, you can generate the docs yourself.  The following requires
+<a class="reference external" href="http://sphinx.pocoo.org">Sphinx</a> (present if you follow the virtualenv instructions above):</p>
+<div class="highlight-python"><pre># pull down the sphinx-to-github project
+git submodule init
+git submodule update
+
+cd docs
+make html</pre>
+</div>
+<p>If you wish to browse the documentation, use Python&#8217;s <a title="(in Python v2.6)" class="reference external" href="http://docs.python.org/library/simplehttpserver.html#module-SimpleHTTPServer"><tt class="xref docutils literal"><span class="pre">SimpleHTTPServer</span></tt></a>
+to host them at <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>:</p>
+<div class="highlight-python"><pre>cd build/html
+python -m SimpleHTTPServer</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Contributing to jsonpickle</a><ul>
+<li><a class="reference external" href="#get-the-code">Get the Code</a></li>
+<li><a class="reference external" href="#run-the-test-suite">Run the Test Suite</a></li>
+<li><a class="reference external" href="#generate-documentation">Generate Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="api.html"
+                                  title="previous chapter">jsonpickle API</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="sources/contrib.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="jsonpickle API"
+             >previous</a> |</li>
+        <li><a href="index.html">jsonpickle v0.4dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2008-2010, John Paulett.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.5.
+    </div>
+  </body>
+</html>
