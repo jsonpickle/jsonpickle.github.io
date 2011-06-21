@@ -1,51 +1,9 @@
-# Sphinx inventory version 1
+# Sphinx inventory version 2
 # Project: jsonpickle
-# Version: 0.4dev
-jsonpickle.pickler mod api.html
-jsonpickle.unpickler mod api.html
-jsonpickle.handlers mod api.html
-jsonpickle.util mod api.html
-jsonpickle mod index.html
-jsonpickle.JSONPluginMgr.decode method api.html
-jsonpickle.handlers.BaseHandler.restore method api.html
-jsonpickle.set_encoder_options function api.html
-jsonpickle.util.is_tuple function api.html
-jsonpickle.util.is_repr function api.html
-jsonpickle.util.is_module function api.html
-jsonpickle.util.is_installed function api.html
-jsonpickle.util.is_dictionary_subclass function api.html
-jsonpickle.unpickler.loadclass function api.html
-jsonpickle.util.is_picklable function api.html
-jsonpickle.handlers.BaseHandler.flatten method api.html
-jsonpickle.handlers.Registry.get method api.html
-jsonpickle.util.is_type function api.html
-jsonpickle.util.is_noncomplex function api.html
-jsonpickle.JSONPluginMgr.set_preferred_backend method api.html
-jsonpickle.pickler.Pickler.flatten method api.html
-jsonpickle.JSONPluginMgr.load_backend method api.html
-jsonpickle.util.is_function function api.html
-jsonpickle.util.is_dictionary function api.html
-jsonpickle.JSONPluginMgr class api.html
-jsonpickle.remove_backend function api.html
-jsonpickle.decode function api.html
-jsonpickle.set_preferred_backend function api.html
-jsonpickle.handlers.Registry class api.html
-jsonpickle.JSONPluginMgr.set_encoder_options method api.html
-jsonpickle.unpickler.loadrepr function api.html
-jsonpickle.unpickler.has_tag function api.html
-jsonpickle.pickler.Pickler class api.html
-jsonpickle.handlers.Registry.register method api.html
-jsonpickle.util.is_collection function api.html
-jsonpickle.util.is_object function api.html
-jsonpickle.JSONPluginMgr.encode method api.html
-jsonpickle.util.is_list function api.html
-jsonpickle.unpickler.Unpickler.restore method api.html
-jsonpickle.load_backend function api.html
-jsonpickle.encode function api.html
-jsonpickle.util.is_collection_subclass function api.html
-jsonpickle.handlers.BaseHandler class api.html
-jsonpickle.handlers.Registry.unregister method api.html
-jsonpickle.util.is_primitive function api.html
-jsonpickle.JSONPluginMgr.remove_backend method api.html
-jsonpickle.unpickler.Unpickler class api.html
-jsonpickle.util.is_set function api.html
+# Version: 0.4.0
+# The remainder of this file is compressed using zlib.
+xÚVMO„0½û+šè¢WozRuãÆ3)tª¥%mÙ¸ÿÞBa¡.îv8A‡y¯73ÔŠqÉà‡ËîÍAäŽ4‡¤>¤•­Å5yU¬@ž;ÑÕ—Q²áÅ·€„6<„:‡ÜI<lž¯J¦Fé`Ç0@uQ…Š^6¨m½Â†–0ó&õíü¿¯½Ã·“C^’Üdiå
+PE%sƒ2d¹@èª³-_þ²}Ûˆ¶äòµÔ)ƒB1ØJ1”e1’ô‘xò‡Tƒ±JÇ]`Àf ;{:SåJöYÙµ²ègK™?£íÒ—r“Ù¶ñÉ‰±0`44	üÁ¸4–
+‰c¼×¤ú™6/5è¦BQ†B¶û#Í£c]$ÌNPkAâ÷%7VÒlòHCƒ­ŒTŽ¢µcÎO$0l¨Žä†h,Ëiñ’Eù<–g3<1™
+}è
+Œ2=Æ~Œv-)×¤¬Ãx:þÐP«=ÌcŠ°2Í¶åë†!úÈÓ˜Ni³0/W.èjÌô:+êú„–‘¸?,‰3»O[^÷/<†È¨Q(7„×p^å_·jDø:£S¸ ûy|Ãlé¿Ã#Âä"Sæ±›li¯Dð0àÅì7é"[‰æ`¿.5¯¹å{ìºŒâoÈ¨ÓñˆŸóŸ«K½<gà,!¸R‹
