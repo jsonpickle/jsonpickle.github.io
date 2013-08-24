@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>jsonpickle API &mdash; jsonpickle 0.5.0 documentation</title>
+    <title>jsonpickle API &mdash; jsonpickle 0.6.0 documentation</title>
     
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.0',
+        VERSION:     '0.6.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.5.0 documentation" href="index.html" />
+    <link rel="top" title="jsonpickle 0.6.0 documentation" href="index.html" />
     <link rel="next" title="Contributing to jsonpickle" href="contrib.html" />
     <link rel="prev" title="jsonpickle Documentation" href="index.html" /> 
   </head>
@@ -45,7 +45,7 @@
         <li class="right" >
           <a href="index.html" title="jsonpickle Documentation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.5.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.6.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -262,54 +262,77 @@ serialization handlers at run-time.  This feature is useful when
 jsonpickle is unable to serialize objects that are not
 under your direct control.</p>
 <span class="target" id="module-jsonpickle.handlers"></span><p>Custom handlers may be created to handle other objects. Each custom handler
-must derive from BaseHandler and override <tt class="docutils literal"><span class="pre">.flatten</span></tt> and
-<tt class="docutils literal"><span class="pre">.restore</span></tt>.</p>
-<p>The handler may also declare a <tt class="docutils literal"><span class="pre">_handles</span></tt> class property which
-should be a sequence of types handled by that handler. See the <cite>mod:_handlers</cite>
-module for more examples of internal handlers implemented in jsonpickle.</p>
-<p>A handler may also be late-bound to other types by calling the <tt class="docutils literal"><span class="pre">.handles</span></tt>
-method on the class. For example, the
-<tt class="docutils literal"><span class="pre">class:SimpleReduceHandler</span></tt> is suitable for handling objects that implement
-the reduce protocol:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@SimpleReduceHandler.handles</span>
-<span class="k">class</span> <span class="nc">MyCustomObject</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+must derive from <a class="reference internal" href="#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.BaseHandler</span></tt></a> and
+implement <tt class="docutils literal"><span class="pre">flatten</span></tt> and <tt class="docutils literal"><span class="pre">restore</span></tt>.</p>
+<p>A handler can be bound to other types by calling <tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.handlers.register()</span></tt>.</p>
+<p><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.customhandlers.SimpleReduceHandler</span></tt> is suitable for handling
+objects that implement the reduce protocol:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">jsonpickle</span> <span class="kn">import</span> <span class="n">handlers</span>
+
+<span class="k">class</span> <span class="nc">MyCustomObject</span><span class="p">(</span><span class="n">handlers</span><span class="o">.</span><span class="n">BaseHandler</span><span class="p">):</span>
     <span class="o">...</span>
 
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">MyCustomObject</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_args</span><span class="p">()</span>
+
+<span class="n">handlers</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MyCustomObject</span><span class="p">,</span> <span class="n">handlers</span><span class="o">.</span><span class="n">SimpleReduceHandler</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="class">
 <dt id="jsonpickle.handlers.BaseHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">BaseHandler</tt><big>(</big><em>base</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract base class for handlers.</p>
-<dl class="method">
+<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">BaseHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
 <dt id="jsonpickle.handlers.BaseHandler.flatten">
 <tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.flatten" title="Permalink to this definition">¶</a></dt>
-<dd><p>Flatten <cite>obj</cite> into a json-friendly form.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first last simple">
-<li><cite>obj</cite>: object of <cite>type</cite></li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result in <cite>data</cite></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.BaseHandler.restore">
 <tt class="descname">restore</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.restore" title="Permalink to this definition">¶</a></dt>
-<dd><p>Restores the <cite>obj</cite> to <cite>type</cite></p>
+<dd><p>Restore the json-friendly <cite>obj</cite> to the registered type</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="jsonpickle.handlers.DatetimeHandler">
+<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">DatetimeHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom handler for datetime objects</p>
+<p>Datetime objects use __reduce__, and they generate binary strings encoding
+the payload. This handler encodes that payload to reconstruct the
+object.</p>
+<dl class="method">
+<dt id="jsonpickle.handlers.DatetimeHandler.flatten">
+<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="jsonpickle.handlers.DatetimeHandler.restore">
+<tt class="descname">restore</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.restore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="jsonpickle.handlers.Registry">
+<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">Registry</tt><a class="headerlink" href="#jsonpickle.handlers.Registry" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="jsonpickle.handlers.Registry.get">
+<tt class="descname">get</tt><big>(</big><em>cls</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.Registry.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="jsonpickle.handlers.Registry.register">
+<tt class="descname">register</tt><big>(</big><em>cls</em>, <em>handler</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.Registry.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the a custom handler for a class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters :</th><td class="field-body"><ul class="first last simple">
-<li><cite>object</cite>: json-friendly object</li>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> &#8211; The custom object class to handle</li>
+<li><strong>handler</strong> &#8211; The custom handler class</li>
 </ul>
 </td>
 </tr>
@@ -320,24 +343,19 @@ the reduce protocol:</p>
 </dd></dl>
 
 <dl class="class">
-<dt id="jsonpickle.handlers.TypeRegistered">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">TypeRegistered</tt><big>(</big><em>name</em>, <em>bases</em>, <em>namespace</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.TypeRegistered" title="Permalink to this definition">¶</a></dt>
-<dd><p>As classes of this metaclass are created, they keep a registry in the
-base class of all handler referenced by the keys in cls._handles.</p>
+<dt id="jsonpickle.handlers.SimpleReduceHandler">
+<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">SimpleReduceHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.SimpleReduceHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Follow the __reduce__ protocol to pickle an object. As long as the factory
+and its arguments are pickleable, this should pickle any object that
+implements the reduce protocol.</p>
 <dl class="method">
-<dt id="jsonpickle.handlers.TypeRegistered.handles">
-<tt class="descname">handles</tt><big>(</big><em>handler</em>, <em>cls</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.TypeRegistered.handles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Register this handler for the given class</p>
-</dd></dl>
+<dt id="jsonpickle.handlers.SimpleReduceHandler.flatten">
+<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.SimpleReduceHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
-</dd></dl>
-
-<dl class="class">
-<dt id="jsonpickle.handlers.registry">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">registry</tt><a class="headerlink" href="#jsonpickle.handlers.registry" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="staticmethod">
-<dt id="jsonpickle.handlers.registry.register">
-<em class="property">static </em><tt class="descname">register</tt><big>(</big><em>handled_type</em>, <em>handler_class</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.registry.register" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="jsonpickle.handlers.SimpleReduceHandler.restore">
+<tt class="descname">restore</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.SimpleReduceHandler.restore" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -360,8 +378,6 @@ base class of all handler referenced by the keys in cls._handles.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Pickler</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="s">&#39;hello world&#39;</span><span class="p">)</span>
 <span class="go">&#39;hello world&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="s">u&#39;hello world&#39;</span><span class="p">)</span>
-<span class="go">u&#39;hello world&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span>
 <span class="go">49</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="mf">350.0</span><span class="p">)</span>
@@ -461,10 +477,11 @@ and contains a particular key/tag.</p>
 <span class="go">&lt;class &#39;jsonpickle._samples.Thing&#39;&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;example.module.does.not.exist.Missing&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;does.not.exist&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;samples.MissingThing&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;__builtin__.int&#39;</span><span class="p">)()</span>
+<span class="go">0</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -790,6 +807,24 @@ as list, set, tuple, etc..</p>
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="jsonpickle.util.translate_module_name">
+<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">translate_module_name</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#jsonpickle.util.translate_module_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename builtin modules to a consistent (Python2) module name</p>
+<p>This is used so that references to Python&#8217;s <cite>builtins</cite> module can
+be loaded in both Python 2 and 3.  We remap to the &#8220;__builtin__&#8221;
+name and unmap it when importing.</p>
+<p>See untranslate_module_name() for the reverse operation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="jsonpickle.util.untranslate_module_name">
+<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">untranslate_module_name</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#jsonpickle.util.untranslate_module_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rename module names mention in JSON to names that we can import</p>
+<p>This reverses the translation applied by translate_module_name() to
+a module name available to the current version of Python.</p>
+</dd></dl>
+
 </div>
 </div>
 </div>
@@ -863,7 +898,7 @@ as list, set, tuple, etc..</p>
         <li class="right" >
           <a href="index.html" title="jsonpickle Documentation"
              >previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.5.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.6.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

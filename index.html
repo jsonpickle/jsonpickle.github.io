@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>jsonpickle Documentation &mdash; jsonpickle 0.5.0 documentation</title>
+    <title>jsonpickle Documentation &mdash; jsonpickle 0.6.0 documentation</title>
     
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.0',
+        VERSION:     '0.6.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.5.0 documentation" href="#" />
+    <link rel="top" title="jsonpickle 0.6.0 documentation" href="#" />
     <link rel="next" title="jsonpickle API" href="api.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="api.html" title="jsonpickle API"
              accesskey="N">next</a> |</li>
-        <li><a href="#">jsonpickle 0.5.0 documentation</a> &raquo;</li> 
+        <li><a href="#">jsonpickle 0.6.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -87,21 +87,19 @@ inherit from object (AKA new-style classes).</p>
 <p>Create an object.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">jsonpickle._samples</span> <span class="kn">import</span> <span class="n">Thing</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">Thing</span><span class="p">(</span><span class="s">&#39;A String&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span>
-<span class="go">A String</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;A String&#39;</span>
 </pre></div>
 </div>
 <p>Use jsonpickle to transform the object into a JSON string.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">jsonpickle</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pickled</span> <span class="o">=</span> <span class="n">jsonpickle</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">pickled</span><span class="p">)</span>
-<span class="go">{&quot;py/object&quot;: &quot;jsonpickle._samples.Thing&quot;, &quot;name&quot;: &quot;A String&quot;, &quot;child&quot;: null}</span>
 </pre></div>
 </div>
 <p>Use jsonpickle to recreate a Python object from a JSON string</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">unpickled</span> <span class="o">=</span> <span class="n">jsonpickle</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">pickled</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">unpickled</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="go">&#39;A String&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">unpickled</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">A String</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -111,7 +109,7 @@ security vulnerability.  jsonpickle makes no attempt to sanitize the input.</p>
 </div>
 <p>The new object has the same type and data, but essentially is now a copy of
 the original.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">==</span> <span class="n">unpickled</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="ow">is</span> <span class="n">unpickled</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">unpickled</span><span class="o">.</span><span class="n">name</span>
 <span class="go">True</span>
@@ -123,8 +121,13 @@ the original.</p>
 pass in the keyword unpicklable=False to prevent extra information from being
 added to JSON.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">oneway</span> <span class="o">=</span> <span class="n">jsonpickle</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">unpicklable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">oneway</span>
-<span class="go">{&quot;name&quot;: &quot;A String&quot;, &quot;child&quot;: null}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">jsonpickle</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">oneway</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+<span class="go">A String</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;child&#39;</span><span class="p">])</span>
+<span class="go">None</span>
 </pre></div>
 </div>
 </div>
@@ -204,6 +207,7 @@ You can send email to <em>jsonpickle&#64;googlegroups.com</em>.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-6-0-august-24-2013">Version 0.6.0 - August 24, 2013</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-0-august-22-2013">Version 0.5.0 - August 22, 2013</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-0-june-21-2011">Version 0.4.0 - June 21, 2011</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-3-1-december-12-2009">Version 0.3.1 - December 12, 2009</a></li>
@@ -292,7 +296,7 @@ Copyright (C) 2009-2013 David Aguilar (davvid -at- gmail.com)</p>
         <li class="right" >
           <a href="api.html" title="jsonpickle API"
              >next</a> |</li>
-        <li><a href="#">jsonpickle 0.5.0 documentation</a> &raquo;</li> 
+        <li><a href="#">jsonpickle 0.6.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
