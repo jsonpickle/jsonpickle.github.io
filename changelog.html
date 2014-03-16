@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Change Log &mdash; jsonpickle 0.6.1 documentation</title>
+    <title>Change Log &mdash; jsonpickle 0.7.0 documentation</title>
     
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.6.1',
+        VERSION:     '0.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.6.1 documentation" href="index.html" />
+    <link rel="top" title="jsonpickle 0.7.0 documentation" href="index.html" />
     <link rel="prev" title="Contributing to jsonpickle" href="contrib.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="contrib.html" title="Contributing to jsonpickle"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.6.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,6 +52,26 @@
             
   <div class="section" id="change-log">
 <h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-0-7-0-march-15-2014">
+<h2>Version 0.7.0 - March 15, 2014<a class="headerlink" href="#version-0-7-0-march-15-2014" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added <tt class="docutils literal"><span class="pre">handles</span></tt> decorator to <a class="reference internal" href="api.html#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.BaseHandler</span></tt></a>,
+enabling simple declaration of a handler for a class.</li>
+<li><cite>__getstate__()</cite> and <cite>__setstate__()</cite> are now honored
+when pickling objects that subclass <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a>.</li>
+<li>jsonpickle can now serialize <a class="reference external" href="http://docs.python.org/library/collections.html#collections.Counter" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">collections.Counter</span></tt></a> objects.</li>
+<li>Object references are properly handled when using integer keys.</li>
+<li>Object references are now supported when using custom handlers.</li>
+<li>Decimal objects are supported in Python 3.</li>
+<li>jsonpickle&#8217;s &#8220;fallthrough-on-error&#8221; behavior can now be disabled.</li>
+<li>Simpler API for registering custom handlers.</li>
+<li>A new &#8220;safe-mode&#8221; is provided which avoids eval().
+Backwards-compatible deserialization of repr-serialized objects
+is disabled in this mode.  e.g. <cite>decode(string, safe=True)</cite></li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="version-0-6-1-august-25-2013">
 <h2>Version 0.6.1 - August 25, 2013<a class="headerlink" href="#version-0-6-1-august-25-2013" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -229,6 +249,7 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Change Log</a><ul>
+<li><a class="reference internal" href="#version-0-7-0-march-15-2014">Version 0.7.0 - March 15, 2014</a></li>
 <li><a class="reference internal" href="#version-0-6-1-august-25-2013">Version 0.6.1 - August 25, 2013</a></li>
 <li><a class="reference internal" href="#version-0-6-0-august-24-2013">Version 0.6.0 - August 24, 2013</a></li>
 <li><a class="reference internal" href="#version-0-5-0-august-22-2013">Version 0.5.0 - August 22, 2013</a></li>
@@ -282,7 +303,7 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
         <li class="right" >
           <a href="contrib.html" title="Contributing to jsonpickle"
              >previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.6.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
