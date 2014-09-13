@@ -10,7 +10,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Index &mdash; jsonpickle 0.7.0 documentation</title>
+    <title>Index &mdash; jsonpickle 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -27,7 +27,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.7.0 documentation" href="index.html" /> 
+    <link rel="top" title="jsonpickle 0.8.0 documentation" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">jsonpickle 0.7.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -54,6 +54,7 @@
 <div class="genindex-jumpbox">
  <a href="#_"><strong>_</strong></a>
  | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
@@ -62,7 +63,10 @@
  | <a href="#I"><strong>I</strong></a>
  | <a href="#J"><strong>J</strong></a>
  | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
@@ -100,6 +104,16 @@
   <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#jsonpickle.handlers.BaseHandler">BaseHandler (class in jsonpickle.handlers)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api.html#jsonpickle.handlers.CloneFactory">CloneFactory (class in jsonpickle.handlers)</a>
   </dt>
 
   </dl></td>
@@ -170,6 +184,18 @@
   </dt>
 
         
+  <dt><a href="api.html#jsonpickle.handlers.OrderedDictReduceHandler.flatten">(jsonpickle.handlers.OrderedDictReduceHandler method)</a>
+  </dt>
+
+        
+  <dt><a href="api.html#jsonpickle.handlers.QueueHandler.flatten">(jsonpickle.handlers.QueueHandler method)</a>
+  </dt>
+
+        
+  <dt><a href="api.html#jsonpickle.handlers.RegexHandler.flatten">(jsonpickle.handlers.RegexHandler method)</a>
+  </dt>
+
+        
   <dt><a href="api.html#jsonpickle.handlers.SimpleReduceHandler.flatten">(jsonpickle.handlers.SimpleReduceHandler method)</a>
   </dt>
 
@@ -204,6 +230,10 @@
   <dt><a href="api.html#jsonpickle.handlers.BaseHandler.handles">handles() (jsonpickle.handlers.BaseHandler class method)</a>
   </dt>
 
+      
+  <dt><a href="api.html#jsonpickle.util.has_reduce">has_reduce() (in module jsonpickle.util)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
@@ -216,6 +246,18 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api.html#jsonpickle.util.importable_name">importable_name() (in module jsonpickle.util)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#jsonpickle.util.in_dict">in_dict() (in module jsonpickle.util)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#jsonpickle.util.in_slots">in_slots() (in module jsonpickle.util)</a>
+  </dt>
+
       
   <dt><a href="api.html#jsonpickle.util.is_dictionary">is_dictionary() (in module jsonpickle.util)</a>
   </dt>
@@ -233,6 +275,10 @@
   </dt>
 
       
+  <dt><a href="api.html#jsonpickle.util.is_iterator">is_iterator() (in module jsonpickle.util)</a>
+  </dt>
+
+      
   <dt><a href="api.html#jsonpickle.util.is_list">is_list() (in module jsonpickle.util)</a>
   </dt>
 
@@ -245,6 +291,12 @@
   </dt>
 
       
+  <dt><a href="api.html#jsonpickle.util.is_module_function">is_module_function() (in module jsonpickle.util)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
   <dt><a href="api.html#jsonpickle.util.is_noncomplex">is_noncomplex() (in module jsonpickle.util)</a>
   </dt>
 
@@ -252,14 +304,16 @@
   <dt><a href="api.html#jsonpickle.util.is_object">is_object() (in module jsonpickle.util)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#jsonpickle.util.is_picklable">is_picklable() (in module jsonpickle.util)</a>
   </dt>
 
       
   <dt><a href="api.html#jsonpickle.util.is_primitive">is_primitive() (in module jsonpickle.util)</a>
+  </dt>
+
+      
+  <dt><a href="api.html#jsonpickle.util.is_reducible">is_reducible() (in module jsonpickle.util)</a>
   </dt>
 
       
@@ -345,11 +399,27 @@
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api.html#jsonpickle.unpickler.loadfactory">loadfactory() (in module jsonpickle.unpickler)</a>
+  <dt><a href="api.html#jsonpickle.unpickler.loadrepr">loadrepr() (in module jsonpickle.unpickler)</a>
   </dt>
 
+  </dl></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="api.html#jsonpickle.unpickler.loadrepr">loadrepr() (in module jsonpickle.unpickler)</a>
+  <dt><a href="api.html#jsonpickle.unpickler.make_blank_classic">make_blank_classic() (in module jsonpickle.unpickler)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api.html#jsonpickle.handlers.OrderedDictReduceHandler">OrderedDictReduceHandler (class in jsonpickle.handlers)</a>
   </dt>
 
   </dl></td>
@@ -378,9 +448,23 @@
   </dl></td>
 </tr></table>
 
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api.html#jsonpickle.handlers.QueueHandler">QueueHandler (class in jsonpickle.handlers)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api.html#jsonpickle.handlers.RegexHandler">RegexHandler (class in jsonpickle.handlers)</a>
+  </dt>
+
       
   <dt><a href="api.html#jsonpickle.handlers.Registry.register">register() (jsonpickle.handlers.Registry method)</a>
   </dt>
@@ -389,6 +473,8 @@
   <dt><a href="api.html#jsonpickle.handlers.Registry">Registry (class in jsonpickle.handlers)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#jsonpickle.remove_backend">remove_backend() (in module jsonpickle)</a>
   </dt>
@@ -399,8 +485,6 @@
   </dt>
 
       </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api.html#jsonpickle.pickler.Pickler.reset">reset() (jsonpickle.pickler.Pickler method)</a>
   </dt>
@@ -418,6 +502,14 @@
       <dd><dl>
         
   <dt><a href="api.html#jsonpickle.handlers.DatetimeHandler.restore">(jsonpickle.handlers.DatetimeHandler method)</a>
+  </dt>
+
+        
+  <dt><a href="api.html#jsonpickle.handlers.QueueHandler.restore">(jsonpickle.handlers.QueueHandler method)</a>
+  </dt>
+
+        
+  <dt><a href="api.html#jsonpickle.handlers.RegexHandler.restore">(jsonpickle.handlers.RegexHandler method)</a>
   </dt>
 
         
@@ -481,6 +573,10 @@
   <dt><a href="api.html#jsonpickle.unpickler.Unpickler">Unpickler (class in jsonpickle.unpickler)</a>
   </dt>
 
+      
+  <dt><a href="api.html#jsonpickle.handlers.Registry.unregister">unregister() (jsonpickle.handlers.Registry method)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
@@ -526,7 +622,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="index.html">jsonpickle 0.7.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Change Log &mdash; jsonpickle 0.7.0 documentation</title>
+    <title>Change Log &mdash; jsonpickle 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="static/default.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.7.0 documentation" href="index.html" />
+    <link rel="top" title="jsonpickle 0.8.0 documentation" href="index.html" />
     <link rel="prev" title="Contributing to jsonpickle" href="contrib.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="contrib.html" title="Contributing to jsonpickle"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.7.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -52,6 +52,56 @@
             
   <div class="section" id="change-log">
 <h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-0-8-1-october-tbd-2014">
+<h2>Version 0.8.1 - October TBD, 2014<a class="headerlink" href="#version-0-8-1-october-tbd-2014" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Support for Pickle Protocol v4.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-8-0-september-6-2014">
+<h2>Version 0.8.0 - September 6, 2014<a class="headerlink" href="#version-0-8-0-september-6-2014" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>We now support serializing objects that contain references to
+module-level functions
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/77">#77</a>).</li>
+<li>Better Pickle Protocol v2 support
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/78">#78</a>).</li>
+<li>Support for string __slots__ and iterable __slots__
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/66">#67</a>)
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/67">#68</a>).</li>
+<li><cite>encode()</cite> now has a <cite>warn</cite> option that makes jsonpickle emit warnings
+when encountering objects that cannot be pickled.</li>
+<li>A Javascript implementation of jsonpickle is now included
+in the jsonpickleJS directory.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-7-2-august-6-2014">
+<h2>Version 0.7.2 - August 6, 2014<a class="headerlink" href="#version-0-7-2-august-6-2014" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>We now properly serialize classes that inherit from classes
+that use <cite>__slots__</cite> and add additional slots in the derived class.</li>
+<li>jsonpickle can now serialize objects that implement <cite>__getstate__()</cite> but
+not <cite>__setstate__()</cite>.  The result of <cite>__getstate__()</cite> is returned as-is
+when doing a round-trip from Python objects to jsonpickle and back.</li>
+<li>Better support for collections.defaultdict with custom factories.</li>
+<li>Added support for <cite>queue.Queue</cite> objects.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-7-1-may-6-2014">
+<h2>Version 0.7.1 - May 6, 2014<a class="headerlink" href="#version-0-7-1-may-6-2014" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Added support for Python 3.4.</li>
+<li>Added support for <tt class="xref py py-class docutils literal"><span class="pre">posix.stat_result</span></tt>.</li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="version-0-7-0-march-15-2014">
 <h2>Version 0.7.0 - March 15, 2014<a class="headerlink" href="#version-0-7-0-march-15-2014" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -155,7 +205,7 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 <li>Objects with module references.</li>
 <li>Newstyle classes with <cite>__slots__</cite>.</li>
 <li>Objects implementing <cite>__setstate__()</cite> and <cite>__getstate__()</cite>
-(follows the <a class="reference external" href="http://docs.python.org/library/pickle.html#pickle" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">pickle</span></tt></a> protocol).</li>
+(follows the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">pickle</span></tt></a> protocol).</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
@@ -249,6 +299,10 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Change Log</a><ul>
+<li><a class="reference internal" href="#version-0-8-1-october-tbd-2014">Version 0.8.1 - October TBD, 2014</a></li>
+<li><a class="reference internal" href="#version-0-8-0-september-6-2014">Version 0.8.0 - September 6, 2014</a></li>
+<li><a class="reference internal" href="#version-0-7-2-august-6-2014">Version 0.7.2 - August 6, 2014</a></li>
+<li><a class="reference internal" href="#version-0-7-1-may-6-2014">Version 0.7.1 - May 6, 2014</a></li>
 <li><a class="reference internal" href="#version-0-7-0-march-15-2014">Version 0.7.0 - March 15, 2014</a></li>
 <li><a class="reference internal" href="#version-0-6-1-august-25-2013">Version 0.6.1 - August 25, 2013</a></li>
 <li><a class="reference internal" href="#version-0-6-0-august-24-2013">Version 0.6.0 - August 24, 2013</a></li>
@@ -303,7 +357,7 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
         <li class="right" >
           <a href="contrib.html" title="Contributing to jsonpickle"
              >previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.7.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
