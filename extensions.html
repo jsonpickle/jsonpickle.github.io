@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Python Module Index &#8212; jsonpickle 0.9.5 documentation</title>
+    <title>jsonpickle extensions &#8212; jsonpickle 0.9.5 documentation</title>
     
     <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -26,9 +26,8 @@
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
- 
-
-
+    <link rel="next" title="Contributing to jsonpickle" href="contrib.html" />
+    <link rel="prev" title="jsonpickle API" href="api.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,8 +37,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="#" title="Python Module Index"
+          <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="contrib.html" title="Contributing to jsonpickle"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="jsonpickle API"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 0.9.5 documentation</a> &#187;</li> 
       </ul>
     </div>  
@@ -49,49 +54,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-
-   <h1>Python Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-j"><strong>j</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-j"><td></td><td>
-       <strong>j</strong></td><td></td></tr>
-     <tr>
-       <td><img src="static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-       <td>
-       <a href="index.html#module-jsonpickle"><code class="xref">jsonpickle</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api.html#module-jsonpickle.backend"><code class="xref">jsonpickle.backend</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api.html#module-jsonpickle.handlers"><code class="xref">jsonpickle.handlers</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api.html#module-jsonpickle.pickler"><code class="xref">jsonpickle.pickler</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api.html#module-jsonpickle.unpickler"><code class="xref">jsonpickle.unpickler</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-1">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="api.html#module-jsonpickle.util"><code class="xref">jsonpickle.util</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+  <div class="section" id="jsonpickle-extensions">
+<h1>jsonpickle extensions<a class="headerlink" href="#jsonpickle-extensions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="numpy">
+<h2>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<p>jsonpickle includes a built-in numpy extension.  If would like to encode
+sklearn models, numpy arrays, and other numpy-based data then you must
+enable the numpy extension by registering its handlers:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">jsonpickle.ext.numpy</span> <span class="k">as</span> <span class="nn">jsonpickle_numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonpickle_numpy</span><span class="o">.</span><span class="n">register_handlers</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -99,6 +74,27 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">jsonpickle extensions</a><ul>
+<li><a class="reference internal" href="#numpy">NumPy</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">jsonpickle API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contrib.html"
+                        title="next chapter">Contributing to jsonpickle</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="sources/extensions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -120,8 +116,14 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="#" title="Python Module Index"
+          <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="contrib.html" title="Contributing to jsonpickle"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="jsonpickle API"
+             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 0.9.5 documentation</a> &#187;</li> 
       </ul>
     </div>

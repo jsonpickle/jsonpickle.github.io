@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,29 +6,31 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>jsonpickle API &mdash; jsonpickle 0.8.0 documentation</title>
+    <title>jsonpickle API &#8212; jsonpickle 0.9.5 documentation</title>
     
-    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.8.0',
+        URL_ROOT:    './',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.8.0 documentation" href="index.html" />
-    <link rel="next" title="Contributing to jsonpickle" href="contrib.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="jsonpickle extensions" href="extensions.html" />
     <link rel="prev" title="jsonpickle Documentation" href="index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -40,19 +40,19 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="contrib.html" title="Contributing to jsonpickle"
+          <a href="extensions.html" title="jsonpickle extensions"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="jsonpickle Documentation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 0.9.5 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="jsonpickle-api">
 <span id="id1"></span><h1><a class="toc-backref" href="#id4">jsonpickle API</a><a class="headerlink" href="#jsonpickle-api" title="Permalink to this headline">¶</a></h1>
@@ -60,17 +60,17 @@
 <p class="topic-title first">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#jsonpickle-api" id="id4">jsonpickle API</a><ul>
-<li><a class="reference internal" href="#jsonpickle-high-level-api" id="id5"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle</span></tt></a> &#8211; High Level API</a><ul>
+<li><a class="reference internal" href="#jsonpickle-high-level-api" id="id5"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle</span></code></a> &#8211; High Level API</a><ul>
 <li><a class="reference internal" href="#choosing-and-loading-backends" id="id6">Choosing and Loading Backends</a></li>
 <li><a class="reference internal" href="#customizing-json-output" id="id7">Customizing JSON output</a></li>
-<li><a class="reference internal" href="#jsonpickle-handlers-custom-serialization-handlers" id="id8"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.handlers</span></tt></a> &#8211; Custom Serialization Handlers</a></li>
+<li><a class="reference internal" href="#jsonpickle-handlers-custom-serialization-handlers" id="id8"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.handlers</span></code></a> &#8211; Custom Serialization Handlers</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#low-level-api" id="id9">Low Level API</a><ul>
-<li><a class="reference internal" href="#module-jsonpickle.pickler" id="id10"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.pickler</span></tt></a> &#8211; Python to JSON</a></li>
-<li><a class="reference internal" href="#module-jsonpickle.unpickler" id="id11"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.unpickler</span></tt></a> &#8211; JSON to Python</a></li>
-<li><a class="reference internal" href="#module-jsonpickle.backend" id="id12"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.backend</span></tt></a> &#8211; JSON Backend Management</a></li>
-<li><a class="reference internal" href="#module-jsonpickle.util" id="id13"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.util</span></tt></a> &#8211; Helper functions</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.pickler" id="id10"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.pickler</span></code></a> &#8211; Python to JSON</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.unpickler" id="id11"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.unpickler</span></code></a> &#8211; JSON to Python</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.backend" id="id12"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.backend</span></code></a> &#8211; JSON Backend Management</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.util" id="id13"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.util</span></code></a> &#8211; Helper functions</a></li>
 </ul>
 </li>
 </ul>
@@ -78,10 +78,10 @@
 </ul>
 </div>
 <div class="section" id="jsonpickle-high-level-api">
-<h2><a class="toc-backref" href="#id5"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle</span></tt></a> &#8211; High Level API</a><a class="headerlink" href="#jsonpickle-high-level-api" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle</span></code></a> &#8211; High Level API</a><a class="headerlink" href="#jsonpickle-high-level-api" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="jsonpickle.encode">
-<tt class="descclassname">jsonpickle.</tt><tt class="descname">encode</tt><big>(</big><em>value</em>, <em>unpicklable=True</em>, <em>make_refs=True</em>, <em>keys=False</em>, <em>max_depth=None</em>, <em>backend=None</em>, <em>warn=False</em>, <em>max_iter=None</em><big>)</big><a class="headerlink" href="#jsonpickle.encode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.</code><code class="descname">encode</code><span class="sig-paren">(</span><em>value</em>, <em>unpicklable=True</em>, <em>make_refs=True</em>, <em>keys=False</em>, <em>max_depth=None</em>, <em>backend=None</em>, <em>warn=False</em>, <em>max_iter=None</em>, <em>numeric_keys=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a JSON formatted representation of value, a Python object.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -112,36 +112,28 @@ consume at most <cite>max_iter</cite> items when pickling iterators.</li>
 </tr>
 </tbody>
 </table>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;my string&#39;</span><span class="p">)</span>
-<span class="go">&#39;&quot;my string&quot;&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span>
-<span class="go">&#39;36&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">({</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
-<span class="go">&#39;{&quot;foo&quot;: true}&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">({</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">&#39;&quot;{\&#39;foo\&#39;: True}&quot;&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">({</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="go">&#39;{&quot;foo&quot;: &quot;True&quot;}&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;my string&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&quot;my string&quot;&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;36&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span> <span class="o">==</span> <span class="s1">&#39;{&quot;foo&quot;: true}&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">encode</span><span class="p">({</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;{&quot;foo&quot;: &quot;True&quot;}&#39;</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.decode">
-<tt class="descclassname">jsonpickle.</tt><tt class="descname">decode</tt><big>(</big><em>string</em>, <em>backend=None</em>, <em>keys=False</em><big>)</big><a class="headerlink" href="#jsonpickle.decode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.</code><code class="descname">decode</code><span class="sig-paren">(</span><em>string</em>, <em>backend=None</em>, <em>keys=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a JSON string into a Python object.</p>
 <p>The keyword argument &#8216;keys&#8217; defaults to False.
 If set to True then jsonpickle will decode non-string dictionary keys
 into python objects via the jsonpickle protocol.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;&quot;my string&quot;&#39;</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;&quot;my string&quot;&#39;</span><span class="p">))</span>
 <span class="go">&#39;my string&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;36&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;36&#39;</span><span class="p">)</span>
 <span class="go">36</span>
 </pre></div>
 </div>
@@ -152,18 +144,19 @@ into python objects via the jsonpickle protocol.</p>
 <p>jsonpickle allows the user to specify what JSON backend to use
 when encoding and decoding. By default, jsonpickle will try to use, in
 the following order: <a class="reference external" href="http://undefined.org/python/#simplejson">simplejson</a>,
-<a class="reference external" href="http://docs.python.org/library/json.html#module-json" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">json</span></tt></a>, and <a class="reference external" href="http://deron.meranda.us/python/demjson/">demjson</a>.
-The prefered backend can be set via <a class="reference internal" href="#jsonpickle.set_preferred_backend" title="jsonpickle.set_preferred_backend"><tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.set_preferred_backend()</span></tt></a>.
-Additional JSON backends can be used via <a class="reference internal" href="#jsonpickle.load_backend" title="jsonpickle.load_backend"><tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.load_backend()</span></tt></a>.</p>
+<a class="reference external" href="https://docs.python.org/2/library/json.html#module-json" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">json</span></code></a>, and <a class="reference external" href="http://deron.meranda.us/python/demjson/">demjson</a>.
+The prefered backend can be set via <a class="reference internal" href="#jsonpickle.set_preferred_backend" title="jsonpickle.set_preferred_backend"><code class="xref py py-func docutils literal"><span class="pre">jsonpickle.set_preferred_backend()</span></code></a>.
+Additional JSON backends can be used via <a class="reference internal" href="#jsonpickle.load_backend" title="jsonpickle.load_backend"><code class="xref py py-func docutils literal"><span class="pre">jsonpickle.load_backend()</span></code></a>.</p>
 <p>For example, users of <a class="reference external" href="http://www.djangoproject.com/">Django</a> can use the
 version of simplejson that is bundled in Django:</p>
-<div class="highlight-python"><pre>jsonpickle.load_backend('django.util.simplejson', 'dumps', 'loads', ValueError))
-jsonpickle.set_preferred_backend('django.util.simplejson')</pre>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jsonpickle</span><span class="o">.</span><span class="n">load_backend</span><span class="p">(</span><span class="s1">&#39;django.util.simplejson&#39;</span><span class="p">,</span> <span class="s1">&#39;dumps&#39;</span><span class="p">,</span> <span class="s1">&#39;loads&#39;</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">))</span>
+<span class="n">jsonpickle</span><span class="o">.</span><span class="n">set_preferred_backend</span><span class="p">(</span><span class="s1">&#39;django.util.simplejson&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 <p>Supported backends:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="http://docs.python.org/library/json.html#module-json" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">json</span></tt></a> in Python 2.6+</li>
+<li><a class="reference external" href="https://docs.python.org/2/library/json.html#module-json" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">json</span></code></a> in Python 2.6+</li>
 <li><a class="reference external" href="http://undefined.org/python/#simplejson">simplejson</a></li>
 <li><a class="reference external" href="http://deron.meranda.us/python/demjson/">demjson</a></li>
 </ul>
@@ -178,12 +171,12 @@ jsonpickle.set_preferred_backend('django.util.simplejson')</pre>
 </div></blockquote>
 <dl class="function">
 <dt id="jsonpickle.set_preferred_backend">
-<tt class="descclassname">jsonpickle.</tt><tt class="descname">set_preferred_backend</tt><big>(</big><em>self</em>, <em>name</em><big>)</big><a class="headerlink" href="#jsonpickle.set_preferred_backend" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.</code><code class="descname">set_preferred_backend</code><span class="sig-paren">(</span><em>self</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_preferred_backend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the preferred json backend.</p>
 <p>If a preferred backend is set then jsonpickle tries to use it
 before any other backend.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">set_preferred_backend</span><span class="p">(</span><span class="s">&#39;simplejson&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">set_preferred_backend</span><span class="p">(</span><span class="s1">&#39;simplejson&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If the backend is not one of the built-in jsonpickle backends
@@ -194,25 +187,31 @@ prior to calling set_preferred_backend.</p>
 
 <dl class="function">
 <dt id="jsonpickle.load_backend">
-<tt class="descclassname">jsonpickle.</tt><tt class="descname">load_backend</tt><big>(</big><em>self</em>, <em>name</em>, <em>encode_name</em>, <em>decode_name</em>, <em>decode_exc</em><big>)</big><a class="headerlink" href="#jsonpickle.load_backend" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.</code><code class="descname">load_backend</code><span class="sig-paren">(</span><em>self</em>, <em>name</em>, <em>dumps=u'dumps'</em>, <em>loads=u'loads'</em>, <em>loads_exc=&lt;type 'exceptions.ValueError'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.load_backend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a JSON backend by name.</p>
 <p>This method loads a backend and sets up references to that
-backend&#8217;s encode/decode functions and exception classes.</p>
+backend&#8217;s loads/dumps functions and exception classes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>encode_name</strong> &#8211; is the name of the backend&#8217;s encode method.
-The method should take an object and return a string.</li>
-<li><strong>decode_name</strong> &#8211; names the backend&#8217;s method for the reverse
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dumps</strong> &#8211; is the name of the backend&#8217;s encode method.
+The method should take an object and return a string.
+Defaults to &#8216;dumps&#8217;.</li>
+<li><strong>loads</strong> &#8211; names the backend&#8217;s method for the reverse
 operation &#8211; returning a Python object from a string.</li>
-<li><strong>decode_exc</strong> &#8211; can be either the name of the exception class
+<li><strong>loads_exc</strong> &#8211; can be either the name of the exception class
 used to denote decoding errors, or it can be a direct reference
 to the appropriate exception class itself.  If it is a name,
 then the assumption is that an exception class of that name
 can be found in the backend module&#8217;s namespace.</li>
+<li><strong>load</strong> &#8211; names the backend&#8217;s &#8216;load&#8217; method.</li>
+<li><strong>dump</strong> &#8211; names the backend&#8217;s &#8216;dump&#8217; method.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype bool:</th><td class="field-body"><p class="first last">True on success, False if the backend could not be loaded.</p>
 </td>
 </tr>
 </tbody>
@@ -221,66 +220,82 @@ can be found in the backend module&#8217;s namespace.</li>
 
 <dl class="function">
 <dt id="jsonpickle.remove_backend">
-<tt class="descclassname">jsonpickle.</tt><tt class="descname">remove_backend</tt><big>(</big><em>self</em>, <em>name</em><big>)</big><a class="headerlink" href="#jsonpickle.remove_backend" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.</code><code class="descname">remove_backend</code><span class="sig-paren">(</span><em>self</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.remove_backend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all entries for a particular backend.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.set_encoder_options">
-<tt class="descclassname">jsonpickle.</tt><tt class="descname">set_encoder_options</tt><big>(</big><em>self</em>, <em>name</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#jsonpickle.set_encoder_options" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.</code><code class="descname">set_encoder_options</code><span class="sig-paren">(</span><em>self</em>, <em>name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_encoder_options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Associate encoder-specific options with an encoder.</p>
 <p>After calling set_encoder_options, any calls to jsonpickle&#8217;s
 encode method will pass the supplied args and kwargs along to
 the appropriate backend&#8217;s encode method.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">set_encoder_options</span><span class="p">(</span><span class="s">&#39;simplejson&#39;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">set_encoder_options</span><span class="p">(</span><span class="s">&#39;demjson&#39;</span><span class="p">,</span> <span class="n">compactly</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">set_encoder_options</span><span class="p">(</span><span class="s1">&#39;simplejson&#39;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">set_encoder_options</span><span class="p">(</span><span class="s1">&#39;demjson&#39;</span><span class="p">,</span> <span class="n">compactly</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>See the appropriate encoder&#8217;s documentation for details about
 the supported arguments and keyword arguments.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="jsonpickle.set_decoder_options">
+<code class="descclassname">jsonpickle.</code><code class="descname">set_decoder_options</code><span class="sig-paren">(</span><em>self</em>, <em>name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_decoder_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate decoder-specific options with a decoder.</p>
+<p>After calling set_decoder_options, any calls to jsonpickle&#8217;s
+decode method will pass the supplied args and kwargs along to
+the appropriate backend&#8217;s decode method.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">set_decoder_options</span><span class="p">(</span><span class="s1">&#39;simplejson&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">JSONDecoder</span><span class="p">)</span>
+<span class="n">set_decoder_options</span><span class="p">(</span><span class="s1">&#39;demjson&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the appropriate decoder&#8217;s documentation for details about
+the supported arguments and keyword arguments.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="customizing-json-output">
 <h3><a class="toc-backref" href="#id7">Customizing JSON output</a><a class="headerlink" href="#customizing-json-output" title="Permalink to this headline">¶</a></h3>
-<p>jsonpickle supports the standard <a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">pickle</span></tt></a> <cite>__getstate__</cite> and <cite>__setstate__</cite>
+<p>jsonpickle supports the standard <a class="reference external" href="https://docs.python.org/2/library/pickle.html#module-pickle" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">pickle</span></code></a> <cite>__getstate__</cite> and <cite>__setstate__</cite>
 protocol for representating object instances.</p>
 <dl class="method">
 <dt id="object.__getstate__">
-<tt class="descclassname">object.</tt><tt class="descname">__getstate__</tt><big>(</big><big>)</big><a class="headerlink" href="#object.__getstate__" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">object.</code><code class="descname">__getstate__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#object.__getstate__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Classes can further influence how their instances are pickled; if the class
-defines the method <a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><tt class="xref py py-meth docutils literal"><span class="pre">__getstate__()</span></tt></a>, it is called and the return state is
+defines the method <a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><code class="xref py py-meth docutils literal"><span class="pre">__getstate__()</span></code></a>, it is called and the return state is
 pickled as the contents for the instance, instead of the contents of the
-instance&#8217;s dictionary.  If there is no <a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><tt class="xref py py-meth docutils literal"><span class="pre">__getstate__()</span></tt></a> method, the
-instance&#8217;s <tt class="xref py py-attr docutils literal"><span class="pre">__dict__</span></tt> is pickled.</p>
+instance&#8217;s dictionary.  If there is no <a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><code class="xref py py-meth docutils literal"><span class="pre">__getstate__()</span></code></a> method, the
+instance&#8217;s <code class="xref py py-attr docutils literal"><span class="pre">__dict__</span></code> is pickled.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="object.__setstate__">
-<tt class="descclassname">object.</tt><tt class="descname">__setstate__</tt><big>(</big><em>state</em><big>)</big><a class="headerlink" href="#object.__setstate__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Upon unpickling, if the class also defines the method <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><tt class="xref py py-meth docutils literal"><span class="pre">__setstate__()</span></tt></a>,
+<code class="descclassname">object.</code><code class="descname">__setstate__</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#object.__setstate__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upon unpickling, if the class also defines the method <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal"><span class="pre">__setstate__()</span></code></a>,
 it is called with the unpickled state. If there is no
-<a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><tt class="xref py py-meth docutils literal"><span class="pre">__setstate__()</span></tt></a> method, the pickled state must be a dictionary and its
+<a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal"><span class="pre">__setstate__()</span></code></a> method, the pickled state must be a dictionary and its
 items are assigned to the new instance&#8217;s dictionary.  If a class defines both
-<a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><tt class="xref py py-meth docutils literal"><span class="pre">__getstate__()</span></tt></a> and <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><tt class="xref py py-meth docutils literal"><span class="pre">__setstate__()</span></tt></a>, the state object needn&#8217;t be a
+<a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><code class="xref py py-meth docutils literal"><span class="pre">__getstate__()</span></code></a> and <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal"><span class="pre">__setstate__()</span></code></a>, the state object needn&#8217;t be a
 dictionary and these methods can do what they want.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="jsonpickle-handlers-custom-serialization-handlers">
-<h3><a class="toc-backref" href="#id8"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.handlers</span></tt></a> &#8211; Custom Serialization Handlers</a><a class="headerlink" href="#jsonpickle-handlers-custom-serialization-handlers" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.handlers</span></code></a> &#8211; Custom Serialization Handlers</a><a class="headerlink" href="#jsonpickle-handlers-custom-serialization-handlers" title="Permalink to this headline">¶</a></h3>
 <p>The <cite>jsonpickle.handlers</cite> module allows plugging in custom
 serialization handlers at run-time.  This feature is useful when
 jsonpickle is unable to serialize objects that are not
 under your direct control.</p>
 <span class="target" id="module-jsonpickle.handlers"></span><p>Custom handlers may be created to handle other objects. Each custom handler
-must derive from <a class="reference internal" href="#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.BaseHandler</span></tt></a> and
-implement <tt class="docutils literal"><span class="pre">flatten</span></tt> and <tt class="docutils literal"><span class="pre">restore</span></tt>.</p>
-<p>A handler can be bound to other types by calling <tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.handlers.register()</span></tt>.</p>
-<p><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.customhandlers.SimpleReduceHandler</span></tt> is suitable for handling
+must derive from <a class="reference internal" href="#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><code class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.BaseHandler</span></code></a> and
+implement <code class="docutils literal"><span class="pre">flatten</span></code> and <code class="docutils literal"><span class="pre">restore</span></code>.</p>
+<p>A handler can be bound to other types by calling <code class="xref py py-func docutils literal"><span class="pre">jsonpickle.handlers.register()</span></code>.</p>
+<p><code class="xref py py-class docutils literal"><span class="pre">jsonpickle.customhandlers.SimpleReduceHandler</span></code> is suitable for handling
 objects that implement the reduce protocol:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">jsonpickle</span> <span class="kn">import</span> <span class="n">handlers</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jsonpickle</span> <span class="k">import</span> <span class="n">handlers</span>
 
 <span class="k">class</span> <span class="nc">MyCustomObject</span><span class="p">(</span><span class="n">handlers</span><span class="o">.</span><span class="n">BaseHandler</span><span class="p">):</span>
     <span class="o">...</span>
@@ -293,19 +308,33 @@ objects that implement the reduce protocol:</p>
 </div>
 <dl class="class">
 <dt id="jsonpickle.handlers.BaseHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">BaseHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">BaseHandler</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="jsonpickle.handlers.BaseHandler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.flatten" title="Permalink to this definition">¶</a></dt>
-<dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result in <cite>data</cite></p>
+<code class="descname">flatten</code><span class="sig-paren">(</span><em>obj</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) &#8211; The object to be serialized.</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; A partially filled dictionary which will contain the
+json-friendly representation of <cite>obj</cite> once this method has
+finished.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="classmethod">
 <dt id="jsonpickle.handlers.BaseHandler.handles">
-<em class="property">classmethod </em><tt class="descname">handles</tt><big>(</big><em>cls</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.handles" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="descname">handles</code><span class="sig-paren">(</span><em>cls</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.handles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register this handler for the given class. Suitable as a decorator,
 e.g.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@SimpleReduceHandler.handles</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@SimpleReduceHandler</span><span class="o">.</span><span class="n">handles</span>
 <span class="k">class</span> <span class="nc">MyCustomClass</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="o">...</span>
@@ -315,96 +344,97 @@ e.g.:</p>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.BaseHandler.restore">
-<tt class="descname">restore</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.restore" title="Permalink to this definition">¶</a></dt>
-<dd><p>Restore the json-friendly <cite>obj</cite> to the registered type</p>
+<code class="descname">restore</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore an object of the registered type from the json-friendly
+representation <cite>obj</cite> and return it.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="jsonpickle.handlers.CloneFactory">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">CloneFactory</tt><big>(</big><em>exemplar</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.CloneFactory" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">CloneFactory</code><span class="sig-paren">(</span><em>exemplar</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.CloneFactory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialization proxy for collections.defaultdict&#8217;s default_factory</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="jsonpickle.handlers.DatetimeHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">DatetimeHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">DatetimeHandler</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Custom handler for datetime objects</p>
 <p>Datetime objects use __reduce__, and they generate binary strings encoding
 the payload. This handler encodes that payload to reconstruct the
 object.</p>
 <dl class="method">
 <dt id="jsonpickle.handlers.DatetimeHandler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<code class="descname">flatten</code><span class="sig-paren">(</span><em>obj</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.DatetimeHandler.restore">
-<tt class="descname">restore</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.restore" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="jsonpickle.handlers.OrderedDictReduceHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">OrderedDictReduceHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.OrderedDictReduceHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serialize OrderedDict on Python 3.4+</p>
-<p>Python 3.4+ returns multiple entries in an OrderedDict&#8217;s
-reduced form.  Previous versions return a two-item tuple.
-OrderedDictReduceHandler makes the formats compatible.</p>
-<dl class="method">
-<dt id="jsonpickle.handlers.OrderedDictReduceHandler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.OrderedDictReduceHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<code class="descname">restore</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.restore" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="jsonpickle.handlers.QueueHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">QueueHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.QueueHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">QueueHandler</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opaquely serializes Queue objects</p>
 <p>Queues contains mutex and condition variables which cannot be serialized.
 Construct a new Queue instance when restoring.</p>
 <dl class="method">
 <dt id="jsonpickle.handlers.QueueHandler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<code class="descname">flatten</code><span class="sig-paren">(</span><em>obj</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.QueueHandler.restore">
-<tt class="descname">restore</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.restore" title="Permalink to this definition">¶</a></dt>
+<code class="descname">restore</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.restore" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="jsonpickle.handlers.RegexHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">RegexHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.RegexHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">RegexHandler</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flatten _sre.SRE_Pattern (compiled regex) objects</p>
 <dl class="method">
 <dt id="jsonpickle.handlers.RegexHandler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<code class="descname">flatten</code><span class="sig-paren">(</span><em>obj</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.RegexHandler.restore">
-<tt class="descname">restore</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.restore" title="Permalink to this definition">¶</a></dt>
+<code class="descname">restore</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.restore" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="jsonpickle.handlers.Registry">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">Registry</tt><a class="headerlink" href="#jsonpickle.handlers.Registry" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">Registry</code><a class="headerlink" href="#jsonpickle.handlers.Registry" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="jsonpickle.handlers.Registry.get">
-<tt class="descname">get</tt><big>(</big><em>class_name</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.Registry.get" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">get</code><span class="sig-paren">(</span><em>cls_or_name</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.get" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls_or_name</strong> &#8211; the type or its fully qualified name</li>
+<li><strong>default</strong> &#8211; default value, if a matching handler is not found</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Looks up a handler by type reference or its fully qualified name. If a direct match
+is not found, the search is performed over all handlers registered with base=True.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.Registry.register">
-<tt class="descname">register</tt><big>(</big><em>cls</em>, <em>handler</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.Registry.register" title="Permalink to this definition">¶</a></dt>
+<code class="descname">register</code><span class="sig-paren">(</span><em>cls</em>, <em>handler=None</em>, <em>base=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the a custom handler for a class</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -412,35 +442,40 @@ Construct a new Queue instance when restoring.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>cls</strong> &#8211; The custom object class to handle</li>
-<li><strong>handler</strong> &#8211; The custom handler class</li>
+<li><strong>handler</strong> &#8211; The custom handler class (if None, a decorator wrapper is returned)</li>
+<li><strong>base</strong> &#8211; Indicates whether the handler should be registered for all subclasses</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<p>This function can be also used as a decorator by omitting the <cite>handler</cite> argument:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@jsonpickle</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">FooHandler</span><span class="p">(</span><span class="n">jsonpickle</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">BaseHandler</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.handlers.Registry.unregister">
-<tt class="descname">unregister</tt><big>(</big><em>cls</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.Registry.unregister" title="Permalink to this definition">¶</a></dt>
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>cls</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.unregister" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="jsonpickle.handlers.SimpleReduceHandler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.handlers.</tt><tt class="descname">SimpleReduceHandler</tt><big>(</big><em>context</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.SimpleReduceHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Follow the __reduce__ protocol to pickle an object.</p>
-<p>As long as the factory and its arguments are pickleable, this should
-pickle any object that implements the reduce protocol.</p>
+<dt id="jsonpickle.handlers.UUIDHandler">
+<em class="property">class </em><code class="descclassname">jsonpickle.handlers.</code><code class="descname">UUIDHandler</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize uuid.UUID objects</p>
 <dl class="method">
-<dt id="jsonpickle.handlers.SimpleReduceHandler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.SimpleReduceHandler.flatten" title="Permalink to this definition">¶</a></dt>
+<dt id="jsonpickle.handlers.UUIDHandler.flatten">
+<code class="descname">flatten</code><span class="sig-paren">(</span><em>obj</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="jsonpickle.handlers.SimpleReduceHandler.restore">
-<tt class="descname">restore</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.handlers.SimpleReduceHandler.restore" title="Permalink to this definition">¶</a></dt>
+<dt id="jsonpickle.handlers.UUIDHandler.restore">
+<code class="descname">restore</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler.restore" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -450,76 +485,78 @@ pickle any object that implements the reduce protocol.</p>
 <div class="section" id="low-level-api">
 <h2><a class="toc-backref" href="#id9">Low Level API</a><a class="headerlink" href="#low-level-api" title="Permalink to this headline">¶</a></h2>
 <p>Typically this low level functionality is not needed by clients.</p>
+<p>Note that arguments like <code class="docutils literal"><span class="pre">safe=True</span></code> do not make it safe to load an untrusted
+jsonpickle string.</p>
 <div class="section" id="module-jsonpickle.pickler">
-<span id="jsonpickle-pickler-python-to-json"></span><h3><a class="toc-backref" href="#id10"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.pickler</span></tt></a> &#8211; Python to JSON</a><a class="headerlink" href="#module-jsonpickle.pickler" title="Permalink to this headline">¶</a></h3>
+<span id="jsonpickle-pickler-python-to-json"></span><h3><a class="toc-backref" href="#id10"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.pickler</span></code></a> &#8211; Python to JSON</a><a class="headerlink" href="#module-jsonpickle.pickler" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="jsonpickle.pickler.Pickler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.pickler.</tt><tt class="descname">Pickler</tt><big>(</big><em>unpicklable=True</em>, <em>make_refs=True</em>, <em>max_depth=None</em>, <em>backend=None</em>, <em>keys=False</em>, <em>warn=False</em>, <em>max_iter=None</em><big>)</big><a class="headerlink" href="#jsonpickle.pickler.Pickler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.pickler.</code><code class="descname">Pickler</code><span class="sig-paren">(</span><em>unpicklable=True</em>, <em>make_refs=True</em>, <em>max_depth=None</em>, <em>backend=None</em>, <em>keys=False</em>, <em>warn=False</em>, <em>max_iter=None</em>, <em>numeric_keys=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="jsonpickle.pickler.Pickler.flatten">
-<tt class="descname">flatten</tt><big>(</big><em>obj</em>, <em>reset=True</em><big>)</big><a class="headerlink" href="#jsonpickle.pickler.Pickler.flatten" title="Permalink to this definition">¶</a></dt>
+<code class="descname">flatten</code><span class="sig-paren">(</span><em>obj</em>, <em>reset=True</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler.flatten" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes an object and returns a JSON-safe representation of it.</p>
 <p>Simply returns any of the basic builtin datatypes</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Pickler</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="s">&#39;hello world&#39;</span><span class="p">)</span>
-<span class="go">&#39;hello world&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Pickler</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;hello world&#39;</span>
+<span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span>
 <span class="go">49</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="mf">350.0</span><span class="p">)</span>
 <span class="go">350.0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="ow">is</span> <span class="bp">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="ow">is</span> <span class="kc">None</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="go">[1, 2, 3, 4]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,))[</span><span class="n">tags</span><span class="o">.</span><span class="n">TUPLE</span><span class="p">]</span>
 <span class="go">[1, 2]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">({</span><span class="s">&#39;key&#39;</span><span class="p">:</span> <span class="s">&#39;value&#39;</span><span class="p">})</span>
-<span class="go">{&#39;key&#39;: &#39;value&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">flatten</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">})</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.pickler.Pickler.reset">
-<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#jsonpickle.pickler.Pickler.reset" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler.reset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.pickler.encode">
-<tt class="descclassname">jsonpickle.pickler.</tt><tt class="descname">encode</tt><big>(</big><em>value</em>, <em>unpicklable=False</em>, <em>make_refs=True</em>, <em>keys=False</em>, <em>max_depth=None</em>, <em>reset=True</em>, <em>backend=None</em>, <em>warn=False</em>, <em>context=None</em>, <em>max_iter=None</em><big>)</big><a class="headerlink" href="#jsonpickle.pickler.encode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.pickler.</code><code class="descname">encode</code><span class="sig-paren">(</span><em>value</em>, <em>unpicklable=False</em>, <em>make_refs=True</em>, <em>keys=False</em>, <em>max_depth=None</em>, <em>reset=True</em>, <em>backend=None</em>, <em>warn=False</em>, <em>context=None</em>, <em>max_iter=None</em>, <em>numeric_keys=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.encode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
 <div class="section" id="module-jsonpickle.unpickler">
-<span id="jsonpickle-unpickler-json-to-python"></span><h3><a class="toc-backref" href="#id11"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.unpickler</span></tt></a> &#8211; JSON to Python</a><a class="headerlink" href="#module-jsonpickle.unpickler" title="Permalink to this headline">¶</a></h3>
+<span id="jsonpickle-unpickler-json-to-python"></span><h3><a class="toc-backref" href="#id11"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.unpickler</span></code></a> &#8211; JSON to Python</a><a class="headerlink" href="#module-jsonpickle.unpickler" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="jsonpickle.unpickler.Unpickler">
-<em class="property">class </em><tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">Unpickler</tt><big>(</big><em>backend=None</em>, <em>keys=False</em>, <em>safe=False</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.Unpickler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.unpickler.</code><code class="descname">Unpickler</code><span class="sig-paren">(</span><em>backend=None</em>, <em>keys=False</em>, <em>safe=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="jsonpickle.unpickler.Unpickler.reset">
-<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.reset" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the object&#8217;s internal state.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="jsonpickle.unpickler.Unpickler.restore">
-<tt class="descname">restore</tt><big>(</big><em>obj</em>, <em>reset=True</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.restore" title="Permalink to this definition">¶</a></dt>
+<code class="descname">restore</code><span class="sig-paren">(</span><em>obj</em>, <em>reset=True</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.restore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restores a flattened object to its original python state.</p>
 <p>Simply returns any of the basic builtin types</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">Unpickler</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s">&#39;hello world&#39;</span><span class="p">)</span>
-<span class="go">&#39;hello world&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">restore</span><span class="p">({</span><span class="s">&#39;key&#39;</span><span class="p">:</span> <span class="s">&#39;value&#39;</span><span class="p">})</span>
-<span class="go">{&#39;key&#39;: &#39;value&#39;}</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">Unpickler</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;hello world&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span><span class="o">.</span><span class="n">restore</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">})</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -528,28 +565,28 @@ pickle any object that implements the reduce protocol.</p>
 
 <dl class="function">
 <dt id="jsonpickle.unpickler.decode">
-<tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">decode</tt><big>(</big><em>string</em>, <em>backend=None</em>, <em>context=None</em>, <em>keys=False</em>, <em>reset=True</em>, <em>safe=False</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.decode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.unpickler.</code><code class="descname">decode</code><span class="sig-paren">(</span><em>string</em>, <em>backend=None</em>, <em>context=None</em>, <em>keys=False</em>, <em>reset=True</em>, <em>safe=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.decode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.unpickler.getargs">
-<tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">getargs</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.getargs" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.unpickler.</code><code class="descname">getargs</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.getargs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return arguments suitable for __new__()</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.unpickler.has_tag">
-<tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">has_tag</tt><big>(</big><em>obj</em>, <em>tag</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.has_tag" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.unpickler.</code><code class="descname">has_tag</code><span class="sig-paren">(</span><em>obj</em>, <em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.has_tag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper class that tests to see if the obj is a dictionary
 and contains a particular key/tag.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;test&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">has_tag</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;test&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">has_tag</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">has_tag</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s">&#39;fail&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">has_tag</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s1">&#39;fail&#39;</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">has_tag</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s">&#39;fail&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">has_tag</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;fail&#39;</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -557,17 +594,17 @@ and contains a particular key/tag.</p>
 
 <dl class="function">
 <dt id="jsonpickle.unpickler.loadclass">
-<tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">loadclass</tt><big>(</big><em>module_and_name</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.loadclass" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.unpickler.</code><code class="descname">loadclass</code><span class="sig-paren">(</span><em>module_and_name</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadclass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the module and returns the class.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cls</span> <span class="o">=</span> <span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;datetime.datetime&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">cls</span> <span class="o">=</span> <span class="n">loadclass</span><span class="p">(</span><span class="s1">&#39;datetime.datetime&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span>
 <span class="go">&#39;datetime&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;does.not.exist&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s1">&#39;does.not.exist&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s">&#39;__builtin__.int&#39;</span><span class="p">)()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s1">&#39;__builtin__.int&#39;</span><span class="p">)()</span>
 <span class="go">0</span>
 </pre></div>
 </div>
@@ -575,11 +612,11 @@ and contains a particular key/tag.</p>
 
 <dl class="function">
 <dt id="jsonpickle.unpickler.loadrepr">
-<tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">loadrepr</tt><big>(</big><em>reprstr</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.loadrepr" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.unpickler.</code><code class="descname">loadrepr</code><span class="sig-paren">(</span><em>reprstr</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadrepr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an instance of the object from the object&#8217;s repr() string.
 It involves the dynamic specification of code.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">loadrepr</span><span class="p">(</span><span class="s">&#39;datetime/datetime.datetime.now()&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">loadrepr</span><span class="p">(</span><span class="s1">&#39;datetime/datetime.datetime.now()&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
 <span class="go">&#39;datetime&#39;</span>
 </pre></div>
 </div>
@@ -587,7 +624,7 @@ It involves the dynamic specification of code.</p>
 
 <dl class="function">
 <dt id="jsonpickle.unpickler.make_blank_classic">
-<tt class="descclassname">jsonpickle.unpickler.</tt><tt class="descname">make_blank_classic</tt><big>(</big><em>cls</em><big>)</big><a class="headerlink" href="#jsonpickle.unpickler.make_blank_classic" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.unpickler.</code><code class="descname">make_blank_classic</code><span class="sig-paren">(</span><em>cls</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.make_blank_classic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implement the mandated strategy for dealing with classic classes
 which cannot be instantiated without __getinitargs__ because they
 take parameters</p>
@@ -595,10 +632,10 @@ take parameters</p>
 
 </div>
 <div class="section" id="module-jsonpickle.backend">
-<span id="jsonpickle-backend-json-backend-management"></span><h3><a class="toc-backref" href="#id12"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.backend</span></tt></a> &#8211; JSON Backend Management</a><a class="headerlink" href="#module-jsonpickle.backend" title="Permalink to this headline">¶</a></h3>
+<span id="jsonpickle-backend-json-backend-management"></span><h3><a class="toc-backref" href="#id12"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.backend</span></code></a> &#8211; JSON Backend Management</a><a class="headerlink" href="#module-jsonpickle.backend" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="jsonpickle.backend.JSONBackend">
-<em class="property">class </em><tt class="descclassname">jsonpickle.backend.</tt><tt class="descname">JSONBackend</tt><big>(</big><em>fallthrough=True</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">jsonpickle.backend.</code><code class="descname">JSONBackend</code><span class="sig-paren">(</span><em>fallthrough=True</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manages encoding and decoding using various backends.</p>
 <dl class="docutils">
 <dt>It tries these modules in this order:</dt>
@@ -609,15 +646,23 @@ json comes with python2.6 and is tried second.
 demjson is the most permissive backend and is tried last.</p>
 <dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.decode">
-<tt class="descname">decode</tt><big>(</big><em>string</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.decode" title="Permalink to this definition">¶</a></dt>
+<code class="descname">decode</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to decode an object from a JSON string.</p>
 <p>This tries the loaded backends in order and passes along the last
 exception if no backends are able to decode the string.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="jsonpickle.backend.JSONBackend.dumps">
+<code class="descname">dumps</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.dumps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to encode an object into JSON.</p>
+<p>This tries the loaded backends in order and passes along the last
+exception if no backend is able to encode the object.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.enable_fallthrough">
-<tt class="descname">enable_fallthrough</tt><big>(</big><em>enable</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.enable_fallthrough" title="Permalink to this definition">¶</a></dt>
+<code class="descname">enable_fallthrough</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.enable_fallthrough" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disable jsonpickle&#8217;s fallthrough-on-error behavior</p>
 <p>By default, jsonpickle tries the next backend when decoding or
 encoding using a backend fails.</p>
@@ -630,7 +675,7 @@ re-raise any exceptions raised by the backends.</p>
 
 <dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.encode">
-<tt class="descname">encode</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.encode" title="Permalink to this definition">¶</a></dt>
+<code class="descname">encode</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to encode an object into JSON.</p>
 <p>This tries the loaded backends in order and passes along the last
 exception if no backend is able to encode the object.</p>
@@ -638,25 +683,31 @@ exception if no backend is able to encode the object.</p>
 
 <dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.load_backend">
-<tt class="descname">load_backend</tt><big>(</big><em>name</em>, <em>encode_name</em>, <em>decode_name</em>, <em>decode_exc</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.load_backend" title="Permalink to this definition">¶</a></dt>
+<code class="descname">load_backend</code><span class="sig-paren">(</span><em>name</em>, <em>dumps=u'dumps'</em>, <em>loads=u'loads'</em>, <em>loads_exc=&lt;type 'exceptions.ValueError'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.load_backend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a JSON backend by name.</p>
 <p>This method loads a backend and sets up references to that
-backend&#8217;s encode/decode functions and exception classes.</p>
+backend&#8217;s loads/dumps functions and exception classes.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>encode_name</strong> &#8211; is the name of the backend&#8217;s encode method.
-The method should take an object and return a string.</li>
-<li><strong>decode_name</strong> &#8211; names the backend&#8217;s method for the reverse
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dumps</strong> &#8211; is the name of the backend&#8217;s encode method.
+The method should take an object and return a string.
+Defaults to &#8216;dumps&#8217;.</li>
+<li><strong>loads</strong> &#8211; names the backend&#8217;s method for the reverse
 operation &#8211; returning a Python object from a string.</li>
-<li><strong>decode_exc</strong> &#8211; can be either the name of the exception class
+<li><strong>loads_exc</strong> &#8211; can be either the name of the exception class
 used to denote decoding errors, or it can be a direct reference
 to the appropriate exception class itself.  If it is a name,
 then the assumption is that an exception class of that name
 can be found in the backend module&#8217;s namespace.</li>
+<li><strong>load</strong> &#8211; names the backend&#8217;s &#8216;load&#8217; method.</li>
+<li><strong>dump</strong> &#8211; names the backend&#8217;s &#8216;dump&#8217; method.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rtype bool:</th><td class="field-body"><p class="first last">True on success, False if the backend could not be loaded.</p>
 </td>
 </tr>
 </tbody>
@@ -664,21 +715,45 @@ can be found in the backend module&#8217;s namespace.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="jsonpickle.backend.JSONBackend.loads">
+<code class="descname">loads</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to decode an object from a JSON string.</p>
+<p>This tries the loaded backends in order and passes along the last
+exception if no backends are able to decode the string.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.remove_backend">
-<tt class="descname">remove_backend</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.remove_backend" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_backend</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.remove_backend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all entries for a particular backend.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="jsonpickle.backend.JSONBackend.set_decoder_options">
+<code class="descname">set_decoder_options</code><span class="sig-paren">(</span><em>name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_decoder_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Associate decoder-specific options with a decoder.</p>
+<p>After calling set_decoder_options, any calls to jsonpickle&#8217;s
+decode method will pass the supplied args and kwargs along to
+the appropriate backend&#8217;s decode method.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">set_decoder_options</span><span class="p">(</span><span class="s1">&#39;simplejson&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">JSONDecoder</span><span class="p">)</span>
+<span class="n">set_decoder_options</span><span class="p">(</span><span class="s1">&#39;demjson&#39;</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the appropriate decoder&#8217;s documentation for details about
+the supported arguments and keyword arguments.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.set_encoder_options">
-<tt class="descname">set_encoder_options</tt><big>(</big><em>name</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_encoder_options" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_encoder_options</code><span class="sig-paren">(</span><em>name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_encoder_options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Associate encoder-specific options with an encoder.</p>
 <p>After calling set_encoder_options, any calls to jsonpickle&#8217;s
 encode method will pass the supplied args and kwargs along to
 the appropriate backend&#8217;s encode method.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">set_encoder_options</span><span class="p">(</span><span class="s">&#39;simplejson&#39;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">set_encoder_options</span><span class="p">(</span><span class="s">&#39;demjson&#39;</span><span class="p">,</span> <span class="n">compactly</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">set_encoder_options</span><span class="p">(</span><span class="s1">&#39;simplejson&#39;</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">set_encoder_options</span><span class="p">(</span><span class="s1">&#39;demjson&#39;</span><span class="p">,</span> <span class="n">compactly</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>See the appropriate encoder&#8217;s documentation for details about
@@ -687,12 +762,12 @@ the supported arguments and keyword arguments.</p>
 
 <dl class="method">
 <dt id="jsonpickle.backend.JSONBackend.set_preferred_backend">
-<tt class="descname">set_preferred_backend</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_preferred_backend" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_preferred_backend</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_preferred_backend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the preferred json backend.</p>
 <p>If a preferred backend is set then jsonpickle tries to use it
 before any other backend.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">set_preferred_backend</span><span class="p">(</span><span class="s">&#39;simplejson&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">set_preferred_backend</span><span class="p">(</span><span class="s1">&#39;simplejson&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If the backend is not one of the built-in jsonpickle backends
@@ -705,22 +780,27 @@ prior to calling set_preferred_backend.</p>
 
 </div>
 <div class="section" id="module-jsonpickle.util">
-<span id="jsonpickle-util-helper-functions"></span><h3><a class="toc-backref" href="#id13"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><tt class="xref py py-mod docutils literal"><span class="pre">jsonpickle.util</span></tt></a> &#8211; Helper functions</a><a class="headerlink" href="#module-jsonpickle.util" title="Permalink to this headline">¶</a></h3>
+<span id="jsonpickle-util-helper-functions"></span><h3><a class="toc-backref" href="#id13"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal"><span class="pre">jsonpickle.util</span></code></a> &#8211; Helper functions</a><a class="headerlink" href="#module-jsonpickle.util" title="Permalink to this headline">¶</a></h3>
 <p>Helper functions for pickling and unpickling.  Most functions assist in
 determining the type of an object.</p>
 <dl class="function">
 <dt id="jsonpickle.util.b64decode">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">b64decode</tt><big>(</big><em>payload</em><big>)</big><a class="headerlink" href="#jsonpickle.util.b64decode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">b64decode</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b64decode" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.b64encode">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">b64encode</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#jsonpickle.util.b64encode" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">b64encode</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b64encode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="jsonpickle.util.has_method">
+<code class="descclassname">jsonpickle.util.</code><code class="descname">has_method</code><span class="sig-paren">(</span><em>obj</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.has_method" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.has_reduce">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">has_reduce</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.has_reduce" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">has_reduce</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.has_reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tests if __reduce__ or __reduce_ex__ exists in the object dict or
 in the class dicts of every class in the MRO <em>except object</em>.</p>
 <p>Returns a tuple of booleans (has_reduce, has_reduce_ex)</p>
@@ -728,53 +808,60 @@ in the class dicts of every class in the MRO <em>except object</em>.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.importable_name">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">importable_name</tt><big>(</big><em>cls</em><big>)</big><a class="headerlink" href="#jsonpickle.util.importable_name" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">importable_name</code><span class="sig-paren">(</span><em>cls</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.importable_name" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">pass</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
-<span class="go">&#39;jsonpickle.util.Example&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
-<span class="go">&#39;__builtin__.int&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="bp">None</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
-<span class="go">&#39;__builtin__.NoneType&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="bp">False</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
-<span class="go">&#39;__builtin__.bool&#39;</span>
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">)</span>
-<span class="go">&#39;__builtin__.AttributeError&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;jsonpickle.util.Example&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span> <span class="o">==</span> <span class="s1">&#39;__builtin__.int&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="kc">None</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;__builtin__.NoneType&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="kc">False</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;__builtin__.bool&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">importable_name</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;__builtin__.AttributeError&#39;</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.in_dict">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">in_dict</tt><big>(</big><em>obj</em>, <em>key</em>, <em>default=False</em><big>)</big><a class="headerlink" href="#jsonpickle.util.in_dict" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">in_dict</code><span class="sig-paren">(</span><em>obj</em>, <em>key</em>, <em>default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.in_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns true if key exists in obj.__dict__; false if not in.
 If obj.__dict__ is absent, return default</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.in_slots">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">in_slots</tt><big>(</big><em>obj</em>, <em>key</em>, <em>default=False</em><big>)</big><a class="headerlink" href="#jsonpickle.util.in_slots" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">in_slots</code><span class="sig-paren">(</span><em>obj</em>, <em>key</em>, <em>default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.in_slots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns true if key exists in obj.__slots__; false if not in.
 If obj.__slots__ is absent, return default</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="jsonpickle.util.is_bytes">
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_bytes</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method to see if the object is a bytestring.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="jsonpickle.util.is_collections">
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_collections</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_collections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="jsonpickle.util.is_dictionary">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_dictionary</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_dictionary" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_dictionary</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_dictionary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method for testing if the object is a dictionary.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_dictionary</span><span class="p">({</span><span class="s">&#39;key&#39;</span><span class="p">:</span><span class="s">&#39;value&#39;</span><span class="p">})</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_dictionary</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">})</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -782,10 +869,10 @@ If obj.__slots__ is absent, return default</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_dictionary_subclass">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_dictionary_subclass</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_dictionary_subclass" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_dictionary_subclass</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_dictionary_subclass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if <em>obj</em> is a subclass of the dict type. <em>obj</em> must be
 a subclass and not the actual builtin dict.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Temp</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="k">pass</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Temp</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="k">pass</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_dictionary_subclass</span><span class="p">(</span><span class="n">Temp</span><span class="p">())</span>
 <span class="go">True</span>
 </pre></div>
@@ -794,22 +881,22 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_function">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_function</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_function" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_function</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns true if passed a function</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="nb">locals</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="nb">locals</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span> <span class="k">pass</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span> <span class="k">pass</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -817,11 +904,11 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_installed">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_installed</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_installed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tests to see if <tt class="docutils literal"><span class="pre">module</span></tt> is available on the sys.path</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_installed</span><span class="p">(</span><span class="s">&#39;sys&#39;</span><span class="p">)</span>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_installed</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests to see if <code class="docutils literal"><span class="pre">module</span></code> is available on the sys.path</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_installed</span><span class="p">(</span><span class="s1">&#39;sys&#39;</span><span class="p">)</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_installed</span><span class="p">(</span><span class="s">&#39;hopefullythisisnotarealmodule&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_installed</span><span class="p">(</span><span class="s1">&#39;hopefullythisisnotarealmodule&#39;</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -829,14 +916,14 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_iterator">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_iterator</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_iterator</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_iterator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_list">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_list</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_list" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_list</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a Python list.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_list</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_list</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -844,14 +931,14 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_list_like">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_list_like</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_list_like" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_list_like</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_list_like" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_module">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_module</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_module" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_module</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if passed a module</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_module</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
@@ -860,14 +947,14 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_module_function">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_module_function</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_module_function" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_module_function</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_module_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if <cite>obj</cite> is a module-global function</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_module_function</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_module_function</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">None</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_module_function</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -875,27 +962,29 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_noncomplex">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_noncomplex</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_noncomplex" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_noncomplex</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_noncomplex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if <em>obj</em> is a special (weird) class, that is more complex
 than primitive data types, but is not a full object. Including:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://docs.python.org/library/time.html#time.struct_time" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">struct_time</span></tt></a></li>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://docs.python.org/2/library/time.html#time.struct_time" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">struct_time</span></code></a></li>
 </ul>
+</div></blockquote>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_object">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_object</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_object" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_object</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_object" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True is obj is a reference to an object instance.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="nb">object</span><span class="p">())</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="nb">object</span><span class="p">())</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -903,19 +992,19 @@ than primitive data types, but is not a full object. Including:</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_picklable">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_picklable</tt><big>(</big><em>name</em>, <em>value</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_picklable" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_picklable</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_picklable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if an object can be pickled</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s">&#39;os&#39;</span><span class="p">,</span> <span class="n">os</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s1">&#39;os&#39;</span><span class="p">,</span> <span class="n">os</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span> <span class="k">pass</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span> <span class="k">pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">None</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
@@ -923,11 +1012,11 @@ than primitive data types, but is not a full object. Including:</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_primitive">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_primitive</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_primitive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper method to see if the object is a basic data type. Strings,
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_primitive</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method to see if the object is a basic data type. Unicode strings,
 integers, longs, floats, booleans, and None are considered primitive
 and will return True when passed into <em>is_primitive()</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_primitive</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_primitive</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_primitive</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="go">False</span>
@@ -937,16 +1026,16 @@ and will return True when passed into <em>is_primitive()</em></p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_reducible">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_reducible</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_reducible" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_reducible</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_reducible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns false if of a type which have special casing, and should not have their
 __reduce__ methods used</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_sequence">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_sequence</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_sequence" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_sequence</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_sequence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a sequence (list, set, or tuple).</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_sequence</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_sequence</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -954,11 +1043,11 @@ __reduce__ methods used</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_sequence_subclass">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_sequence_subclass</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_sequence_subclass" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_sequence_subclass</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_sequence_subclass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if <em>obj</em> is a subclass of list, set or tuple.</p>
 <p><em>obj</em> must be a subclass and not the actual builtin, such
 as list, set, tuple, etc..</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Temp</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="k">pass</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Temp</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="k">pass</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_sequence_subclass</span><span class="p">(</span><span class="n">Temp</span><span class="p">())</span>
 <span class="go">True</span>
 </pre></div>
@@ -967,9 +1056,9 @@ as list, set, tuple, etc..</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_set">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_set</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_set" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_set</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a Python set.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_set</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_set</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -977,9 +1066,9 @@ as list, set, tuple, etc..</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_tuple">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_tuple</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_tuple" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_tuple</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_tuple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a Python tuple.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_tuple</span><span class="p">((</span><span class="mi">1</span><span class="p">,))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_tuple</span><span class="p">((</span><span class="mi">1</span><span class="p">,))</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -987,17 +1076,17 @@ as list, set, tuple, etc..</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.is_type">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">is_type</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#jsonpickle.util.is_type" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_type</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True is obj is a reference to a type.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">is_type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Klass</span><span class="p">:</span> <span class="k">pass</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Klass</span><span class="p">:</span> <span class="k">pass</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_type</span><span class="p">(</span><span class="n">Klass</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
@@ -1005,13 +1094,19 @@ as list, set, tuple, etc..</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="jsonpickle.util.is_unicode">
+<code class="descclassname">jsonpickle.util.</code><code class="descname">is_unicode</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method to see if the object is a unicode string</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="jsonpickle.util.itemgetter">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">itemgetter</tt><big>(</big><em>obj</em>, <em>getter=&lt;operator.itemgetter object at 0x10f455810&gt;</em><big>)</big><a class="headerlink" href="#jsonpickle.util.itemgetter" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">itemgetter</code><span class="sig-paren">(</span><em>obj</em>, <em>getter=&lt;operator.itemgetter object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.itemgetter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="jsonpickle.util.translate_module_name">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">translate_module_name</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#jsonpickle.util.translate_module_name" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">translate_module_name</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.translate_module_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename builtin modules to a consistent (Python2) module name</p>
 <p>This is used so that references to Python&#8217;s <cite>builtins</cite> module can
 be loaded in both Python 2 and 3.  We remap to the &#8220;__builtin__&#8221;
@@ -1021,7 +1116,7 @@ name and unmap it when importing.</p>
 
 <dl class="function">
 <dt id="jsonpickle.util.untranslate_module_name">
-<tt class="descclassname">jsonpickle.util.</tt><tt class="descname">untranslate_module_name</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#jsonpickle.util.untranslate_module_name" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">jsonpickle.util.</code><code class="descname">untranslate_module_name</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.untranslate_module_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename module names mention in JSON to names that we can import</p>
 <p>This reverses the translation applied by translate_module_name() to
 a module name available to the current version of Python.</p>
@@ -1035,22 +1130,22 @@ a module name available to the current version of Python.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">jsonpickle API</a><ul>
-<li><a class="reference internal" href="#jsonpickle-high-level-api"><tt class="docutils literal"><span class="pre">jsonpickle</span></tt> &#8211; High Level API</a><ul>
+<li><a class="reference internal" href="#jsonpickle-high-level-api"><code class="docutils literal"><span class="pre">jsonpickle</span></code> &#8211; High Level API</a><ul>
 <li><a class="reference internal" href="#choosing-and-loading-backends">Choosing and Loading Backends</a></li>
 <li><a class="reference internal" href="#customizing-json-output">Customizing JSON output</a></li>
-<li><a class="reference internal" href="#jsonpickle-handlers-custom-serialization-handlers"><tt class="docutils literal"><span class="pre">jsonpickle.handlers</span></tt> &#8211; Custom Serialization Handlers</a></li>
+<li><a class="reference internal" href="#jsonpickle-handlers-custom-serialization-handlers"><code class="docutils literal"><span class="pre">jsonpickle.handlers</span></code> &#8211; Custom Serialization Handlers</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#low-level-api">Low Level API</a><ul>
-<li><a class="reference internal" href="#module-jsonpickle.pickler"><tt class="docutils literal"><span class="pre">jsonpickle.pickler</span></tt> &#8211; Python to JSON</a></li>
-<li><a class="reference internal" href="#module-jsonpickle.unpickler"><tt class="docutils literal"><span class="pre">jsonpickle.unpickler</span></tt> &#8211; JSON to Python</a></li>
-<li><a class="reference internal" href="#module-jsonpickle.backend"><tt class="docutils literal"><span class="pre">jsonpickle.backend</span></tt> &#8211; JSON Backend Management</a></li>
-<li><a class="reference internal" href="#module-jsonpickle.util"><tt class="docutils literal"><span class="pre">jsonpickle.util</span></tt> &#8211; Helper functions</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.pickler"><code class="docutils literal"><span class="pre">jsonpickle.pickler</span></code> &#8211; Python to JSON</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.unpickler"><code class="docutils literal"><span class="pre">jsonpickle.unpickler</span></code> &#8211; JSON to Python</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.backend"><code class="docutils literal"><span class="pre">jsonpickle.backend</span></code> &#8211; JSON Backend Management</a></li>
+<li><a class="reference internal" href="#module-jsonpickle.util"><code class="docutils literal"><span class="pre">jsonpickle.util</span></code> &#8211; Helper functions</a></li>
 </ul>
 </li>
 </ul>
@@ -1061,31 +1156,30 @@ a module name available to the current version of Python.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">jsonpickle Documentation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="contrib.html"
-                        title="next chapter">Contributing to jsonpickle</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="sources/api.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="extensions.html"
+                        title="next chapter">jsonpickle extensions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -1095,17 +1189,17 @@ a module name available to the current version of Python.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="contrib.html" title="Contributing to jsonpickle"
+          <a href="extensions.html" title="jsonpickle extensions"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="jsonpickle Documentation"
              >previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 0.9.5 documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
     </div>
   </body>
 </html>

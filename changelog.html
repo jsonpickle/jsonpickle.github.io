@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,28 +6,30 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Change Log &mdash; jsonpickle 0.8.0 documentation</title>
+    <title>Change Log &#8212; jsonpickle 0.9.5 documentation</title>
     
-    <link rel="stylesheet" href="static/default.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.8.0',
+        URL_ROOT:    './',
+        VERSION:     '0.9.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <link rel="top" title="jsonpickle 0.8.0 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Contributing to jsonpickle" href="contrib.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -41,22 +41,99 @@
         <li class="right" >
           <a href="contrib.html" title="Contributing to jsonpickle"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 0.9.5 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="change-log">
 <h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-0-8-1-october-tbd-2014">
-<h2>Version 0.8.1 - October TBD, 2014<a class="headerlink" href="#version-0-8-1-october-tbd-2014" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-0-9-6-unreleased-beta">
+<h2>Version 0.9.6 - Unreleased Beta<a class="headerlink" href="#version-0-9-6-unreleased-beta" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Better support for SQLAlchemy
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/180">#180</a>).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-9-5-july-16-2017">
+<h2>Version 0.9.5 - July 16, 2017<a class="headerlink" href="#version-0-9-5-july-16-2017" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Better support for objects that implement the reduce protocol.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/170">#170</a>).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-9-4-january-10-2017">
+<h2>Version 0.9.4 - January 10, 2017<a class="headerlink" href="#version-0-9-4-january-10-2017" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Arbitrary byte streams are now better supported.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/143">#143</a>).</li>
+<li>Better support for NumPy data types.  The Python3 NumPy support
+is especially robust.</li>
+<li>Fortran-ordered based NumPy arrays are now properly serialized.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-9-3-march-9-2016">
+<h2>Version 0.9.3 - March 9, 2016<a class="headerlink" href="#version-0-9-3-march-9-2016" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>UUID objects can now be serialized
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/130">#130</a>).</li>
+<li>Added <cite>set_decoder_options</cite> method to allow decoder specific options
+equal to <cite>set_encoder_options</cite>.</li>
+<li>Int keys can be encoded directly by e.g. demjson by passing
+<cite>numeric_keys=True</cite> and setting its backend options via
+<cite>jsonpickle.set_encoder_options(&#8216;demjson&#8217;, strict=False)</cite>.</li>
+<li>Newer Numpy versions (v1.10+) are now supported.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-9-2-march-20-2015">
+<h2>Version 0.9.2 - March 20, 2015<a class="headerlink" href="#version-0-9-2-march-20-2015" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Fixes for serializing objects with custom handlers.</li>
+<li>We now properly serialize deque objects constructed with a <cite>maxlen</cite> parameter.</li>
+<li>Test suite fixes</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-9-1-march-15-2015">
+<h2>Version 0.9.1 - March 15, 2015<a class="headerlink" href="#version-0-9-1-march-15-2015" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Support datetime objects with FixedOffsets.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="version-0-9-0-january-16-2015">
+<h2>Version 0.9.0 - January 16, 2015<a class="headerlink" href="#version-0-9-0-january-16-2015" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li>Support for Pickle Protocol v4.</li>
+<li>We now support serializing defaultdict subclasses that use <cite>self</cite>
+as their default factory.</li>
+<li>We now have a decorator syntax for registering custom handlers,
+and allow custom handlers to register themselves for all subclasses.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/104">#104</a>).</li>
+<li>We now support serializing types with metaclasses and their
+instances (e.g., Python 3 <cite>enum</cite>).</li>
+<li>We now support serializing bytestrings in both Python 2 and Python 3.
+In Python 2, the <cite>str</cite> type is decoded to UTF-8 whenever possible and
+serialized as a true bytestring elsewise; in Python 3, bytestrings
+are explicitly encoded/decoded as bytestrings. Unicode strings are
+always encoded as is in both Python 2 and Python 3.</li>
+<li>Added support for serializing numpy arrays, dtypes and scalars
+(see <cite>jsonpickle.ext.numpy</cite> module).</li>
 </ul>
 </div></blockquote>
 </div>
@@ -98,7 +175,7 @@ when doing a round-trip from Python objects to jsonpickle and back.</li>
 <blockquote>
 <div><ul class="simple">
 <li>Added support for Python 3.4.</li>
-<li>Added support for <tt class="xref py py-class docutils literal"><span class="pre">posix.stat_result</span></tt>.</li>
+<li>Added support for <code class="xref py py-class docutils literal"><span class="pre">posix.stat_result</span></code>.</li>
 </ul>
 </div></blockquote>
 </div>
@@ -106,11 +183,11 @@ when doing a round-trip from Python objects to jsonpickle and back.</li>
 <h2>Version 0.7.0 - March 15, 2014<a class="headerlink" href="#version-0-7-0-march-15-2014" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>Added <tt class="docutils literal"><span class="pre">handles</span></tt> decorator to <a class="reference internal" href="api.html#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.BaseHandler</span></tt></a>,
+<li>Added <code class="docutils literal"><span class="pre">handles</span></code> decorator to <a class="reference internal" href="api.html#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><code class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.BaseHandler</span></code></a>,
 enabling simple declaration of a handler for a class.</li>
 <li><cite>__getstate__()</cite> and <cite>__setstate__()</cite> are now honored
-when pickling objects that subclass <a class="reference external" href="http://docs.python.org/library/stdtypes.html#dict" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt></a>.</li>
-<li>jsonpickle can now serialize <a class="reference external" href="http://docs.python.org/library/collections.html#collections.Counter" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">collections.Counter</span></tt></a> objects.</li>
+when pickling objects that subclass <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#dict" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a>.</li>
+<li>jsonpickle can now serialize <a class="reference external" href="https://docs.python.org/2/library/collections.html#collections.Counter" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">collections.Counter</span></code></a> objects.</li>
 <li>Object references are properly handled when using integer keys.</li>
 <li>Object references are now supported when using custom handlers.</li>
 <li>Decimal objects are supported in Python 3.</li>
@@ -135,8 +212,8 @@ is disabled in this mode.  e.g. <cite>decode(string, safe=True)</cite></li>
 <blockquote>
 <div><ul class="simple">
 <li>Python 3 support!</li>
-<li><a class="reference external" href="http://docs.python.org/library/time.html#time.struct_time" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">time.struct_time</span></tt></a> is now serialized using the built-in
-<a class="reference internal" href="api.html#jsonpickle.handlers.SimpleReduceHandler" title="jsonpickle.handlers.SimpleReduceHandler"><tt class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.SimpleReduceHandler</span></tt></a>.</li>
+<li><a class="reference external" href="https://docs.python.org/2/library/time.html#time.struct_time" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">time.struct_time</span></code></a> is now serialized using the built-in
+<code class="xref py py-class docutils literal"><span class="pre">jsonpickle.handlers.SimpleReduceHandler</span></code>.</li>
 </ul>
 </div></blockquote>
 </div>
@@ -145,15 +222,15 @@ is disabled in this mode.  e.g. <cite>decode(string, safe=True)</cite></li>
 <blockquote>
 <div><ul class="simple">
 <li>Non-string dictionary keys (e.g. ints, objects) are now supported
-by passing <cite>keys=True</cite> to <a class="reference internal" href="api.html#jsonpickle.encode" title="jsonpickle.encode"><tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.encode()</span></tt></a> and
-<a class="reference internal" href="api.html#jsonpickle.decode" title="jsonpickle.decode"><tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.decode()</span></tt></a>.</li>
+by passing <cite>keys=True</cite> to <a class="reference internal" href="api.html#jsonpickle.encode" title="jsonpickle.encode"><code class="xref py py-func docutils literal"><span class="pre">jsonpickle.encode()</span></code></a> and
+<a class="reference internal" href="api.html#jsonpickle.decode" title="jsonpickle.decode"><code class="xref py py-func docutils literal"><span class="pre">jsonpickle.decode()</span></code></a>.</li>
 <li>We now support namedtuple, deque, and defaultdict.</li>
 <li>Datetimes with timezones are now fully supported.</li>
 <li>Better support for complicated structures e.g.
 datetime inside dicts.</li>
 <li>jsonpickle added support for references and cyclical data structures
 in 0.4.0.  This can be disabled by passing <cite>make_refs=False</cite> to
-<a class="reference internal" href="api.html#jsonpickle.encode" title="jsonpickle.encode"><tt class="xref py py-func docutils literal"><span class="pre">jsonpickle.encode()</span></tt></a>.</li>
+<a class="reference internal" href="api.html#jsonpickle.encode" title="jsonpickle.encode"><code class="xref py py-func docutils literal"><span class="pre">jsonpickle.encode()</span></code></a>.</li>
 </ul>
 </div></blockquote>
 </div>
@@ -205,7 +282,7 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 <li>Objects with module references.</li>
 <li>Newstyle classes with <cite>__slots__</cite>.</li>
 <li>Objects implementing <cite>__setstate__()</cite> and <cite>__getstate__()</cite>
-(follows the <a class="reference external" href="http://docs.python.org/library/pickle.html#module-pickle" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">pickle</span></tt></a> protocol).</li>
+(follows the <a class="reference external" href="https://docs.python.org/2/library/pickle.html#module-pickle" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">pickle</span></code></a> protocol).</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
@@ -213,7 +290,7 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 <li>Support for user-defined serialization handlers via the
 jsonpickle.handlers registry.</li>
 <li>Removed cjson support per John Millikin&#8217;s recommendation.</li>
-<li>General improvements to style, including <span class="target" id="index-0"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0257"><strong>PEP 257</strong></a> compliance and
+<li>General improvements to style, including <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0257"><strong>PEP 257</strong></a> compliance and
 refactored project layout.</li>
 <li>Steps towards Python 2.3 and Python 3 support.</li>
 <li>New contributors Dan Buch and Ian Schenck.</li>
@@ -294,12 +371,18 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Change Log</a><ul>
-<li><a class="reference internal" href="#version-0-8-1-october-tbd-2014">Version 0.8.1 - October TBD, 2014</a></li>
+<li><a class="reference internal" href="#version-0-9-6-unreleased-beta">Version 0.9.6 - Unreleased Beta</a></li>
+<li><a class="reference internal" href="#version-0-9-5-july-16-2017">Version 0.9.5 - July 16, 2017</a></li>
+<li><a class="reference internal" href="#version-0-9-4-january-10-2017">Version 0.9.4 - January 10, 2017</a></li>
+<li><a class="reference internal" href="#version-0-9-3-march-9-2016">Version 0.9.3 - March 9, 2016</a></li>
+<li><a class="reference internal" href="#version-0-9-2-march-20-2015">Version 0.9.2 - March 20, 2015</a></li>
+<li><a class="reference internal" href="#version-0-9-1-march-15-2015">Version 0.9.1 - March 15, 2015</a></li>
+<li><a class="reference internal" href="#version-0-9-0-january-16-2015">Version 0.9.0 - January 16, 2015</a></li>
 <li><a class="reference internal" href="#version-0-8-0-september-6-2014">Version 0.8.0 - September 6, 2014</a></li>
 <li><a class="reference internal" href="#version-0-7-2-august-6-2014">Version 0.7.2 - August 6, 2014</a></li>
 <li><a class="reference internal" href="#version-0-7-1-may-6-2014">Version 0.7.1 - May 6, 2014</a></li>
@@ -323,29 +406,28 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
   <h4>Previous topic</h4>
   <p class="topless"><a href="contrib.html"
                         title="previous chapter">Contributing to jsonpickle</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="sources/changelog.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="sources/changelog.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -357,12 +439,12 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</li>
         <li class="right" >
           <a href="contrib.html" title="Contributing to jsonpickle"
              >previous</a> |</li>
-        <li><a href="index.html">jsonpickle 0.8.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 0.9.5 documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
     </div>
   </body>
 </html>
