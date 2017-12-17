@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>jsonpickle Documentation &#8212; jsonpickle 0.9.5 documentation</title>
-    
     <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -28,7 +25,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="jsonpickle API" href="api.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -55,11 +52,11 @@
 <p><a class="reference external" href="http://jsonpickle.github.com">jsonpickle</a> is a Python library for
 serialization and deserialization of complex Python objects to and from
 JSON.  The standard Python libraries for encoding Python into JSON, such as
-the stdlib&#8217;s json, simplejson, and demjson, can only handle Python
+the stdlib’s json, simplejson, and demjson, can only handle Python
 primitives that have a direct JSON equivalent (e.g. dicts, lists, strings,
 ints, etc.).  jsonpickle builds on top of these libraries and allows more
 complex data structures to be serialized to JSON. jsonpickle is highly
-configurable and extendable&#8211;allowing the user to choose the JSON backend
+configurable and extendable–allowing the user to choose the JSON backend
 and add additional backends.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
@@ -128,7 +125,7 @@ added to JSON:</p>
 </pre></div>
 </div>
 <p>For Python 2.6+, jsonpickle has no required dependencies (it uses the standard
-library&#8217;s <a class="reference external" href="https://docs.python.org/2/library/json.html#module-json" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">json</span></code></a> module by default). For Python 2.5 or earlier, you must
+library’s <a class="reference external" href="https://docs.python.org/2/library/json.html#module-json" title="(in Python v2.7)"><code class="xref py py-mod docutils literal"><span class="pre">json</span></code></a> module by default). For Python 2.5 or earlier, you must
 install a supported JSON backend (including simplejson or demjson). For example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install simplejson
 </pre></div>
@@ -144,17 +141,17 @@ latest code and install from source:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">jsonpickle API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#jsonpickle-high-level-api"><code class="docutils literal"><span class="pre">jsonpickle</span></code> &#8211; High Level API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#jsonpickle-high-level-api"><code class="docutils literal"><span class="pre">jsonpickle</span></code> – High Level API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#choosing-and-loading-backends">Choosing and Loading Backends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#customizing-json-output">Customizing JSON output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#jsonpickle-handlers-custom-serialization-handlers"><code class="docutils literal"><span class="pre">jsonpickle.handlers</span></code> &#8211; Custom Serialization Handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#jsonpickle-handlers-custom-serialization-handlers"><code class="docutils literal"><span class="pre">jsonpickle.handlers</span></code> – Custom Serialization Handlers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#low-level-api">Low Level API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.pickler"><code class="docutils literal"><span class="pre">jsonpickle.pickler</span></code> &#8211; Python to JSON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.unpickler"><code class="docutils literal"><span class="pre">jsonpickle.unpickler</span></code> &#8211; JSON to Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.backend"><code class="docutils literal"><span class="pre">jsonpickle.backend</span></code> &#8211; JSON Backend Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.util"><code class="docutils literal"><span class="pre">jsonpickle.util</span></code> &#8211; Helper functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.pickler"><code class="docutils literal"><span class="pre">jsonpickle.pickler</span></code> – Python to JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.unpickler"><code class="docutils literal"><span class="pre">jsonpickle.unpickler</span></code> – JSON to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.backend"><code class="docutils literal"><span class="pre">jsonpickle.backend</span></code> – JSON Backend Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.util"><code class="docutils literal"><span class="pre">jsonpickle.util</span></code> – Helper functions</a></li>
 </ul>
 </li>
 </ul>
@@ -313,7 +310,7 @@ Copyright (C) 2009-2016 David Aguilar (davvid -at- gmail.com)</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
     </div>
   </body>
 </html>
