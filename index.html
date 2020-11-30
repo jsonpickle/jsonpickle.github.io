@@ -1,18 +1,20 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>jsonpickle Documentation &#8212; jsonpickle 1.0 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsonpickle Documentation &#8212; jsonpickle 1.4.3.dev0+g5b8d3ea.d20201130 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="jsonpickle API" href="api.html" /> 
@@ -29,7 +31,8 @@
         <li class="right" >
           <a href="api.html" title="jsonpickle API"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">jsonpickle 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">jsonpickle 1.4.3.dev0+g5b8d3ea.d20201130 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jsonpickle Documentation</a></li> 
       </ul>
     </div>  
 
@@ -40,7 +43,7 @@
             
   <div class="section" id="jsonpickle-documentation">
 <h1><a class="toc-backref" href="#id1">jsonpickle Documentation</a><a class="headerlink" href="#jsonpickle-documentation" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://jsonpickle.github.io/">jsonpickle</a> is a Python library for
+<p><code class="docutils literal notranslate"><span class="pre">jsonpickle</span></code> is a Python library for
 serialization and deserialization of complex Python objects to and from
 JSON.  The standard Python libraries for encoding Python into JSON, such as
 the stdlib’s json, simplejson, and demjson, can only handle Python
@@ -50,28 +53,34 @@ complex data structures to be serialized to JSON. jsonpickle is highly
 configurable and extendable–allowing the user to choose the JSON backend
 and add additional backends.</p>
 <div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
+<p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#jsonpickle-documentation" id="id1">jsonpickle Documentation</a><ul>
-<li><a class="reference internal" href="#module-jsonpickle" id="id2">jsonpickle Usage</a></li>
-<li><a class="reference internal" href="#download-install" id="id3">Download &amp; Install</a></li>
-<li><a class="reference internal" href="#api-reference" id="id4">API Reference</a></li>
-<li><a class="reference internal" href="#extensions" id="id5">Extensions</a></li>
-<li><a class="reference internal" href="#contributing" id="id6">Contributing</a></li>
-<li><a class="reference internal" href="#contact" id="id7">Contact</a></li>
-<li><a class="reference internal" href="#authors" id="id8">Authors</a></li>
-<li><a class="reference internal" href="#change-log" id="id9">Change Log</a></li>
-<li><a class="reference internal" href="#license" id="id10">License</a></li>
+<li><p><a class="reference internal" href="#jsonpickle-documentation" id="id1">jsonpickle Documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#jsonpickle-usage" id="id2">jsonpickle Usage</a></p></li>
+<li><p><a class="reference internal" href="#download-install" id="id3">Download &amp; Install</a></p></li>
+<li><p><a class="reference internal" href="#api-reference" id="id4">API Reference</a></p></li>
+<li><p><a class="reference internal" href="#extensions" id="id5">Extensions</a></p></li>
+<li><p><a class="reference internal" href="#contributing" id="id6">Contributing</a></p></li>
+<li><p><a class="reference internal" href="#contact" id="id7">Contact</a></p></li>
+<li><p><a class="reference internal" href="#authors" id="id8">Authors</a></p></li>
+<li><p><a class="reference internal" href="#change-log" id="id9">Change Log</a></p></li>
+<li><p><a class="reference internal" href="#license" id="id10">License</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="module-jsonpickle">
-<span id="jsonpickle-usage"></span><h2><a class="toc-backref" href="#id2">jsonpickle Usage</a><a class="headerlink" href="#module-jsonpickle" title="Permalink to this headline">¶</a></h2>
-<p>Python library for serializing any arbitrary object graph into JSON.</p>
+<div class="section" id="jsonpickle-usage">
+<h2><a class="toc-backref" href="#id2">jsonpickle Usage</a><a class="headerlink" href="#jsonpickle-usage" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please see the note in the <a class="reference internal" href="api.html#api-docs"><span class="std std-ref">jsonpickle – High Level API</span></a> when serializing dictionaries
+that contain non-string dictionary keys.</p>
+</div>
+<span class="target" id="module-jsonpickle"></span><p>Python library for serializing any arbitrary object graph into JSON.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">jsonpickle can execute arbitrary Python code. Do not load jsonpickles from
+<p class="admonition-title">Warning</p>
+<p>jsonpickle can execute arbitrary Python code. Do not load jsonpickles from
 untrusted / unauthenticated sources.</p>
 </div>
 <p>jsonpickle can take almost any Python object and turn the object into JSON.
@@ -80,7 +89,7 @@ Additionally, it can reconstitute the object back into Python.</p>
 inherit from object (AKA new-style classes).</p>
 <p>Create an object:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Thing</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Thing</span><span class="p">(</span><span class="s1">&#39;Awesome&#39;</span><span class="p">)</span>
@@ -116,7 +125,7 @@ added to JSON:</p>
 </pre></div>
 </div>
 <p>jsonpickle has no required dependencies (it uses the standard library’s
-<a class="reference external" href="https://docs.python.org/3/library/json.html#module-json" title="(in Python v3.7)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> module by default).</p>
+<a class="reference external" href="https://docs.python.org/3/library/json.html#module-json" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> module by default).</p>
 <p>You can also download or <a class="reference internal" href="contrib.html#jsonpickle-contrib-checkout"><span class="std std-ref">checkout</span></a> the
 latest code and install from source:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python setup.py install
@@ -128,17 +137,17 @@ latest code and install from source:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">jsonpickle API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#jsonpickle-high-level-api"><code class="docutils literal notranslate"><span class="pre">jsonpickle</span></code> – High Level API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#jsonpickle-high-level-api"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle</span></code> – High Level API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#choosing-and-loading-backends">Choosing and Loading Backends</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#customizing-json-output">Customizing JSON output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#jsonpickle-handlers-custom-serialization-handlers"><code class="docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code> – Custom Serialization Handlers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#jsonpickle-handlers-custom-serialization-handlers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code> – Custom Serialization Handlers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#low-level-api">Low Level API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.pickler"><code class="docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code> – Python to JSON-compatible dict</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.unpickler"><code class="docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code> – JSON-compatible dict to Python</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.backend"><code class="docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code> – JSON Backend Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.util"><code class="docutils literal notranslate"><span class="pre">jsonpickle.util</span></code> – Helper functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.pickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code> – Python to JSON-compatible dict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.unpickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code> – JSON-compatible dict to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.backend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code> – JSON Backend Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#module-jsonpickle.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.util</span></code> – Helper functions</a></li>
 </ul>
 </li>
 </ul>
@@ -164,7 +173,6 @@ latest code and install from source:</p>
 <li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributing to jsonpickle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html#get-the-code">Get the Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html#run-the-test-suite">Run the Test Suite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contrib.html#testing-with-tox">Testing with Tox</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html#generate-documentation">Generate Documentation</a></li>
 </ul>
 </li>
@@ -181,14 +189,14 @@ You can send email to <em>jsonpickle&#64;googlegroups.com</em>.</p>
 <h2><a class="toc-backref" href="#id8">Authors</a><a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>John Paulett - john -at- paulett.org - <a class="reference external" href="https://github.com/johnpaulett">https://github.com/johnpaulett</a></li>
-<li>David Aguilar - davvid -at- gmail.com - <a class="reference external" href="https://github.com/davvid">https://github.com/davvid</a></li>
-<li>Dan Buch - <a class="reference external" href="https://github.com/meatballhat">https://github.com/meatballhat</a></li>
-<li>Ian Schenck - <a class="reference external" href="https://github.com/ianschenck">https://github.com/ianschenck</a></li>
-<li>David K. Hess - <a class="reference external" href="https://github.com/davidkhess">https://github.com/davidkhess</a></li>
-<li>Alec Thomas - <a class="reference external" href="https://github.com/alecthomas">https://github.com/alecthomas</a></li>
-<li>jaraco - <a class="reference external" href="https://github.com/jaraco">https://github.com/jaraco</a></li>
-<li>Marcin Tustin - <a class="reference external" href="https://github.com/marcintustin">https://github.com/marcintustin</a></li>
+<li><p>John Paulett - john -at- paulett.org - <a class="reference external" href="https://github.com/johnpaulett">https://github.com/johnpaulett</a></p></li>
+<li><p>David Aguilar - davvid -at- gmail.com - <a class="reference external" href="https://github.com/davvid">https://github.com/davvid</a></p></li>
+<li><p>Dan Buch - <a class="reference external" href="https://github.com/meatballhat">https://github.com/meatballhat</a></p></li>
+<li><p>Ian Schenck - <a class="reference external" href="https://github.com/ianschenck">https://github.com/ianschenck</a></p></li>
+<li><p>David K. Hess - <a class="reference external" href="https://github.com/davidkhess">https://github.com/davidkhess</a></p></li>
+<li><p>Alec Thomas - <a class="reference external" href="https://github.com/alecthomas">https://github.com/alecthomas</a></p></li>
+<li><p>jaraco - <a class="reference external" href="https://github.com/jaraco">https://github.com/jaraco</a></p></li>
+<li><p>Marcin Tustin - <a class="reference external" href="https://github.com/marcintustin">https://github.com/marcintustin</a></p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -196,32 +204,37 @@ You can send email to <em>jsonpickle&#64;googlegroups.com</em>.</p>
 <h2><a class="toc-backref" href="#id9">Change Log</a><a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-beta">Version 1.1 - Beta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-september-1-2018">Version 1.0 - September 1, 2018</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-6-february-9-2018">Version 0.9.6 - February 9, 2018</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-5-july-16-2017">Version 0.9.5 - July 16, 2017</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-4-january-10-2017">Version 0.9.4 - January 10, 2017</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-3-march-9-2016">Version 0.9.3 - March 9, 2016</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-2-march-20-2015">Version 0.9.2 - March 20, 2015</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-1-march-15-2015">Version 0.9.1 - March 15, 2015</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-9-0-january-16-2015">Version 0.9.0 - January 16, 2015</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-8-0-september-6-2014">Version 0.8.0 - September 6, 2014</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-7-2-august-6-2014">Version 0.7.2 - August 6, 2014</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-7-1-may-6-2014">Version 0.7.1 - May 6, 2014</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-7-0-march-15-2014">Version 0.7.0 - March 15, 2014</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-6-1-august-25-2013">Version 0.6.1 - August 25, 2013</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-6-0-august-24-2013">Version 0.6.0 - August 24, 2013</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-0-august-22-2013">Version 0.5.0 - August 22, 2013</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-0-june-21-2011">Version 0.4.0 - June 21, 2011</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-3-1-december-12-2009">Version 0.3.1 - December 12, 2009</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-3-0-december-11-2009">Version 0.3.0 - December 11, 2009</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-0-january-10-2009">Version 0.2.0 - January 10, 2009</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1-0-august-21-2008">Version 0.1.0 - August 21, 2008</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-5-july-21-2008">Version 0.0.5 - July 21, 2008</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-3">Version 0.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-2">Version 0.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-0-1">Version 0.0.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-4-2">v1.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-4-1">v1.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-4">v1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-3">v1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-2">v1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-1">v1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v1-0">v1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-6">v0.9.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-5">v0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-4">v0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-3">v0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-2">v0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-1">v0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-9-0">v0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-8-0">v0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-7-2">v0.7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-7-1">v0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-7-0">v0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-6-1">v0.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-6-0">v0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v0-5-0">v0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id44">0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id47">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id48">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id49">0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id50">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id51">0.0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id52">0.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id53">0.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id54">0.0.1</a></li>
 </ul>
 </li>
 </ul>
@@ -237,15 +250,16 @@ Copyright (C) 2009-2016 David Aguilar (davvid -at- gmail.com)</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="#">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">jsonpickle Documentation</a><ul>
-<li><a class="reference internal" href="#module-jsonpickle">jsonpickle Usage</a></li>
+<li><a class="reference internal" href="#jsonpickle-usage">jsonpickle Usage</a></li>
 <li><a class="reference internal" href="#download-install">Download &amp; Install</a></li>
 <li><a class="reference internal" href="#api-reference">API Reference</a></li>
 <li><a class="reference internal" href="#extensions">Extensions</a></li>
@@ -264,22 +278,20 @@ Copyright (C) 2009-2016 David Aguilar (davvid -at- gmail.com)</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="sources/index.rst.txt"
+      <li><a href="_sources/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -296,12 +308,13 @@ Copyright (C) 2009-2016 David Aguilar (davvid -at- gmail.com)</p>
         <li class="right" >
           <a href="api.html" title="jsonpickle API"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">jsonpickle 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">jsonpickle 1.4.3.dev0+g5b8d3ea.d20201130 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">jsonpickle Documentation</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+        &#169; Copyright David Aguilar.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
     </div>
   </body>
 </html>

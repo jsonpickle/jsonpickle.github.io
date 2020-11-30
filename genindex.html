@@ -1,19 +1,20 @@
 
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index &#8212; jsonpickle 1.0 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; jsonpickle 1.4.3.dev0+g5b8d3ea.d20201130 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
   </head><body>
@@ -26,7 +27,8 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 1.4.3.dev0+g5b8d3ea.d20201130 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Index</a></li> 
       </ul>
     </div>  
 
@@ -40,6 +42,7 @@
 
 <div class="genindex-jumpbox">
  <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
@@ -71,14 +74,26 @@
   </ul></td>
 </tr></table>
 
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#jsonpickle.handlers.ArrayHandler">ArrayHandler (class in jsonpickle.handlers)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.util.b64decode">b64decode() (in module jsonpickle.util)</a>
 </li>
+      <li><a href="api.html#jsonpickle.util.b64encode">b64encode() (in module jsonpickle.util)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#jsonpickle.util.b64encode">b64encode() (in module jsonpickle.util)</a>
+      <li><a href="api.html#jsonpickle.util.b85decode">b85decode() (in module jsonpickle.util)</a>
+</li>
+      <li><a href="api.html#jsonpickle.util.b85encode">b85encode() (in module jsonpickle.util)</a>
 </li>
       <li><a href="api.html#jsonpickle.handlers.BaseHandler">BaseHandler (class in jsonpickle.handlers)</a>
 </li>
@@ -132,14 +147,20 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#jsonpickle.handlers.BaseHandler.flatten">flatten() (jsonpickle.handlers.BaseHandler method)</a>
+      <li><a href="api.html#jsonpickle.handlers.ArrayHandler.flatten">flatten() (jsonpickle.handlers.ArrayHandler method)</a>
 
       <ul>
+        <li><a href="api.html#jsonpickle.handlers.BaseHandler.flatten">(jsonpickle.handlers.BaseHandler method)</a>
+</li>
         <li><a href="api.html#jsonpickle.handlers.DatetimeHandler.flatten">(jsonpickle.handlers.DatetimeHandler method)</a>
+</li>
+        <li><a href="api.html#jsonpickle.handlers.LockHandler.flatten">(jsonpickle.handlers.LockHandler method)</a>
 </li>
         <li><a href="api.html#jsonpickle.handlers.QueueHandler.flatten">(jsonpickle.handlers.QueueHandler method)</a>
 </li>
         <li><a href="api.html#jsonpickle.handlers.RegexHandler.flatten">(jsonpickle.handlers.RegexHandler method)</a>
+</li>
+        <li><a href="api.html#jsonpickle.handlers.TextIOHandler.flatten">(jsonpickle.handlers.TextIOHandler method)</a>
 </li>
         <li><a href="api.html#jsonpickle.handlers.UUIDHandler.flatten">(jsonpickle.handlers.UUIDHandler method)</a>
 </li>
@@ -152,8 +173,12 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#jsonpickle.handlers.Registry.get">get() (jsonpickle.handlers.Registry method)</a>
+      <li><a href="api.html#jsonpickle.handlers.get">get() (in module jsonpickle.handlers)</a>
+
+      <ul>
+        <li><a href="api.html#jsonpickle.handlers.Registry.get">(jsonpickle.handlers.Registry method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.unpickler.getargs">getargs() (in module jsonpickle.unpickler)</a>
@@ -234,6 +259,8 @@
 </li>
       <li><a href="api.html#jsonpickle.util.itemgetter">itemgetter() (in module jsonpickle.util)</a>
 </li>
+      <li><a href="api.html#jsonpickle.util.items">items() (in module jsonpickle.util)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -242,20 +269,50 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.backend.JSONBackend">JSONBackend (class in jsonpickle.backend)</a>
 </li>
-      <li><a href="index.html#module-jsonpickle">jsonpickle (module)</a>
+      <li>
+    jsonpickle
+
+      <ul>
+        <li><a href="index.html#module-jsonpickle">module</a>
 </li>
-      <li><a href="api.html#module-jsonpickle.backend">jsonpickle.backend (module)</a>
+      </ul></li>
+      <li>
+    jsonpickle.backend
+
+      <ul>
+        <li><a href="api.html#module-jsonpickle.backend">module</a>
 </li>
+      </ul></li>
+      <li>
+    jsonpickle.handlers
+
+      <ul>
+        <li><a href="api.html#module-jsonpickle.handlers">module</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#module-jsonpickle.handlers">jsonpickle.handlers (module)</a>
+      <li>
+    jsonpickle.pickler
+
+      <ul>
+        <li><a href="api.html#module-jsonpickle.pickler">module</a>
 </li>
-      <li><a href="api.html#module-jsonpickle.pickler">jsonpickle.pickler (module)</a>
+      </ul></li>
+      <li>
+    jsonpickle.unpickler
+
+      <ul>
+        <li><a href="api.html#module-jsonpickle.unpickler">module</a>
 </li>
-      <li><a href="api.html#module-jsonpickle.unpickler">jsonpickle.unpickler (module)</a>
+      </ul></li>
+      <li>
+    jsonpickle.util
+
+      <ul>
+        <li><a href="api.html#module-jsonpickle.util">module</a>
 </li>
-      <li><a href="api.html#module-jsonpickle.util">jsonpickle.util (module)</a>
-</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -268,13 +325,15 @@
         <li><a href="api.html#jsonpickle.backend.JSONBackend.load_backend">(jsonpickle.backend.JSONBackend method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.unpickler.loadclass">loadclass() (in module jsonpickle.unpickler)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.unpickler.loadrepr">loadrepr() (in module jsonpickle.unpickler)</a>
 </li>
       <li><a href="api.html#jsonpickle.backend.JSONBackend.loads">loads() (jsonpickle.backend.JSONBackend method)</a>
+</li>
+      <li><a href="api.html#jsonpickle.handlers.LockHandler">LockHandler (class in jsonpickle.handlers)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -284,6 +343,23 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.unpickler.make_blank_classic">make_blank_classic() (in module jsonpickle.unpickler)</a>
 </li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="index.html#module-jsonpickle">jsonpickle</a>
+</li>
+        <li><a href="api.html#module-jsonpickle.backend">jsonpickle.backend</a>
+</li>
+        <li><a href="api.html#module-jsonpickle.handlers">jsonpickle.handlers</a>
+</li>
+        <li><a href="api.html#module-jsonpickle.pickler">jsonpickle.pickler</a>
+</li>
+        <li><a href="api.html#module-jsonpickle.unpickler">jsonpickle.unpickler</a>
+</li>
+        <li><a href="api.html#module-jsonpickle.util">jsonpickle.util</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -298,7 +374,7 @@
     Python Enhancement Proposals
 
       <ul>
-        <li><a href="changelog.html#index-0">PEP 257</a>
+        <li><a href="history.html#index-0">PEP 257</a>
 </li>
       </ul></li>
   </ul></td>
@@ -317,8 +393,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.handlers.RegexHandler">RegexHandler (class in jsonpickle.handlers)</a>
 </li>
-      <li><a href="api.html#jsonpickle.handlers.Registry.register">register() (jsonpickle.handlers.Registry method)</a>
+      <li><a href="api.html#jsonpickle.handlers.register">register() (in module jsonpickle.handlers)</a>
+
+      <ul>
+        <li><a href="api.html#jsonpickle.handlers.Registry.register">(jsonpickle.handlers.Registry method)</a>
 </li>
+      </ul></li>
       <li><a href="api.html#jsonpickle.unpickler.Unpickler.register_classes">register_classes() (jsonpickle.unpickler.Unpickler method)</a>
 </li>
       <li><a href="api.html#jsonpickle.handlers.Registry">Registry (class in jsonpickle.handlers)</a>
@@ -337,14 +417,20 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#jsonpickle.handlers.BaseHandler.restore">restore() (jsonpickle.handlers.BaseHandler method)</a>
+      <li><a href="api.html#jsonpickle.handlers.ArrayHandler.restore">restore() (jsonpickle.handlers.ArrayHandler method)</a>
 
       <ul>
+        <li><a href="api.html#jsonpickle.handlers.BaseHandler.restore">(jsonpickle.handlers.BaseHandler method)</a>
+</li>
         <li><a href="api.html#jsonpickle.handlers.DatetimeHandler.restore">(jsonpickle.handlers.DatetimeHandler method)</a>
+</li>
+        <li><a href="api.html#jsonpickle.handlers.LockHandler.restore">(jsonpickle.handlers.LockHandler method)</a>
 </li>
         <li><a href="api.html#jsonpickle.handlers.QueueHandler.restore">(jsonpickle.handlers.QueueHandler method)</a>
 </li>
         <li><a href="api.html#jsonpickle.handlers.RegexHandler.restore">(jsonpickle.handlers.RegexHandler method)</a>
+</li>
+        <li><a href="api.html#jsonpickle.handlers.TextIOHandler.restore">(jsonpickle.handlers.TextIOHandler method)</a>
 </li>
         <li><a href="api.html#jsonpickle.handlers.UUIDHandler.restore">(jsonpickle.handlers.UUIDHandler method)</a>
 </li>
@@ -383,6 +469,10 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#jsonpickle.handlers.TextIOHandler">TextIOHandler (class in jsonpickle.handlers)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.util.translate_module_name">translate_module_name() (in module jsonpickle.util)</a>
 </li>
   </ul></td>
@@ -393,8 +483,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.unpickler.Unpickler">Unpickler (class in jsonpickle.unpickler)</a>
 </li>
-      <li><a href="api.html#jsonpickle.handlers.Registry.unregister">unregister() (jsonpickle.handlers.Registry method)</a>
+      <li><a href="api.html#jsonpickle.handlers.unregister">unregister() (in module jsonpickle.handlers)</a>
+
+      <ul>
+        <li><a href="api.html#jsonpickle.handlers.Registry.unregister">(jsonpickle.handlers.Registry method)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#jsonpickle.util.untranslate_module_name">untranslate_module_name() (in module jsonpickle.util)</a>
@@ -406,23 +500,22 @@
 
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -436,12 +529,13 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">jsonpickle 1.4.3.dev0+g5b8d3ea.d20201130 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Index</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2011, John Paulett; 2009-2013, David Aguilar.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+        &#169; Copyright David Aguilar.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
     </div>
   </body>
 </html>
