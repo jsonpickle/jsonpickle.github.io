@@ -37,8 +37,8 @@ Choosing and Loading Backends
 
 jsonpickle allows the user to specify what JSON backend to use
 when encoding and decoding. By default, jsonpickle will try to use, in
-the following order: :mod:`simplejson`, :mod:`json`, and :mod:`demjson`.
-The prefered backend can be set via :func:`jsonpickle.set_preferred_backend`.
+the following order: ``simplejson`` and :mod:`json`.
+The preferred backend can be set via :func:`jsonpickle.set_preferred_backend`.
 Additional JSON backends can be used via :func:`jsonpickle.load_backend`.
 
 For example, users of `Django <http://www.djangoproject.com/>`_ can use the
@@ -51,7 +51,6 @@ Supported backends:
 
  * :mod:`json`
  * `simplejson <http://undefined.org/python/#simplejson>`_
- * `demjson <https://deron.meranda.us/python/demjson/>`_
 
 Experimental backends:
 
@@ -73,7 +72,7 @@ Customizing JSON output
 -----------------------
 
 jsonpickle supports the standard :mod:`pickle` `__getstate__` and `__setstate__`
-protocol for representating object instances.
+protocol for representing object instances.
 
 .. method:: object.__getstate__()
 
