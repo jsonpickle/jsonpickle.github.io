@@ -2,14 +2,14 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="jsonpickle extensions" href="extensions.html" /><link rel="prev" title="jsonpickle Documentation" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>jsonpickle API - Python documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=9701f087" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=e61b947c" />
+        <title>jsonpickle API - jsonpickle documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Python  documentation</div></a>
+      <a href="index.html"><div class="brand">jsonpickle  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Python  documentation</span>
+  <span class="sidebar-brand-text">jsonpickle  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -258,10 +258,6 @@ If you want the output to not include the dtype for numpy arrays, add:</p>
 </div>
 <p>before your pickling code.</p>
 </p></li>
-<li><p><strong>max_depth</strong> – If set to a non-negative integer then jsonpickle will
-not recurse deeper than ‘max_depth’ steps into the object.  Anything
-deeper than ‘max_depth’ is represented using a Python repr() of the
-object.</p></li>
 <li><p><strong>make_refs</strong> – If set to False jsonpickle’s referencing support is
 disabled.  Objects that are id()-identical won’t be preserved across
 encode()/decode(), but the resulting JSON stream will be conceptually
@@ -271,15 +267,25 @@ by calling repr() instead of recursing when make_refs is set False.</p></li>
 dictionary keys instead of coercing them into strings via <cite>repr()</cite>.
 This is typically what you want if you need to support Integer or
 objects as dictionary keys.</p></li>
-<li><p><strong>numeric_keys</strong> – Only use this option if the backend supports integer
-dict keys natively.  This flag tells jsonpickle to leave numeric keys
-as-is rather than conforming them to json-friendly strings.
-Using <code class="docutils literal notranslate"><span class="pre">keys=True</span></code> is the typical solution for integer keys, so only
-use this if you have a specific use case where you want to allow the
-backend to handle serialization of numeric dict keys.</p></li>
+<li><p><strong>max_depth</strong> – If set to a non-negative integer then jsonpickle will
+not recurse deeper than ‘max_depth’ steps into the object.  Anything
+deeper than ‘max_depth’ is represented using a Python repr() of the
+object.</p></li>
+<li><p><strong>reset</strong> – Custom pickle handlers that use the <cite>Pickler.flatten</cite> method or
+<cite>jsonpickle.encode</cite> function must call <cite>encode</cite> with <cite>reset=False</cite>
+in order to retain object references during pickling.
+This flag is not typically used outside of a custom handler or
+<cite>__getstate__</cite> implementation.</p></li>
+<li><p><strong>backend</strong> – If set to an instance of jsonpickle.backend.JSONBackend,
+jsonpickle will use that backend for deserialization.</p></li>
 <li><p><strong>warn</strong> – If set to True then jsonpickle will warn when it
 returns None for an object which it cannot pickle
 (e.g. file descriptors).</p></li>
+<li><p><strong>context</strong> – Supply a pre-built Pickler or Unpickler object to the
+<cite>jsonpickle.encode</cite> and <cite>jsonpickle.decode</cite> machinery instead
+of creating a new instance. The <cite>context</cite> represents the currently
+active Pickler and Unpickler objects when custom handlers are
+invoked by jsonpickle.</p></li>
 <li><p><strong>max_iter</strong> – If set to a non-negative integer then jsonpickle will
 consume at most <cite>max_iter</cite> items when pickling iterators.</p></li>
 <li><p><strong>use_decimal</strong> – <p>If set to True jsonpickle will allow Decimal
@@ -296,6 +302,12 @@ you will need to configure simplejson:</p>
 <p>NOTE: A side-effect of the above settings is that float values will be
 converted to Decimal when converting to json.</p>
 </p></li>
+<li><p><strong>numeric_keys</strong> – Only use this option if the backend supports integer
+dict keys natively.  This flag tells jsonpickle to leave numeric keys
+as-is rather than conforming them to json-friendly strings.
+Using <code class="docutils literal notranslate"><span class="pre">keys=True</span></code> is the typical solution for integer keys, so only
+use this if you have a specific use case where you want to allow the
+backend to handle serialization of numeric dict keys.</p></li>
 <li><p><strong>use_base85</strong> – If possible, use base85 to encode binary data. Base85 bloats binary data
 by 1/4 as opposed to base64, which expands it by 1/3. This argument is
 ignored on Python 2 because it doesn’t support it.</p></li>
@@ -343,38 +355,47 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 <dt class="sig sig-object py" id="jsonpickle.decode">
 <span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.decode" title="Link to this definition">#</a></dt>
 <dd><p>Convert a JSON string into a Python object.</p>
-<p>The keyword argument ‘keys’ defaults to False.
-If set to True then jsonpickle will decode non-string dictionary keys
-into python objects via the jsonpickle protocol.</p>
-<p>The keyword argument ‘classes’ defaults to None.
-If set to a single class, or a sequence (list, set, tuple) of classes,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>backend</strong> – If set to an instance of jsonpickle.backend.JSONBackend, jsonpickle
+will use that backend for deserialization.</p></li>
+<li><p><strong>context</strong> – Supply a pre-built Pickler or Unpickler object to the
+<cite>jsonpickle.encode</cite> and <cite>jsonpickle.decode</cite> machinery instead
+of creating a new instance. The <cite>context</cite> represents the currently
+active Pickler and Unpickler objects when custom handlers are
+invoked by jsonpickle.</p></li>
+<li><p><strong>keys</strong> – If set to True then jsonpickle will decode non-string dictionary keys
+into python objects via the jsonpickle protocol.</p></li>
+<li><p><strong>reset</strong> – Custom pickle handlers that use the <cite>Pickler.flatten</cite> method or
+<cite>jsonpickle.encode</cite> function must call <cite>encode</cite> with <cite>reset=False</cite>
+in order to retain object references during pickling.
+This flag is not typically used outside of a custom handler or
+<cite>__getstate__</cite> implementation.</p></li>
+<li><p><strong>safe</strong> – If set to True, eval() is avoided, but backwards-compatible
+(pre-0.7.0) deserialization of repr-serialized objects is disabled.</p></li>
+<li><p><strong>classes</strong> – If set to a single class, or a sequence (list, set, tuple) of classes,
 then the classes will be made available when constructing objects.
 If set to a dictionary of class names to class objects, the class object
 will be provided to jsonpickle to deserialize the class name into.
 This can be used to give jsonpickle access to local classes that are not
 available through the global module import scope, and the dict method can
-be used to deserialize encoded objects into a new class.</p>
-<p>The keyword argument ‘safe’ defaults to False.
-If set to True, eval() is avoided, but backwards-compatible
-(pre-0.7.0) deserialization of repr-serialized objects is disabled.</p>
-<p>The keyword argument ‘backend’ defaults to None.
-If set to an instance of jsonpickle.backend.JSONBackend, jsonpickle
-will use that backend for deserialization.</p>
-<p>The keyword argument ‘v1_decode’ defaults to False.
-If set to True it enables you to decode objects serialized in jsonpickle v1.
+be used to deserialize encoded objects into a new class.</p></li>
+<li><p><strong>v1_decode</strong> – If set to True it enables you to decode objects serialized in jsonpickle v1.
 Please do not attempt to re-encode the objects in the v1 format! Version 2’s
 format fixes issue #255, and allows dictionary identity to be preserved
-through an encode/decode cycle.</p>
-<p>The keyword argument ‘on_missing’ defaults to ‘ignore’.
-If set to ‘error’, it will raise an error if the class it’s decoding is not
+through an encode/decode cycle.</p></li>
+<li><p><strong>on_missing</strong> – If set to ‘error’, it will raise an error if the class it’s decoding is not
 found. If set to ‘warn’, it will warn you in said case. If set to a
 non-awaitable function, it will call said callback function with the class
 name (a string) as the only parameter. Strings passed to on_missing are
-lowercased automatically.</p>
-<p>The keyword argument ‘handle_readonly’ defaults to False.
-If set to True, the Unpickler will handle objects encoded with
+lowercased automatically.</p></li>
+<li><p><strong>handle_readonly</strong> – If set to True, the Unpickler will handle objects encoded with
 ‘handle_readonly’ properly. Do not set this flag for objects not encoded
-with ‘handle_readonly’ set to True.</p>
+with ‘handle_readonly’ set to True.</p></li>
+</ul>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;&quot;my string&quot;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;my string&#39;</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;36&#39;</span><span class="p">)</span>
@@ -957,10 +978,6 @@ If you want the output to not include the dtype for numpy arrays, add:</p>
 </div>
 <p>before your pickling code.</p>
 </p></li>
-<li><p><strong>max_depth</strong> – If set to a non-negative integer then jsonpickle will
-not recurse deeper than ‘max_depth’ steps into the object.  Anything
-deeper than ‘max_depth’ is represented using a Python repr() of the
-object.</p></li>
 <li><p><strong>make_refs</strong> – If set to False jsonpickle’s referencing support is
 disabled.  Objects that are id()-identical won’t be preserved across
 encode()/decode(), but the resulting JSON stream will be conceptually
@@ -970,15 +987,25 @@ by calling repr() instead of recursing when make_refs is set False.</p></li>
 dictionary keys instead of coercing them into strings via <cite>repr()</cite>.
 This is typically what you want if you need to support Integer or
 objects as dictionary keys.</p></li>
-<li><p><strong>numeric_keys</strong> – Only use this option if the backend supports integer
-dict keys natively.  This flag tells jsonpickle to leave numeric keys
-as-is rather than conforming them to json-friendly strings.
-Using <code class="docutils literal notranslate"><span class="pre">keys=True</span></code> is the typical solution for integer keys, so only
-use this if you have a specific use case where you want to allow the
-backend to handle serialization of numeric dict keys.</p></li>
+<li><p><strong>max_depth</strong> – If set to a non-negative integer then jsonpickle will
+not recurse deeper than ‘max_depth’ steps into the object.  Anything
+deeper than ‘max_depth’ is represented using a Python repr() of the
+object.</p></li>
+<li><p><strong>reset</strong> – Custom pickle handlers that use the <cite>Pickler.flatten</cite> method or
+<cite>jsonpickle.encode</cite> function must call <cite>encode</cite> with <cite>reset=False</cite>
+in order to retain object references during pickling.
+This flag is not typically used outside of a custom handler or
+<cite>__getstate__</cite> implementation.</p></li>
+<li><p><strong>backend</strong> – If set to an instance of jsonpickle.backend.JSONBackend,
+jsonpickle will use that backend for deserialization.</p></li>
 <li><p><strong>warn</strong> – If set to True then jsonpickle will warn when it
 returns None for an object which it cannot pickle
 (e.g. file descriptors).</p></li>
+<li><p><strong>context</strong> – Supply a pre-built Pickler or Unpickler object to the
+<cite>jsonpickle.encode</cite> and <cite>jsonpickle.decode</cite> machinery instead
+of creating a new instance. The <cite>context</cite> represents the currently
+active Pickler and Unpickler objects when custom handlers are
+invoked by jsonpickle.</p></li>
 <li><p><strong>max_iter</strong> – If set to a non-negative integer then jsonpickle will
 consume at most <cite>max_iter</cite> items when pickling iterators.</p></li>
 <li><p><strong>use_decimal</strong> – <p>If set to True jsonpickle will allow Decimal
@@ -995,6 +1022,12 @@ you will need to configure simplejson:</p>
 <p>NOTE: A side-effect of the above settings is that float values will be
 converted to Decimal when converting to json.</p>
 </p></li>
+<li><p><strong>numeric_keys</strong> – Only use this option if the backend supports integer
+dict keys natively.  This flag tells jsonpickle to leave numeric keys
+as-is rather than conforming them to json-friendly strings.
+Using <code class="docutils literal notranslate"><span class="pre">keys=True</span></code> is the typical solution for integer keys, so only
+use this if you have a specific use case where you want to allow the
+backend to handle serialization of numeric dict keys.</p></li>
 <li><p><strong>use_base85</strong> – If possible, use base85 to encode binary data. Base85 bloats binary data
 by 1/4 as opposed to base64, which expands it by 1/3. This argument is
 ignored on Python 2 because it doesn’t support it.</p></li>
@@ -1081,38 +1114,47 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 <dt class="sig sig-object py" id="jsonpickle.unpickler.decode">
 <span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.decode" title="Link to this definition">#</a></dt>
 <dd><p>Convert a JSON string into a Python object.</p>
-<p>The keyword argument ‘keys’ defaults to False.
-If set to True then jsonpickle will decode non-string dictionary keys
-into python objects via the jsonpickle protocol.</p>
-<p>The keyword argument ‘classes’ defaults to None.
-If set to a single class, or a sequence (list, set, tuple) of classes,
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>backend</strong> – If set to an instance of jsonpickle.backend.JSONBackend, jsonpickle
+will use that backend for deserialization.</p></li>
+<li><p><strong>context</strong> – Supply a pre-built Pickler or Unpickler object to the
+<cite>jsonpickle.encode</cite> and <cite>jsonpickle.decode</cite> machinery instead
+of creating a new instance. The <cite>context</cite> represents the currently
+active Pickler and Unpickler objects when custom handlers are
+invoked by jsonpickle.</p></li>
+<li><p><strong>keys</strong> – If set to True then jsonpickle will decode non-string dictionary keys
+into python objects via the jsonpickle protocol.</p></li>
+<li><p><strong>reset</strong> – Custom pickle handlers that use the <cite>Pickler.flatten</cite> method or
+<cite>jsonpickle.encode</cite> function must call <cite>encode</cite> with <cite>reset=False</cite>
+in order to retain object references during pickling.
+This flag is not typically used outside of a custom handler or
+<cite>__getstate__</cite> implementation.</p></li>
+<li><p><strong>safe</strong> – If set to True, eval() is avoided, but backwards-compatible
+(pre-0.7.0) deserialization of repr-serialized objects is disabled.</p></li>
+<li><p><strong>classes</strong> – If set to a single class, or a sequence (list, set, tuple) of classes,
 then the classes will be made available when constructing objects.
 If set to a dictionary of class names to class objects, the class object
 will be provided to jsonpickle to deserialize the class name into.
 This can be used to give jsonpickle access to local classes that are not
 available through the global module import scope, and the dict method can
-be used to deserialize encoded objects into a new class.</p>
-<p>The keyword argument ‘safe’ defaults to False.
-If set to True, eval() is avoided, but backwards-compatible
-(pre-0.7.0) deserialization of repr-serialized objects is disabled.</p>
-<p>The keyword argument ‘backend’ defaults to None.
-If set to an instance of jsonpickle.backend.JSONBackend, jsonpickle
-will use that backend for deserialization.</p>
-<p>The keyword argument ‘v1_decode’ defaults to False.
-If set to True it enables you to decode objects serialized in jsonpickle v1.
+be used to deserialize encoded objects into a new class.</p></li>
+<li><p><strong>v1_decode</strong> – If set to True it enables you to decode objects serialized in jsonpickle v1.
 Please do not attempt to re-encode the objects in the v1 format! Version 2’s
 format fixes issue #255, and allows dictionary identity to be preserved
-through an encode/decode cycle.</p>
-<p>The keyword argument ‘on_missing’ defaults to ‘ignore’.
-If set to ‘error’, it will raise an error if the class it’s decoding is not
+through an encode/decode cycle.</p></li>
+<li><p><strong>on_missing</strong> – If set to ‘error’, it will raise an error if the class it’s decoding is not
 found. If set to ‘warn’, it will warn you in said case. If set to a
 non-awaitable function, it will call said callback function with the class
 name (a string) as the only parameter. Strings passed to on_missing are
-lowercased automatically.</p>
-<p>The keyword argument ‘handle_readonly’ defaults to False.
-If set to True, the Unpickler will handle objects encoded with
+lowercased automatically.</p></li>
+<li><p><strong>handle_readonly</strong> – If set to True, the Unpickler will handle objects encoded with
 ‘handle_readonly’ properly. Do not set this flag for objects not encoded
-with ‘handle_readonly’ set to True.</p>
+with ‘handle_readonly’ set to True.</p></li>
+</ul>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;&quot;my string&quot;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;my string&#39;</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;36&#39;</span><span class="p">)</span>
@@ -1975,6 +2017,6 @@ a module name available to the current version of Python.</p>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script type="module" src="_static/scripts/furo.js?v=3e7832f7"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     </body>
 </html>

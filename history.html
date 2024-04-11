@@ -2,14 +2,14 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Contributing to jsonpickle" href="contrib.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>History - Python documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=9701f087" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=e61b947c" />
+        <title>History - jsonpickle documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Python  documentation</div></a>
+      <a href="index.html"><div class="brand">jsonpickle  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Python  documentation</span>
+  <span class="sidebar-brand-text">jsonpickle  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -193,7 +193,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -201,6 +201,652 @@
         <article role="main">
           <section id="history">
 <span id="changes"></span><h1>History<a class="headerlink" href="#history" title="Link to this heading">#</a></h1>
+<section id="v3-0-4">
+<h2>v3.0.4<a class="headerlink" href="#v3-0-4" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixed an issue with django.SafeString and other classes inheriting from
+str having read-only attribute errors (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/478">#478</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/481">+481</a>)</p></li>
+<li><p>The test suite was made compatible with <cite>pytest-ruff&gt;=0.3.0</cite>. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/482">+482</a>)</p></li>
+<li><p>A <cite>garden.yaml</cite> file was added for use with the
+<cite>garden &lt;https://crates.io/crates/garden-tools&gt;_</cite> command runner. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/486">+486</a>)</p></li>
+<li><p>The test suite was updated to avoid deprecated SQLALchemy APIs.</p></li>
+<li><p>The <cite>jaraco.packaging.sphinx</cite> documentation dependency was removed.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v3-0-3">
+<h2>v3.0.3<a class="headerlink" href="#v3-0-3" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>19 Feb 2024</dt><dd><ul class="simple">
+<li><p>Compatibilty with Pandas and Cython 3.0 was added. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/460">#460</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/477">+477</a>)</p></li>
+<li><p>Fixed a bug where pickling some built-in classes (e.g. zoneinfo)
+could return a <code class="docutils literal notranslate"><span class="pre">None</span></code> module. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/447">#447</a>)</p></li>
+<li><p>Fixed a bug where unpickling a missing class would return a different object
+instead of <code class="docutils literal notranslate"><span class="pre">None</span></code>. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/471">+471</a>)</p></li>
+<li><p>Fixed the handling of missing classes when setting <code class="docutils literal notranslate"><span class="pre">on_missing</span></code> to <code class="docutils literal notranslate"><span class="pre">warn</span></code>
+or <code class="docutils literal notranslate"><span class="pre">error</span></code>. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/471">+471</a>)</p></li>
+<li><p>The test suite was made compatible with Python 3.12.</p></li>
+<li><p>The tox configuration was updated to generate code coverage reports.</p></li>
+<li><p>The suite now uses <code class="docutils literal notranslate"><span class="pre">ruff</span></code> to validate python code.</p></li>
+<li><p>The documentation can now be built offline when <code class="docutils literal notranslate"><span class="pre">rst.linker</span></code> and
+<code class="docutils literal notranslate"><span class="pre">jaraco.packaging.sphinx</span></code> are not available.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v3-0-2">
+<h2>v3.0.2<a class="headerlink" href="#v3-0-2" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>13 Aug 2023</dt><dd><ul class="simple">
+<li><p>Properly raise warning if a custom pickling handler returns None. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/433">#433</a>)</p></li>
+<li><p>Fix issue with serialization of certain sklearn objects breaking when
+the numpy handler was enabled. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/431">#431</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/434">+434</a>)</p></li>
+<li><p>Allow custom backends to not implement _encoder_options (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/436">#436</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/446">+446</a>)</p></li>
+<li><p>Implement compatibility with pandas 2 (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/446">+446</a>)</p></li>
+<li><p>Fix encoding/decoding of dictionary subclasses with referencing (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/455">+455</a>)</p></li>
+<li><p>Fix depth tracking for list/dict referencing (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/456">+456</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v3-0-1">
+<h2>v3.0.1<a class="headerlink" href="#v3-0-1" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>16 Dec 2022</dt><dd><ul class="simple">
+<li><p>Remove accidental pin of setuptools to versions below 59. This allows
+jsonpickle to build with CPython 3.11 and 3.12 alphas. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/424">#424</a>)</p></li>
+<li><p>Remove accidental dependency on pytz in pandas tests. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/421">+421</a>)</p></li>
+<li><p>Fix issue with decoding bson.bson.Int64 objects (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/422">#422</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v3-0-0">
+<h2>v3.0.0<a class="headerlink" href="#v3-0-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>01 Dec 2022</dt><dd><ul class="simple">
+<li><p>Drop support for CPython&lt;3.7. CPython 3.6 and below have reached EOL
+and no longer receive security updates. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/375">#375</a>)</p></li>
+<li><p>Add support for CPython 3.11. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/395">#395</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/396">+396</a>)</p></li>
+<li><p>Remove jsonlib and yajl backends (py2 only)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">include_properties</span></code> option to the pickler. This should only
+be used if analyzing generated json outside of Python. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/297">#297</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/387">+387</a>)</p></li>
+<li><p>Allow the <code class="docutils literal notranslate"><span class="pre">classes</span></code> argument to <code class="docutils literal notranslate"><span class="pre">jsonpickle.decode</span></code> to be a dict
+of class name to class object. This lets you decode arbitrary dumps
+into different classes. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/148">#148</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/392">+392</a>)</p></li>
+<li><p>Fix bug with deserializing <cite>numpy.poly1d</cite>. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/391">#391</a>)</p></li>
+<li><p>Allow frozen dataclasses to be deserialized. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/240">#240</a>)</p></li>
+<li><p>Fixed a bug where pickling a function could return a <code class="docutils literal notranslate"><span class="pre">None</span></code> module. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/399">#399</a>)</p></li>
+<li><p>Removed old bytes/quopri and ref decoding abaility from the unpickler.
+These were last used in jsonpickle&lt;1. Removing them causes a slight speedup
+in unpickling lists (~5%). (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/403">+403</a>)</p></li>
+<li><p>Fixed a bug with namedtuples encoding on CPython 3.11. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/411">#411</a>)</p></li>
+<li><p>When using the <code class="docutils literal notranslate"><span class="pre">sort_keys</span></code> option for the <code class="docutils literal notranslate"><span class="pre">simplejson</span></code> backend,
+jsonpickle now produces correct object references with py/id tags. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/408">#408</a>)</p></li>
+<li><p>Speed up the internal method <code class="docutils literal notranslate"><span class="pre">_restore_tags</span></code> by ~10%. This should speed
+up unpickling of almost every object.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v2-2-0">
+<h2>v2.2.0<a class="headerlink" href="#v2-2-0" title="Link to this heading">#</a></h2>
+<p>10 May 2022</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Classes with a custom <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code> and <code class="docutils literal notranslate"><span class="pre">append()</span></code>
+now pickle properly. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/362">#362</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/379">+379</a>)</p></li>
+<li><p>Remove the demjson backend, as demjson hasn’t been maintained
+for 5 years. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/379">+379</a>)</p></li>
+<li><p>Added new handler for numpy objects when using unpickleable=False.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/381">#381</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/382">+382</a>)</p></li>
+<li><p>Added exception handling for class attributes that can’t be accessed.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/301">#301</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/383">+383</a>)</p></li>
+<li><p>Added a long-requested on_missing attribute to the Unpickler class.
+This lets you choose behavior for when jsonpickle can’t find a class
+to deserialize to. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/190">#190</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/193">#193</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/384">+384</a>)</p></li>
+<li><p>Private members of <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> are no longer skipped when encoding.
+Any objects encoded with versions prior to 2.2.0 should still decode
+properly. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/318">#318</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/385">+385</a>)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v2-1-0">
+<h2>v2.1.0<a class="headerlink" href="#v2-1-0" title="Link to this heading">#</a></h2>
+<p>10 Jan 2022</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3.10 is now officially supported. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/376">+376</a>)</p></li>
+<li><p>Benchmarks were added to aid in optimization efforts.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/350">#350</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/352">+352</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_reducible()</span></code> was sped up by ~80%.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/353">+353</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/354">+354</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_restore_tags()</span></code> was sped up by ~100%. Unpickling items
+with a lot of tuples and sets will benefit most. Python 2 users
+and users deserializing pickles from jsonpickle &lt;= 0.9.6 may see
+a slight performance decrease if using a lot of bytes, ref,
+and/or repr objects. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/354">+354</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_iterator()</span></code> was sped up by ~20% by removing an unnecessary
+variable assignment. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/354">+354</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jsonpickle.decode</span></code> has a new option, <code class="docutils literal notranslate"><span class="pre">v1_decode</span></code> to assist in
+decoding objects created in jsonpickle version 1. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/364">#364</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">encode()</span></code> documentation has been updated to help sklearn users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demjson</span></code> has been removed from the test suite. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/374">+374</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SQLALchemy&lt;1.2</span></code> is no longer being tested by jsonpickle.
+Users of sqlalchemy + jsonpickle can always use 1.2 or 1.3.
+When jsonpickle v3 is released we will add SQLAlchemy 1.4 to
+the test suite alongside removal of support for Python 3.5 and earlier.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v2-0-0">
+<h2>v2.0.0<a class="headerlink" href="#v2-0-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>07 Feb 2021</dt><dd><ul class="simple">
+<li><p>Major release: the serialized JSON format now preserves dictionary
+identity, which is a subtle change in the serialized format.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/351">#351</a>)</p></li>
+<li><p>Dictionary identity is now preserved.  For example, if the same
+dictionary appears twice in a list, the reconstituted list
+will now contain two references to the same dictionary.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/255">#255</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/332">+332</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-5-2">
+<h2>v1.5.2<a class="headerlink" href="#v1-5-2" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>07 Feb 2021</dt><dd><ul class="simple">
+<li><p>Patch release to avoid the change in behavior from the preservation
+of dict identity.  The next release will be v2.0.0.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/351">#351</a>)</p></li>
+<li><p>This release does <em>not</em> include the performance improvements
+from v1.5.1.</p></li>
+<li><p>Pandas DataFrame objects with multilevel columns are now supported.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/346">#346</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/347">+347</a>)</p></li>
+<li><p>Numpy 1.20 is now officially supported.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/336">#336</a>)</p></li>
+<li><p>Python 3.9 is now officially supported.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/348">+348</a>)</p></li>
+<li><p>Achieved a small speedup for _get_flattener by merging type checks. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/349">+349</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-5-1">
+<h2>v1.5.1<a class="headerlink" href="#v1-5-1" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>30 Jan 2021</dt><dd><ul class="simple">
+<li><p>The performance of the unpickler was drastically improved by
+avoiding tag checks for basic Python types.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/340">+340</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">decode()</span></code> documentation improvements.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/341">+341</a>)</p></li>
+<li><p>Serialization of Pandas DataFrame objects that contain
+timedelta64[ns] dtypes are now supported.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/330">+330</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/331">#331</a>)</p></li>
+<li><p>Dictionary identity is now preserved.  For example, if the same
+dictionary appears twice in a list, the reconstituted list
+will now contain two references to the same dictionary.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/255">#255</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/332">+332</a>)</p></li>
+<li><p>Unit tests were added to ensure that sklearn.tree.DecisionTreeClassifier
+objects are properly serialized.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/155">#155</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/344">+344</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">is_reducible()</span></code> utility function used by <code class="docutils literal notranslate"><span class="pre">encode()</span></code> is now
+4x faster!  Objects that provide <code class="docutils literal notranslate"><span class="pre">__getstate__()</span></code>, <code class="docutils literal notranslate"><span class="pre">__setstate__()</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> benefit most from these improvements.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/343">+343</a>)</p></li>
+<li><p>Improved pickler <code class="docutils literal notranslate"><span class="pre">flatten()/encode()</span></code> performance.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/345">+345</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-5-0">
+<h2>v1.5.0<a class="headerlink" href="#v1-5-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>16 Jan 2021</dt><dd><ul class="simple">
+<li><p>Previous versions of jsonpickle with <cite>make_refs=False</cite> would emit
+<code class="docutils literal notranslate"><span class="pre">null</span></code> when encountering an object it had already seen when
+traversing objects.  All instances of the object are now serialized.
+While this is arguably an improvement in the vast majority of
+scenarios, it is a change in behavior and is thus considered a
+minor-level change.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/333">#333</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/334">#334</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/337">#337</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/338">+338</a>)</p></li>
+<li><p>Multiple enums are now serialized correctly with <cite>make_refs=False</cite>.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/235">#235</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-4-2">
+<h2>v1.4.2<a class="headerlink" href="#v1-4-2" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>29 Nov 2020</dt><dd><ul class="simple">
+<li><p>Use importlib.metadata from the stdlib on Python 3.8.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/305">+305</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/303">#303</a>)</p></li>
+<li><p>Micro-optimize type checks to use a <cite>set</cite> for lookups. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/327">+327</a>)</p></li>
+<li><p>Documentation improvements.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-4-1">
+<h2>v1.4.1<a class="headerlink" href="#v1-4-1" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>20 Apr 2020</dt><dd><ul class="simple">
+<li><p>Patch release for Python 3.8 <cite>importlib_metadata</cite> support.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/300">#300</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-4">
+<h2>v1.4<a class="headerlink" href="#v1-4" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>13 Apr 2020</dt><dd><ul class="simple">
+<li><p>Python 3.8 support.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/292">#292</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jsonpickle.encode</span></code> now supports the standard <code class="docutils literal notranslate"><span class="pre">indent</span></code>
+and <code class="docutils literal notranslate"><span class="pre">separators</span></code> arguments, and passes them through to the
+active JSON backend library.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/183">#183</a>)</p></li>
+<li><p>We now include a custom handler for <cite>array.array</cite> objects.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/199">#199</a>)</p></li>
+<li><p>Dict key order is preserved when pickling dictionaries on Python3.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/193">#193</a>)</p></li>
+<li><p>Improved serialization of dictionaries with non-string keys.
+Previously, using an enum that was both the key and a value in
+a dictionary could end up with incorrect references to other
+objects.  The references are now properly maintained for dicts
+with object keys that are also referenced in the dict’s values.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/286">#286</a>)</p></li>
+<li><p>Improved serialization of pandas.Series objects.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/287">#287</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-3">
+<h2>v1.3<a class="headerlink" href="#v1-3" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>13 Feb 2020</dt><dd><ul class="simple">
+<li><p>Improved round tripping of default dicts.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/283">+283</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/282">#282</a>)</p></li>
+<li><p>Better support for cyclical references when encoding with
+<code class="docutils literal notranslate"><span class="pre">unpicklable=False</span></code>.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/264">+264</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-2">
+<h2>v1.2<a class="headerlink" href="#v1-2" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>15 May 2019</dt><dd><ul class="simple">
+<li><p>Simplified JSON representation for <cite>__reduce__</cite> values.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/261">+261</a>)</p></li>
+<li><p>Improved Pandas support with new handlers for more Pandas data types.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/256">+256</a>)</p></li>
+<li><p>Prevent stack overflows caused by bugs in user-defined <cite>__getstate__</cite>
+functions which cause infinite recursion.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/260">+260</a>)
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/259">#259</a>)</p></li>
+<li><p>Improved support for objects that contain dicts with Integer keys.
+Previously, jsonpickle could not restore objects that contained
+dicts with integer keys and provided getstate only.
+These objects are now handled robustly.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/247">#247</a>).</p></li>
+<li><p>Support for encoding binary data in <a class="reference external" href="https://en.wikipedia.org/wiki/Ascii85">base85</a> instead of base64 has been
+added on Python 3. Base85 produces payloads about 10% smaller than base64,
+albeit at the cost of lower throughput.  For performance and backwards
+compatibility with Python 2 the pickler uses base64 by default, but it can
+be configured to use <code class="docutils literal notranslate"><span class="pre">base85</span></code> with the new <code class="docutils literal notranslate"><span class="pre">use_base85</span></code> argument.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/251">#251</a>).</p></li>
+<li><p>Dynamic SQLAlchemy tables in SQLAlchemy &gt;= 1.3 are now supported.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/254">#254</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-1">
+<h2>v1.1<a class="headerlink" href="#v1-1" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>22 Jan 2019</dt><dd><ul class="simple">
+<li><p>Python 3.7 <cite>collections.Iterator</cite> deprecation warnings have been fixed.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/229">#229</a>).</p></li>
+<li><p>Improved Pandas support for datetime and complex numbers.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/245">+245</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v1-0">
+<h2>v1.0<a class="headerlink" href="#v1-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>01 Sep 2018</dt><dd><ul class="simple">
+<li><p><em>NOTE</em> jsonpickle no longer supports Python2.6, or Python3 &lt; 3.4.
+The officially supported Python versions are now 2.7 and 3.4+.</p></li>
+<li><p>Improved Pandas and Numpy support.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/227">+227</a>)</p></li>
+<li><p>Improved support for pickling iterators.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/216">+216</a>)</p></li>
+<li><p>Better support for the stdlib <cite>json</cite> module when <cite>simplejson</cite>
+is not installed.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/217">+217</a>)</p></li>
+<li><p>jsonpickle will now output python3-style module names when
+pickling builtins methods or functions.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/223">+223</a>)</p></li>
+<li><p>jsonpickle will always flatten primitives, even when <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>
+is reached, which avoids encoding unicode strings into their
+<code class="docutils literal notranslate"><span class="pre">u'string'</span></code> representation.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/207">+207</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/180">#180</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/198">#198</a>).</p></li>
+<li><p>Nested classes are now supported on Python 3.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/206">+206</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/176">#176</a>).</p></li>
+<li><p>Better support for older (pre-1.9) versions of numpy (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/195">+195</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-9-6">
+<h2>v0.9.6<a class="headerlink" href="#v0-9-6" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>09 Feb 2018</dt><dd><ul class="simple">
+<li><p>Better support for SQLAlchemy (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/180">#180</a>).</p></li>
+<li><p>Better support for NumPy and SciKit-Learn.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/184">#184</a>).</p></li>
+<li><p>Better support for dict sub-classes (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/156">#156</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-9-5">
+<h2>v0.9.5<a class="headerlink" href="#v0-9-5" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>16 Jul 2017</dt><dd><ul class="simple">
+<li><p>Better support for objects that implement the reduce protocol.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/170">+170</a>)
+This backward-incompatible change removes the SimpleReduceHandler.
+Any projects registering that handler for a particular type should
+instead remove references to the handler and jsonpickle will now
+handle those types directly.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-9-4">
+<h2>v0.9.4<a class="headerlink" href="#v0-9-4" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>10 Jan 2017</dt><dd><ul class="simple">
+<li><p>Arbitrary byte streams are now better supported.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/143">#143</a>)</p></li>
+<li><p>Better support for NumPy data types.  The Python3 NumPy support
+is especially robust.</p></li>
+<li><p>Fortran-ordered based NumPy arrays are now properly serialized.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-9-3">
+<h2>v0.9.3<a class="headerlink" href="#v0-9-3" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>09 Mar 2016</dt><dd><ul class="simple">
+<li><p>UUID objects can now be serialized (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/130">#130</a>)</p></li>
+<li><p>Added <cite>set_decoder_options</cite> method to allow decoder specific options
+equal to <cite>set_encoder_options</cite>.</p></li>
+<li><p>Int keys can be encoded directly by e.g. demjson by passing
+<cite>numeric_keys=True</cite> and setting its backend options via
+<cite>jsonpickle.set_encoder_options(‘demjson’, strict=False)</cite>.</p></li>
+<li><p>Newer Numpy versions (v1.10+) are now supported.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-9-2">
+<h2>v0.9.2<a class="headerlink" href="#v0-9-2" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>20 Mar 2015</dt><dd><ul class="simple">
+<li><p>Fixes for serializing objects with custom handlers.</p></li>
+<li><p>We now properly serialize deque objects constructed with a <cite>maxlen</cite> parameter.</p></li>
+<li><p>Test suite fixes</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-9-1">
+<h2>v0.9.1<a class="headerlink" href="#v0-9-1" title="Link to this heading">#</a></h2>
+<p>12 Mar 2015</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Support datetime objects with FixedOffsets.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-9-0">
+<h2>v0.9.0<a class="headerlink" href="#v0-9-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>16 Jan 2015</dt><dd><ul class="simple">
+<li><p>Support for Pickle Protocol v4.</p></li>
+<li><p>We now support serializing defaultdict subclasses that use <cite>self</cite>
+as their default factory.</p></li>
+<li><p>We now have a decorator syntax for registering custom handlers,
+and allow custom handlers to register themselves for all subclasses.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/104">+104</a>)</p></li>
+<li><p>We now support serializing types with metaclasses and their
+instances (e.g., Python 3 <cite>enum</cite>).</p></li>
+<li><p>We now support serializing bytestrings in both Python 2 and Python 3.
+In Python 2, the <cite>str</cite> type is decoded to UTF-8 whenever possible and
+serialized as a true bytestring elsewise; in Python 3, bytestrings
+are explicitly encoded/decoded as bytestrings. Unicode strings are
+always encoded as is in both Python 2 and Python 3.</p></li>
+<li><p>Added support for serializing numpy arrays, dtypes and scalars
+(see <cite>jsonpickle.ext.numpy</cite> module).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v0-8-0">
+<h2>v0.8.0<a class="headerlink" href="#v0-8-0" title="Link to this heading">#</a></h2>
+<p>06 Sep 2014</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>We now support serializing objects that contain references to
+module-level functions.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/77">#77</a>)</p></li>
+<li><p>Better Pickle Protocol v2 support.  (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/78">#78</a>)</p></li>
+<li><p>Support for string <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> and iterable <code class="docutils literal notranslate"><span class="pre">__slots__</span></code>. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/67">#67</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/68">#68</a>)</p></li>
+<li><p><cite>encode()</cite> now has a <cite>warn</cite> option that makes jsonpickle emit warnings
+when encountering objects that cannot be pickled.</p></li>
+<li><p>A Javascript implementation of jsonpickle is now included
+in the jsonpickleJS directory.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-7-2">
+<h2>v0.7.2<a class="headerlink" href="#v0-7-2" title="Link to this heading">#</a></h2>
+<p>06 Aug 2014</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>We now properly serialize classes that inherit from classes
+that use <cite>__slots__</cite> and add additional slots in the derived class.</p></li>
+<li><p>jsonpickle can now serialize objects that implement <cite>__getstate__()</cite> but
+not <cite>__setstate__()</cite>.  The result of <cite>__getstate__()</cite> is returned as-is
+when doing a round-trip from Python objects to jsonpickle and back.</p></li>
+<li><p>Better support for collections.defaultdict with custom factories.</p></li>
+<li><p>Added support for <cite>queue.Queue</cite> objects.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-7-1">
+<h2>v0.7.1<a class="headerlink" href="#v0-7-1" title="Link to this heading">#</a></h2>
+<p>06 May 2014</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added support for Python 3.4.</p></li>
+<li><p>Added support for <cite>posix.stat_result</cite>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-7-0">
+<h2>v0.7.0<a class="headerlink" href="#v0-7-0" title="Link to this heading">#</a></h2>
+<p>15 Mar 2014</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">handles</span></code> decorator to <a class="reference internal" href="api.html#jsonpickle.handlers.BaseHandler" title="jsonpickle.handlers.BaseHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">jsonpickle.handlers.BaseHandler</span></code></a>,
+enabling simple declaration of a handler for a class.</p></li>
+<li><p><cite>__getstate__()</cite> and <cite>__setstate__()</cite> are now honored
+when pickling objects that subclass <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.</p></li>
+<li><p>jsonpickle can now serialize <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.Counter" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.Counter</span></code></a> objects.</p></li>
+<li><p>Object references are properly handled when using integer keys.</p></li>
+<li><p>Object references are now supported when using custom handlers.</p></li>
+<li><p>Decimal objects are supported in Python 3.</p></li>
+<li><p>jsonpickle’s “fallthrough-on-error” behavior can now be disabled.</p></li>
+<li><p>Simpler API for registering custom handlers.</p></li>
+<li><p>A new “safe-mode” is provided which avoids eval().
+Backwards-compatible deserialization of repr-serialized objects
+is disabled in this mode.  e.g. <cite>decode(string, safe=True)</cite></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-6-1">
+<h2>v0.6.1<a class="headerlink" href="#v0-6-1" title="Link to this heading">#</a></h2>
+<p>25 Aug 2013</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3.2 support, and additional fixes for Python 3.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-6-0">
+<h2>v0.6.0<a class="headerlink" href="#v0-6-0" title="Link to this heading">#</a></h2>
+<p>24 Aug 2013</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python 3 support!</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/time.html#time.struct_time" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">time.struct_time</span></code></a> is now serialized using the built-in
+<cite>jsonpickle.handlers.SimpleReduceHandler</cite>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v0-5-0">
+<h2>v0.5.0<a class="headerlink" href="#v0-5-0" title="Link to this heading">#</a></h2>
+<p>22 Aug 2013</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Non-string dictionary keys (e.g. ints, objects) are now supported
+by passing <cite>keys=True</cite> to <a class="reference internal" href="api.html#jsonpickle.encode" title="jsonpickle.encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">jsonpickle.encode()</span></code></a> and
+<a class="reference internal" href="api.html#jsonpickle.decode" title="jsonpickle.decode"><code class="xref py py-func docutils literal notranslate"><span class="pre">jsonpickle.decode()</span></code></a>.</p></li>
+<li><p>We now support namedtuple, deque, and defaultdict.</p></li>
+<li><p>Datetimes with timezones are now fully supported.</p></li>
+<li><p>Better support for complicated structures e.g.
+datetime inside dicts.</p></li>
+<li><p>jsonpickle added support for references and cyclical data structures
+in 0.4.0.  This can be disabled by passing <cite>make_refs=False</cite> to
+<a class="reference internal" href="api.html#jsonpickle.encode" title="jsonpickle.encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">jsonpickle.encode()</span></code></a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id122">
+<h2>0.4.0<a class="headerlink" href="#id122" title="Link to this heading">#</a></h2>
+<p>21 Jun 2011</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Switch build from setuptools to distutils</p></li>
+<li><p>Consistent dictionary key ordering</p></li>
+<li><p>Fix areas with improper support for unpicklable=False</p></li>
+<li><p>Added support for cyclical data structures
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/16">#16</a>).</p></li>
+<li><p>Experimental support for  <a class="reference external" href="http://pypi.python.org/pypi/jsonlib/">jsonlib</a>
+and <a class="reference external" href="http://github.com/rtyler/py-yajl/">py-yajl</a> backends.</p></li>
+<li><p>New contributors David K. Hess and Alec Thomas</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To support cyclical data structures
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/16">#16</a>),
+the storage format has been modified.  Efforts have been made to
+ensure backwards-compatibility.  jsonpickle 0.4.0 can read data
+encoded by jsonpickle 0.3.1, but earlier versions of jsonpickle may be
+unable to read data encoded by jsonpickle 0.4.0.</p>
+</div>
+</div></blockquote>
+</section>
+<section id="id125">
+<h2>0.3.1<a class="headerlink" href="#id125" title="Link to this heading">#</a></h2>
+<p>12 Dec 2009</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Include tests and docs directories in sdist for distribution packages.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id126">
+<h2>0.3.0<a class="headerlink" href="#id126" title="Link to this heading">#</a></h2>
+<p>11 Dec 2009</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Officially migrated to git from subversion. Project home now at
+<a class="reference external" href="http://jsonpickle.github.com/">http://jsonpickle.github.com/</a>. Thanks to Michael Jone’s
+<a class="reference external" href="http://github.com/michaeljones/sphinx-to-github">sphinx-to-github</a>.</p></li>
+<li><p>Fortified jsonpickle against common error conditions.</p></li>
+<li><p>Added support for:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>List and set subclasses.</p></li>
+<li><p>Objects with module references.</p></li>
+<li><p>Newstyle classes with <cite>__slots__</cite>.</p></li>
+<li><p>Objects implementing <cite>__setstate__()</cite> and <cite>__getstate__()</cite>
+(follows the <a class="reference external" href="https://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.12)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> protocol).</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Improved support for Zope objects via pre-fetch.</p></li>
+<li><p>Support for user-defined serialization handlers via the
+jsonpickle.handlers registry.</p></li>
+<li><p>Removed cjson support per John Millikin’s recommendation.</p></li>
+<li><p>General improvements to style, including <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0257/"><strong>PEP 257</strong></a> compliance and
+refactored project layout.</p></li>
+<li><p>Steps towards Python 2.3 and Python 3 support.</p></li>
+<li><p>New contributors Dan Buch and Ian Schenck.</p></li>
+<li><p>Thanks also to Kieran Darcy, Eoghan Murray, and Antonin Hildebrand
+for their assistance!</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id127">
+<h2>0.2.0<a class="headerlink" href="#id127" title="Link to this heading">#</a></h2>
+<p>10 Jan 2009</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Support for all major Python JSON backends (including json in Python 2.6,
+simplejson, cjson, and demjson)</p></li>
+<li><p>Handle several datetime objects using the repr() of the objects
+(Thanks to Antonin Hildebrand).</p></li>
+<li><p>Sphinx documentation</p></li>
+<li><p>Added support for recursive data structures</p></li>
+<li><p>Unicode dict-keys support</p></li>
+<li><p>Support for Google App Engine and Django</p></li>
+<li><p>Tons of additional testing and bug reports (Antonin Hildebrand, Sorin,
+Roberto Saccon, Faber Fedor,
+<a class="reference external" href="http://github.com/darwin/firepython/tree/master">FirePython</a>, and
+<a class="reference external" href="http://code.google.com/p/joose-js/">Joose</a>)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id128">
+<h2>0.1.0<a class="headerlink" href="#id128" title="Link to this heading">#</a></h2>
+<p>22 Aug 2008</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Added long as basic primitive (thanks Adam Fisk)</p></li>
+<li><p>Prefer python-cjson to simplejson, if available</p></li>
+<li><p>Major API change, use python-cjson’s decode/encode instead of
+simplejson’s load/loads/dump/dumps</p></li>
+<li><p>Added benchmark.py to compare simplejson and python-cjson</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id129">
+<h2>0.0.5<a class="headerlink" href="#id129" title="Link to this heading">#</a></h2>
+<p>22 Jul 2008</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Changed prefix of special fields to conform with CouchDB
+requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
+<li><p>Moved to Google Code subversion</p></li>
+<li><p>Fixed unit test imports</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id130">
+<h2>0.0.3<a class="headerlink" href="#id130" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Convert back to setup.py from pavement.py (issue found by spidaman)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id131">
+<h2>0.0.2<a class="headerlink" href="#id131" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Handle feedparser’s FeedParserDict</p></li>
+<li><p>Converted project to Paver</p></li>
+<li><p>Restructured directories</p></li>
+<li><p>Increase test coverage</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id132">
+<h2>0.0.1<a class="headerlink" href="#id132" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Initial release</p>
+</div></blockquote>
+</section>
 </section>
 
         </article>
@@ -238,8 +884,67 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">History</a><ul>
+<li><a class="reference internal" href="#v3-0-4">v3.0.4</a></li>
+<li><a class="reference internal" href="#v3-0-3">v3.0.3</a></li>
+<li><a class="reference internal" href="#v3-0-2">v3.0.2</a></li>
+<li><a class="reference internal" href="#v3-0-1">v3.0.1</a></li>
+<li><a class="reference internal" href="#v3-0-0">v3.0.0</a></li>
+<li><a class="reference internal" href="#v2-2-0">v2.2.0</a></li>
+<li><a class="reference internal" href="#v2-1-0">v2.1.0</a></li>
+<li><a class="reference internal" href="#v2-0-0">v2.0.0</a></li>
+<li><a class="reference internal" href="#v1-5-2">v1.5.2</a></li>
+<li><a class="reference internal" href="#v1-5-1">v1.5.1</a></li>
+<li><a class="reference internal" href="#v1-5-0">v1.5.0</a></li>
+<li><a class="reference internal" href="#v1-4-2">v1.4.2</a></li>
+<li><a class="reference internal" href="#v1-4-1">v1.4.1</a></li>
+<li><a class="reference internal" href="#v1-4">v1.4</a></li>
+<li><a class="reference internal" href="#v1-3">v1.3</a></li>
+<li><a class="reference internal" href="#v1-2">v1.2</a></li>
+<li><a class="reference internal" href="#v1-1">v1.1</a></li>
+<li><a class="reference internal" href="#v1-0">v1.0</a></li>
+<li><a class="reference internal" href="#v0-9-6">v0.9.6</a></li>
+<li><a class="reference internal" href="#v0-9-5">v0.9.5</a></li>
+<li><a class="reference internal" href="#v0-9-4">v0.9.4</a></li>
+<li><a class="reference internal" href="#v0-9-3">v0.9.3</a></li>
+<li><a class="reference internal" href="#v0-9-2">v0.9.2</a></li>
+<li><a class="reference internal" href="#v0-9-1">v0.9.1</a></li>
+<li><a class="reference internal" href="#v0-9-0">v0.9.0</a></li>
+<li><a class="reference internal" href="#v0-8-0">v0.8.0</a></li>
+<li><a class="reference internal" href="#v0-7-2">v0.7.2</a></li>
+<li><a class="reference internal" href="#v0-7-1">v0.7.1</a></li>
+<li><a class="reference internal" href="#v0-7-0">v0.7.0</a></li>
+<li><a class="reference internal" href="#v0-6-1">v0.6.1</a></li>
+<li><a class="reference internal" href="#v0-6-0">v0.6.0</a></li>
+<li><a class="reference internal" href="#v0-5-0">v0.5.0</a></li>
+<li><a class="reference internal" href="#id122">0.4.0</a></li>
+<li><a class="reference internal" href="#id125">0.3.1</a></li>
+<li><a class="reference internal" href="#id126">0.3.0</a></li>
+<li><a class="reference internal" href="#id127">0.2.0</a></li>
+<li><a class="reference internal" href="#id128">0.1.0</a></li>
+<li><a class="reference internal" href="#id129">0.0.5</a></li>
+<li><a class="reference internal" href="#id130">0.0.3</a></li>
+<li><a class="reference internal" href="#id131">0.0.2</a></li>
+<li><a class="reference internal" href="#id132">0.0.1</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -247,6 +952,6 @@
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script type="module" src="_static/scripts/furo.js?v=3e7832f7"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     </body>
 </html>
