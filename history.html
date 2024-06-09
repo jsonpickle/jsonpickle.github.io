@@ -201,10 +201,39 @@
         <article role="main">
           <section id="history">
 <span id="changes"></span><h1>History<a class="headerlink" href="#history" title="Link to this heading">#</a></h1>
+<section id="v3-2-0">
+<h2>v3.2.0<a class="headerlink" href="#v3-2-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>08 Jun 2024</dt><dd><ul class="simple">
+<li><p>Nested dictionaries in <cite>py/state</cite> are now correct restored when
+tracking object references. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/501">#501</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/500">#500</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="v3-1-0">
+<h2>v3.1.0<a class="headerlink" href="#v3-1-0" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>08 Jun 2024</dt><dd><ul class="simple">
+<li><p><cite>jsonpickle.ext.numpy.register_handlers</cite> now provides options that are forwarded
+to the <cite>NumpyNDArrayHandler</cite> constructor. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/489">+489</a>)</p></li>
+<li><p>Fix bug of not handling <code class="docutils literal notranslate"><span class="pre">classes</span></code> argument to <cite>jsonpickle.decode</cite>
+being a dict. Previously, the keys were ignored and only values were
+used. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/494">+494</a>)</p></li>
+<li><p>Allow the <code class="docutils literal notranslate"><span class="pre">classes</span></code> argument to <cite>jsonpickle.pickle</cite> to have class
+objects as keys. This extends the current functionality of only having
+class name strings as keys. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/494">+494</a>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">garden</span> <span class="pre">setup/dev</span></code> action and <code class="docutils literal notranslate"><span class="pre">requirements-dev.txt</span></code> requirements file
+now include test dependencies for use during development.</p></li>
+<li><p>Added support for Python 3.13. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/505">+505</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/504">#504</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 <section id="v3-0-4">
 <h2>v3.0.4<a class="headerlink" href="#v3-0-4" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><ul class="simple">
+<dl class="simple">
+<dt>11 Apr 2024</dt><dd><ul class="simple">
 <li><p>Fixed an issue with django.SafeString and other classes inheriting from
 str having read-only attribute errors (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/478">#478</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/481">+481</a>)</p></li>
 <li><p>The test suite was made compatible with <cite>pytest-ruff&gt;=0.3.0</cite>. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/482">+482</a>)</p></li>
@@ -213,7 +242,8 @@ str having read-only attribute errors (<a class="reference external" href="https
 <li><p>The test suite was updated to avoid deprecated SQLALchemy APIs.</p></li>
 <li><p>The <cite>jaraco.packaging.sphinx</cite> documentation dependency was removed.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 </section>
 <section id="v3-0-3">
 <h2>v3.0.3<a class="headerlink" href="#v3-0-3" title="Link to this heading">#</a></h2>
@@ -709,8 +739,8 @@ in 0.4.0.  This can be disabled by passing <cite>make_refs=False</cite> to
 </ul>
 </div></blockquote>
 </section>
-<section id="id122">
-<h2>0.4.0<a class="headerlink" href="#id122" title="Link to this heading">#</a></h2>
+<section id="id129">
+<h2>0.4.0<a class="headerlink" href="#id129" title="Link to this heading">#</a></h2>
 <p>21 Jun 2011</p>
 <blockquote>
 <div><ul class="simple">
@@ -734,8 +764,8 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 </div>
 </div></blockquote>
 </section>
-<section id="id125">
-<h2>0.3.1<a class="headerlink" href="#id125" title="Link to this heading">#</a></h2>
+<section id="id132">
+<h2>0.3.1<a class="headerlink" href="#id132" title="Link to this heading">#</a></h2>
 <p>12 Dec 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -743,8 +773,8 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 </ul>
 </div></blockquote>
 </section>
-<section id="id126">
-<h2>0.3.0<a class="headerlink" href="#id126" title="Link to this heading">#</a></h2>
+<section id="id133">
+<h2>0.3.0<a class="headerlink" href="#id133" title="Link to this heading">#</a></h2>
 <p>11 Dec 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -777,8 +807,8 @@ for their assistance!</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id127">
-<h2>0.2.0<a class="headerlink" href="#id127" title="Link to this heading">#</a></h2>
+<section id="id134">
+<h2>0.2.0<a class="headerlink" href="#id134" title="Link to this heading">#</a></h2>
 <p>10 Jan 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -797,8 +827,8 @@ Roberto Saccon, Faber Fedor,
 </ul>
 </div></blockquote>
 </section>
-<section id="id128">
-<h2>0.1.0<a class="headerlink" href="#id128" title="Link to this heading">#</a></h2>
+<section id="id135">
+<h2>0.1.0<a class="headerlink" href="#id135" title="Link to this heading">#</a></h2>
 <p>22 Aug 2008</p>
 <blockquote>
 <div><ul class="simple">
@@ -810,8 +840,8 @@ simplejson’s load/loads/dump/dumps</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id129">
-<h2>0.0.5<a class="headerlink" href="#id129" title="Link to this heading">#</a></h2>
+<section id="id136">
+<h2>0.0.5<a class="headerlink" href="#id136" title="Link to this heading">#</a></h2>
 <p>22 Jul 2008</p>
 <blockquote>
 <div><ul class="simple">
@@ -822,16 +852,16 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id130">
-<h2>0.0.3<a class="headerlink" href="#id130" title="Link to this heading">#</a></h2>
+<section id="id137">
+<h2>0.0.3<a class="headerlink" href="#id137" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Convert back to setup.py from pavement.py (issue found by spidaman)</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id131">
-<h2>0.0.2<a class="headerlink" href="#id131" title="Link to this heading">#</a></h2>
+<section id="id138">
+<h2>0.0.2<a class="headerlink" href="#id138" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Handle feedparser’s FeedParserDict</p></li>
@@ -841,8 +871,8 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id132">
-<h2>0.0.1<a class="headerlink" href="#id132" title="Link to this heading">#</a></h2>
+<section id="id139">
+<h2>0.0.1<a class="headerlink" href="#id139" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p>Initial release</p>
 </div></blockquote>
@@ -897,6 +927,8 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">History</a><ul>
+<li><a class="reference internal" href="#v3-2-0">v3.2.0</a></li>
+<li><a class="reference internal" href="#v3-1-0">v3.1.0</a></li>
 <li><a class="reference internal" href="#v3-0-4">v3.0.4</a></li>
 <li><a class="reference internal" href="#v3-0-3">v3.0.3</a></li>
 <li><a class="reference internal" href="#v3-0-2">v3.0.2</a></li>
@@ -929,15 +961,15 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 <li><a class="reference internal" href="#v0-6-1">v0.6.1</a></li>
 <li><a class="reference internal" href="#v0-6-0">v0.6.0</a></li>
 <li><a class="reference internal" href="#v0-5-0">v0.5.0</a></li>
-<li><a class="reference internal" href="#id122">0.4.0</a></li>
-<li><a class="reference internal" href="#id125">0.3.1</a></li>
-<li><a class="reference internal" href="#id126">0.3.0</a></li>
-<li><a class="reference internal" href="#id127">0.2.0</a></li>
-<li><a class="reference internal" href="#id128">0.1.0</a></li>
-<li><a class="reference internal" href="#id129">0.0.5</a></li>
-<li><a class="reference internal" href="#id130">0.0.3</a></li>
-<li><a class="reference internal" href="#id131">0.0.2</a></li>
-<li><a class="reference internal" href="#id132">0.0.1</a></li>
+<li><a class="reference internal" href="#id129">0.4.0</a></li>
+<li><a class="reference internal" href="#id132">0.3.1</a></li>
+<li><a class="reference internal" href="#id133">0.3.0</a></li>
+<li><a class="reference internal" href="#id134">0.2.0</a></li>
+<li><a class="reference internal" href="#id135">0.1.0</a></li>
+<li><a class="reference internal" href="#id136">0.0.5</a></li>
+<li><a class="reference internal" href="#id137">0.0.3</a></li>
+<li><a class="reference internal" href="#id138">0.0.2</a></li>
+<li><a class="reference internal" href="#id139">0.0.1</a></li>
 </ul>
 </li>
 </ul>

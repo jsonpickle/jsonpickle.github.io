@@ -374,24 +374,24 @@ This flag is not typically used outside of a custom handler or
 <cite>__getstate__</cite> implementation.</p></li>
 <li><p><strong>safe</strong> – If set to True, eval() is avoided, but backwards-compatible
 (pre-0.7.0) deserialization of repr-serialized objects is disabled.</p></li>
-<li><p><strong>classes</strong> – If set to a single class, or a sequence (list, set, tuple) of classes,
-then the classes will be made available when constructing objects.
+<li><p><strong>classes</strong> – If set to a single class, or a sequence (list, set, tuple) of
+classes, then the classes will be made available when constructing objects.
 If set to a dictionary of class names to class objects, the class object
 will be provided to jsonpickle to deserialize the class name into.
 This can be used to give jsonpickle access to local classes that are not
 available through the global module import scope, and the dict method can
 be used to deserialize encoded objects into a new class.</p></li>
-<li><p><strong>v1_decode</strong> – If set to True it enables you to decode objects serialized in jsonpickle v1.
-Please do not attempt to re-encode the objects in the v1 format! Version 2’s
-format fixes issue #255, and allows dictionary identity to be preserved
-through an encode/decode cycle.</p></li>
-<li><p><strong>on_missing</strong> – If set to ‘error’, it will raise an error if the class it’s decoding is not
-found. If set to ‘warn’, it will warn you in said case. If set to a
-non-awaitable function, it will call said callback function with the class
-name (a string) as the only parameter. Strings passed to on_missing are
-lowercased automatically.</p></li>
-<li><p><strong>handle_readonly</strong> – If set to True, the Unpickler will handle objects encoded with
-‘handle_readonly’ properly. Do not set this flag for objects not encoded
+<li><p><strong>v1_decode</strong> – If set to True it enables you to decode objects serialized in
+jsonpickle v1. Please do not attempt to re-encode the objects in the v1 format!
+Version 2’s format fixes issue #255, and allows dictionary identity to be
+preserved through an encode/decode cycle.</p></li>
+<li><p><strong>on_missing</strong> – If set to ‘error’, it will raise an error if the class it’s
+decoding is not found. If set to ‘warn’, it will warn you in said case.
+If set to a non-awaitable function, it will call said callback function
+with the class name (a string) as the only parameter. Strings passed to
+<cite>on_missing</cite> are lowercased automatically.</p></li>
+<li><p><strong>handle_readonly</strong> – If set to True, the Unpickler will handle objects encoded
+with ‘handle_readonly’ properly. Do not set this flag for objects not encoded
 with ‘handle_readonly’ set to True.</p></li>
 </ul>
 </dd>
@@ -1133,24 +1133,24 @@ This flag is not typically used outside of a custom handler or
 <cite>__getstate__</cite> implementation.</p></li>
 <li><p><strong>safe</strong> – If set to True, eval() is avoided, but backwards-compatible
 (pre-0.7.0) deserialization of repr-serialized objects is disabled.</p></li>
-<li><p><strong>classes</strong> – If set to a single class, or a sequence (list, set, tuple) of classes,
-then the classes will be made available when constructing objects.
+<li><p><strong>classes</strong> – If set to a single class, or a sequence (list, set, tuple) of
+classes, then the classes will be made available when constructing objects.
 If set to a dictionary of class names to class objects, the class object
 will be provided to jsonpickle to deserialize the class name into.
 This can be used to give jsonpickle access to local classes that are not
 available through the global module import scope, and the dict method can
 be used to deserialize encoded objects into a new class.</p></li>
-<li><p><strong>v1_decode</strong> – If set to True it enables you to decode objects serialized in jsonpickle v1.
-Please do not attempt to re-encode the objects in the v1 format! Version 2’s
-format fixes issue #255, and allows dictionary identity to be preserved
-through an encode/decode cycle.</p></li>
-<li><p><strong>on_missing</strong> – If set to ‘error’, it will raise an error if the class it’s decoding is not
-found. If set to ‘warn’, it will warn you in said case. If set to a
-non-awaitable function, it will call said callback function with the class
-name (a string) as the only parameter. Strings passed to on_missing are
-lowercased automatically.</p></li>
-<li><p><strong>handle_readonly</strong> – If set to True, the Unpickler will handle objects encoded with
-‘handle_readonly’ properly. Do not set this flag for objects not encoded
+<li><p><strong>v1_decode</strong> – If set to True it enables you to decode objects serialized in
+jsonpickle v1. Please do not attempt to re-encode the objects in the v1 format!
+Version 2’s format fixes issue #255, and allows dictionary identity to be
+preserved through an encode/decode cycle.</p></li>
+<li><p><strong>on_missing</strong> – If set to ‘error’, it will raise an error if the class it’s
+decoding is not found. If set to ‘warn’, it will warn you in said case.
+If set to a non-awaitable function, it will call said callback function
+with the class name (a string) as the only parameter. Strings passed to
+<cite>on_missing</cite> are lowercased automatically.</p></li>
+<li><p><strong>handle_readonly</strong> – If set to True, the Unpickler will handle objects encoded
+with ‘handle_readonly’ properly. Do not set this flag for objects not encoded
 with ‘handle_readonly’ set to True.</p></li>
 </ul>
 </dd>
@@ -1219,6 +1219,19 @@ and contains a particular key/tag.</p>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loadclass</span><span class="p">(</span><span class="s1">&#39;builtins.int&#39;</span><span class="p">)()</span>
 <span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jsonpickle.unpickler.loadmodule">
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">loadmodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadmodule" title="Link to this definition">#</a></dt>
+<dd><p>Returns a reference to a module.</p>
+<p>WARNING: This function imports modules and thus can trigger
+execution of arbitrary code.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">loadmodule</span><span class="p">(</span><span class="s1">&#39;datetime/datetime.datetime&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="go">&#39;datetime&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1938,6 +1951,7 @@ a module name available to the current version of Python.</p>
 <li><a class="reference internal" href="#jsonpickle.unpickler.has_tag"><code class="docutils literal notranslate"><span class="pre">has_tag()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.has_tag_dict"><code class="docutils literal notranslate"><span class="pre">has_tag_dict()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.loadclass"><code class="docutils literal notranslate"><span class="pre">loadclass()</span></code></a></li>
+<li><a class="reference internal" href="#jsonpickle.unpickler.loadmodule"><code class="docutils literal notranslate"><span class="pre">loadmodule()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.loadrepr"><code class="docutils literal notranslate"><span class="pre">loadrepr()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.make_blank_classic"><code class="docutils literal notranslate"><span class="pre">make_blank_classic()</span></code></a></li>
 </ul>
