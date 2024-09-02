@@ -2,13 +2,13 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="jsonpickle extensions" href="extensions.html" /><link rel="prev" title="jsonpickle Documentation" href="index.html" />
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
         <title>jsonpickle API - jsonpickle documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -68,7 +68,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -83,7 +83,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -91,7 +91,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -99,6 +99,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -111,6 +165,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -129,7 +185,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -184,11 +241,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/api.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -198,9 +261,9 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="jsonpickle-api">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">jsonpickle API</a><a class="headerlink" href="#jsonpickle-api" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">jsonpickle API</a><a class="headerlink" href="#jsonpickle-api" title="Link to this heading">¶</a></h1>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -226,7 +289,7 @@
 </ul>
 </nav>
 <section id="jsonpickle-high-level-api">
-<span id="api-docs"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle</span></code></a> – High Level API</a><a class="headerlink" href="#jsonpickle-high-level-api" title="Link to this heading">#</a></h2>
+<span id="api-docs"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle</span></code></a> – High Level API</a><a class="headerlink" href="#jsonpickle-high-level-api" title="Link to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For performance and compatibility reasons, jsonpickle does not preserve
@@ -237,7 +300,7 @@ tuples, and other non-strings types as dictionary keys.</p>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.encode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.encode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.encode" title="Link to this definition">¶</a></dt>
 <dd><p>Return a JSON formatted representation of value, a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -353,7 +416,7 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.decode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.decode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.decode" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a JSON string into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -405,7 +468,7 @@ with ‘handle_readonly’ set to True.</p></li>
 </dd></dl>
 
 <section id="choosing-and-loading-backends">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Choosing and Loading Backends</a><a class="headerlink" href="#choosing-and-loading-backends" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Choosing and Loading Backends</a><a class="headerlink" href="#choosing-and-loading-backends" title="Link to this heading">¶</a></h3>
 <p>jsonpickle allows the user to specify what JSON backend to use
 when encoding and decoding. By default, jsonpickle will try to use, in
 the following order: <code class="docutils literal notranslate"><span class="pre">simplejson</span></code> and <a class="reference external" href="https://docs.python.org/3/library/json.html#module-json" title="(in Python v3.12)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a>.
@@ -434,7 +497,7 @@ version of simplejson that is bundled in Django:</p>
 </div></blockquote>
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.set_preferred_backend">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">set_preferred_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_preferred_backend" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">set_preferred_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_preferred_backend" title="Link to this definition">¶</a></dt>
 <dd><p>Set the preferred json backend.</p>
 <p>If a preferred backend is set then jsonpickle tries to use it
 before any other backend.</p>
@@ -450,7 +513,7 @@ prior to calling set_preferred_backend.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.load_backend">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">load_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dumps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dumps'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'loads'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads_exc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.load_backend" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">load_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dumps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dumps'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'loads'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads_exc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.load_backend" title="Link to this definition">¶</a></dt>
 <dd><p>Load a JSON backend by name.</p>
 <p>This method loads a backend and sets up references to that
 backend’s loads/dumps functions and exception classes.</p>
@@ -479,13 +542,13 @@ can be found in the backend module’s namespace.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.remove_backend">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">remove_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.remove_backend" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">remove_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.remove_backend" title="Link to this definition">¶</a></dt>
 <dd><p>Remove all entries for a particular backend.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.set_encoder_options">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">set_encoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_encoder_options" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">set_encoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_encoder_options" title="Link to this definition">¶</a></dt>
 <dd><p>Associate encoder-specific options with an encoder.</p>
 <p>After calling set_encoder_options, any calls to jsonpickle’s
 encode method will pass the supplied args and kwargs along to
@@ -503,7 +566,7 @@ a TypeError will be raised!</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.set_decoder_options">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">set_decoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_decoder_options" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.</span></span><span class="sig-name descname"><span class="pre">set_decoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.set_decoder_options" title="Link to this definition">¶</a></dt>
 <dd><p>Associate decoder-specific options with a decoder.</p>
 <p>After calling set_decoder_options, any calls to jsonpickle’s
 decode method will pass the supplied args and kwargs along to
@@ -518,12 +581,12 @@ the supported arguments and keyword arguments.</p>
 
 </section>
 <section id="customizing-json-output">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Customizing JSON output</a><a class="headerlink" href="#customizing-json-output" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Customizing JSON output</a><a class="headerlink" href="#customizing-json-output" title="Link to this heading">¶</a></h3>
 <p>jsonpickle supports the standard <a class="reference external" href="https://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.12)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> <cite>__getstate__</cite> and <cite>__setstate__</cite>
 protocol for representing object instances.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__getstate__">
-<span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#object.__getstate__" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__getstate__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#object.__getstate__" title="Link to this definition">¶</a></dt>
 <dd><p>Classes can further influence how their instances are pickled; if the class
 defines the method <a class="reference internal" href="#object.__getstate__" title="object.__getstate__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getstate__()</span></code></a>, it is called and the return state is
 pickled as the contents for the instance, instead of the contents of the
@@ -533,7 +596,7 @@ instance’s <a class="reference external" href="https://docs.python.org/3/libra
 
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__setstate__">
-<span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__setstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__setstate__" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__setstate__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__setstate__" title="Link to this definition">¶</a></dt>
 <dd><p>Upon unpickling, if the class also defines the method <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__setstate__()</span></code></a>,
 it is called with the unpickled state. If there is no
 <a class="reference internal" href="#object.__setstate__" title="object.__setstate__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__setstate__()</span></code></a> method, the pickled state must be a dictionary and its
@@ -542,9 +605,17 @@ items are assigned to the new instance’s dictionary.  If a class defines both
 dictionary and these methods can do what they want.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">object._jsonpickle_exclude</span> <span class="pre">=</span> <span class="pre">set()</span></span></dt>
+<dd><p>Classes can specify attributes that they want to exclude from being pickled
+by defining an attribute named <cite>_jsonpickle_exclude</cite>. This set should contain
+the names of attributes of that class to exclude from being pickled.</p>
+</dd></dl>
+
 </section>
 <section id="jsonpickle-handlers-custom-serialization-handlers">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code></a> – Custom Serialization Handlers</a><a class="headerlink" href="#jsonpickle-handlers-custom-serialization-handlers" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code></a> – Custom Serialization Handlers</a><a class="headerlink" href="#jsonpickle-handlers-custom-serialization-handlers" title="Link to this heading">¶</a></h3>
 <p>The <cite>jsonpickle.handlers</cite> module allows plugging in custom
 serialization handlers at run-time.  This feature is useful when
 jsonpickle is unable to serialize objects that are not
@@ -556,11 +627,11 @@ implement <code class="docutils literal notranslate"><span class="pre">flatten</
 <a class="reference internal" href="#jsonpickle.handlers.register" title="jsonpickle.handlers.register"><code class="xref py py-func docutils literal notranslate"><span class="pre">jsonpickle.handlers.register()</span></code></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.ArrayHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">ArrayHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.ArrayHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">ArrayHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.ArrayHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten and restore array.array objects</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.ArrayHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.ArrayHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.ArrayHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -576,7 +647,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.ArrayHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.ArrayHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.ArrayHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -585,10 +656,10 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.BaseHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">BaseHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">BaseHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler" title="Link to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.BaseHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -604,7 +675,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.BaseHandler.handles">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.handles" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.handles" title="Link to this definition">¶</a></dt>
 <dd><p>Register this handler for the given class. Suitable as a decorator,
 e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@MyCustomHandler</span><span class="o">.</span><span class="n">handles</span>
@@ -617,7 +688,7 @@ e.g.:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.BaseHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.BaseHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -626,20 +697,20 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.CloneFactory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">CloneFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exemplar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.CloneFactory" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">CloneFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exemplar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.CloneFactory" title="Link to this definition">¶</a></dt>
 <dd><p>Serialization proxy for collections.defaultdict’s default_factory</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.DatetimeHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">DatetimeHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">DatetimeHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Custom handler for datetime objects</p>
 <p>Datetime objects use __reduce__, and they generate binary strings encoding
 the payload. This handler encodes that payload to reconstruct the
 object.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.DatetimeHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -655,7 +726,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.DatetimeHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.DatetimeHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -664,11 +735,11 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.LockHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">LockHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.LockHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">LockHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.LockHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Serialize threading.Lock objects</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.LockHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.LockHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.LockHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -684,7 +755,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.LockHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.LockHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.LockHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -693,13 +764,13 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.QueueHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">QueueHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">QueueHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Opaquely serializes Queue objects</p>
 <p>Queues contains mutex and condition variables which cannot be serialized.
 Construct a new Queue instance when restoring.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.QueueHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -715,7 +786,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.QueueHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.QueueHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -724,11 +795,11 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.RegexHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">RegexHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">RegexHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten _sre.SRE_Pattern (compiled regex) objects</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.RegexHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -744,7 +815,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.RegexHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.RegexHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -753,10 +824,10 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.Registry">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">Registry</span></span><a class="headerlink" href="#jsonpickle.handlers.Registry" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">Registry</span></span><a class="headerlink" href="#jsonpickle.handlers.Registry" title="Link to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.Registry.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_or_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.get" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls_or_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.get" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -773,7 +844,7 @@ handlers registered with base=True.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.Registry.register">
-<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.register" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.register" title="Link to this definition">¶</a></dt>
 <dd><p>Register the a custom handler for a class</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -797,18 +868,18 @@ by omitting the <cite>handler</cite> argument:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.Registry.unregister">
-<span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.unregister" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.Registry.unregister" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.TextIOHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">TextIOHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.TextIOHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">TextIOHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.TextIOHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Serialize file descriptors as None because we cannot roundtrip</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.TextIOHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.TextIOHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.TextIOHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -824,7 +895,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.TextIOHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.TextIOHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.TextIOHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore should never get called because flatten() returns None</p>
 </dd></dl>
 
@@ -832,11 +903,11 @@ finished.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.handlers.UUIDHandler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">UUIDHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">UUIDHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Serialize uuid.UUID objects</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.UUIDHandler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Flatten <cite>obj</cite> into a json-friendly form and write result to <cite>data</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -852,7 +923,7 @@ finished.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.handlers.UUIDHandler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.UUIDHandler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restore an object of the registered type from the json-friendly
 representation <cite>obj</cite> and return it.</p>
 </dd></dl>
@@ -861,7 +932,7 @@ representation <cite>obj</cite> and return it.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.handlers.get">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.get" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.get" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -878,7 +949,7 @@ handlers registered with base=True.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.handlers.register">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.register" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.register" title="Link to this definition">¶</a></dt>
 <dd><p>Register the a custom handler for a class</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -902,24 +973,24 @@ by omitting the <cite>handler</cite> argument:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.handlers.unregister">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.unregister" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.handlers.</span></span><span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.handlers.unregister" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
 </section>
 <section id="low-level-api">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Low Level API</a><a class="headerlink" href="#low-level-api" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Low Level API</a><a class="headerlink" href="#low-level-api" title="Link to this heading">¶</a></h2>
 <p>Typically this low level functionality is not needed by clients.</p>
 <p>Note that arguments like <code class="docutils literal notranslate"><span class="pre">safe=True</span></code> do not make it safe to load an untrusted
 jsonpickle string.</p>
 <section id="module-jsonpickle.pickler">
-<span id="jsonpickle-pickler-python-to-json-compatible-dict"></span><h3><a class="toc-backref" href="#id8" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code></a> – Python to JSON-compatible dict</a><a class="headerlink" href="#module-jsonpickle.pickler" title="Link to this heading">#</a></h3>
+<span id="jsonpickle-pickler-python-to-json-compatible-dict"></span><h3><a class="toc-backref" href="#id8" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code></a> – Python to JSON-compatible dict</a><a class="headerlink" href="#module-jsonpickle.pickler" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.pickler.Pickler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.pickler.</span></span><span class="sig-name descname"><span class="pre">Pickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.pickler.</span></span><span class="sig-name descname"><span class="pre">Pickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler" title="Link to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.pickler.Pickler.flatten">
-<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler.flatten" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler.flatten" title="Link to this definition">¶</a></dt>
 <dd><p>Takes an object and returns a JSON-safe representation of it.</p>
 <p>Simply returns any of the basic builtin datatypes</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Pickler</span><span class="p">()</span>
@@ -950,14 +1021,14 @@ jsonpickle string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.pickler.Pickler.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler.reset" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler.reset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.pickler.encode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.pickler.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.encode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.pickler.</span></span><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.encode" title="Link to this definition">¶</a></dt>
 <dd><p>Return a JSON formatted representation of value, a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1073,13 +1144,13 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 
 </section>
 <section id="module-jsonpickle.unpickler">
-<span id="jsonpickle-unpickler-json-compatible-dict-to-python"></span><h3><a class="toc-backref" href="#id9" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code></a> – JSON-compatible dict to Python</a><a class="headerlink" href="#module-jsonpickle.unpickler" title="Link to this heading">#</a></h3>
+<span id="jsonpickle-unpickler-json-compatible-dict-to-python"></span><h3><a class="toc-backref" href="#id9" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code></a> – JSON-compatible dict to Python</a><a class="headerlink" href="#module-jsonpickle.unpickler" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.Unpickler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">Unpickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">Unpickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler" title="Link to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.Unpickler.register_classes">
-<span class="sig-name descname"><span class="pre">register_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.register_classes" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">register_classes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.register_classes" title="Link to this definition">¶</a></dt>
 <dd><p>Register one or more classes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1090,13 +1161,13 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.Unpickler.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.reset" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.reset" title="Link to this definition">¶</a></dt>
 <dd><p>Resets the object’s internal state.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.Unpickler.restore">
-<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.restore" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler.restore" title="Link to this definition">¶</a></dt>
 <dd><p>Restores a flattened object to its original python state.</p>
 <p>Simply returns any of the basic builtin types</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">Unpickler</span><span class="p">()</span>
@@ -1112,7 +1183,7 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.decode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.decode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.decode" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a JSON string into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1165,13 +1236,13 @@ with ‘handle_readonly’ set to True.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.getargs">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">getargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.getargs" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">getargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.getargs" title="Link to this definition">¶</a></dt>
 <dd><p>Return arguments suitable for __new__()</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.has_tag">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">has_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.has_tag" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">has_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.has_tag" title="Link to this definition">¶</a></dt>
 <dd><p>Helper class that tests to see if the obj is a dictionary
 and contains a particular key/tag.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
@@ -1189,7 +1260,7 @@ and contains a particular key/tag.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.has_tag_dict">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">has_tag_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.has_tag_dict" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">has_tag_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.has_tag_dict" title="Link to this definition">¶</a></dt>
 <dd><p>Helper class that tests to see if the obj is a dictionary
 and contains a particular key/tag.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
@@ -1207,7 +1278,7 @@ and contains a particular key/tag.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.loadclass">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">loadclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_and_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadclass" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">loadclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_and_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadclass" title="Link to this definition">¶</a></dt>
 <dd><p>Loads the module and returns the class.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">cls</span> <span class="o">=</span> <span class="n">loadclass</span><span class="p">(</span><span class="s1">&#39;datetime.datetime&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span>
@@ -1224,10 +1295,25 @@ and contains a particular key/tag.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="jsonpickle.unpickler.loadmodule">
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">loadmodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadmodule" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a reference to a module.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fn</span> <span class="o">=</span> <span class="n">loadmodule</span><span class="p">(</span><span class="s1">&#39;datetime/datetime.datetime.fromtimestamp&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fn</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="go">&#39;fromtimestamp&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.loadrepr">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">loadrepr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reprstr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadrepr" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">loadrepr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reprstr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.loadrepr" title="Link to this definition">¶</a></dt>
 <dd><p>Returns an instance of the object from the object’s repr() string.
 It involves the dynamic specification of code.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is unsafe and uses <cite>eval()</cite>.</p>
+</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">loadrepr</span><span class="p">(</span><span class="s1">&#39;datetime/datetime.datetime.now()&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
 <span class="go">&#39;datetime&#39;</span>
@@ -1237,7 +1323,7 @@ It involves the dynamic specification of code.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.make_blank_classic">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">make_blank_classic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.make_blank_classic" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">make_blank_classic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.make_blank_classic" title="Link to this definition">¶</a></dt>
 <dd><p>Implement the mandated strategy for dealing with classic classes
 which cannot be instantiated without __getinitargs__ because they
 take parameters</p>
@@ -1245,10 +1331,10 @@ take parameters</p>
 
 </section>
 <section id="module-jsonpickle.backend">
-<span id="jsonpickle-backend-json-backend-management"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code></a> – JSON Backend Management</a><a class="headerlink" href="#module-jsonpickle.backend" title="Link to this heading">#</a></h3>
+<span id="jsonpickle-backend-json-backend-management"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code></a> – JSON Backend Management</a><a class="headerlink" href="#module-jsonpickle.backend" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.backend.</span></span><span class="sig-name descname"><span class="pre">JSONBackend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fallthrough</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.backend.</span></span><span class="sig-name descname"><span class="pre">JSONBackend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fallthrough</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend" title="Link to this definition">¶</a></dt>
 <dd><p>Manages encoding and decoding using various backends.</p>
 <dl class="simple">
 <dt>It tries these modules in this order:</dt><dd><p>simplejson, json, ujson</p>
@@ -1258,7 +1344,7 @@ take parameters</p>
 json comes with Python and is tried second.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.decode">
-<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.decode" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.decode" title="Link to this definition">¶</a></dt>
 <dd><p>Attempt to decode an object from a JSON string.</p>
 <p>This tries the loaded backends in order and passes along the last
 exception if no backends are able to decode the string.</p>
@@ -1266,7 +1352,7 @@ exception if no backends are able to decode the string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.dumps">
-<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.dumps" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">dumps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.dumps" title="Link to this definition">¶</a></dt>
 <dd><p>Attempt to encode an object into JSON.</p>
 <p>This tries the loaded backends in order and passes along the last
 exception if no backend is able to encode the object.</p>
@@ -1274,7 +1360,7 @@ exception if no backend is able to encode the object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.enable_fallthrough">
-<span class="sig-name descname"><span class="pre">enable_fallthrough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.enable_fallthrough" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">enable_fallthrough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.enable_fallthrough" title="Link to this definition">¶</a></dt>
 <dd><p>Disable jsonpickle’s fallthrough-on-error behavior</p>
 <p>By default, jsonpickle tries the next backend when decoding or
 encoding using a backend fails.</p>
@@ -1287,7 +1373,7 @@ re-raise any exceptions raised by the backends.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.encode">
-<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.encode" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.encode" title="Link to this definition">¶</a></dt>
 <dd><p>Attempt to encode an object into JSON.</p>
 <p>This tries the loaded backends in order and passes along the last
 exception if no backend is able to encode the object.</p>
@@ -1295,7 +1381,7 @@ exception if no backend is able to encode the object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.load_backend">
-<span class="sig-name descname"><span class="pre">load_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dumps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dumps'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'loads'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads_exc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.load_backend" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">load_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dumps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dumps'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'loads'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads_exc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.load_backend" title="Link to this definition">¶</a></dt>
 <dd><p>Load a JSON backend by name.</p>
 <p>This method loads a backend and sets up references to that
 backend’s loads/dumps functions and exception classes.</p>
@@ -1324,7 +1410,7 @@ can be found in the backend module’s namespace.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.loads">
-<span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.loads" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.loads" title="Link to this definition">¶</a></dt>
 <dd><p>Attempt to decode an object from a JSON string.</p>
 <p>This tries the loaded backends in order and passes along the last
 exception if no backends are able to decode the string.</p>
@@ -1332,13 +1418,13 @@ exception if no backends are able to decode the string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.remove_backend">
-<span class="sig-name descname"><span class="pre">remove_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.remove_backend" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">remove_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.remove_backend" title="Link to this definition">¶</a></dt>
 <dd><p>Remove all entries for a particular backend.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.set_decoder_options">
-<span class="sig-name descname"><span class="pre">set_decoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_decoder_options" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_decoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_decoder_options" title="Link to this definition">¶</a></dt>
 <dd><p>Associate decoder-specific options with a decoder.</p>
 <p>After calling set_decoder_options, any calls to jsonpickle’s
 decode method will pass the supplied args and kwargs along to
@@ -1353,7 +1439,7 @@ the supported arguments and keyword arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.set_encoder_options">
-<span class="sig-name descname"><span class="pre">set_encoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_encoder_options" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_encoder_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_encoder_options" title="Link to this definition">¶</a></dt>
 <dd><p>Associate encoder-specific options with an encoder.</p>
 <p>After calling set_encoder_options, any calls to jsonpickle’s
 encode method will pass the supplied args and kwargs along to
@@ -1371,7 +1457,7 @@ a TypeError will be raised!</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend.set_preferred_backend">
-<span class="sig-name descname"><span class="pre">set_preferred_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_preferred_backend" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_preferred_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend.set_preferred_backend" title="Link to this definition">¶</a></dt>
 <dd><p>Set the preferred json backend.</p>
 <p>If a preferred backend is set then jsonpickle tries to use it
 before any other backend.</p>
@@ -1389,41 +1475,41 @@ prior to calling set_preferred_backend.</p>
 
 </section>
 <section id="module-jsonpickle.util">
-<span id="jsonpickle-util-helper-functions"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.util</span></code></a> – Helper functions</a><a class="headerlink" href="#module-jsonpickle.util" title="Link to this heading">#</a></h3>
+<span id="jsonpickle-util-helper-functions"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.util</span></code></a> – Helper functions</a><a class="headerlink" href="#module-jsonpickle.util" title="Link to this heading">¶</a></h3>
 <p>Helper functions for pickling and unpickling.  Most functions assist in
 determining the type of an object.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.b64decode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b64decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b64decode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b64decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b64decode" title="Link to this definition">¶</a></dt>
 <dd><p>Decode payload - must be ascii text.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.b64encode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b64encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b64encode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b64encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b64encode" title="Link to this definition">¶</a></dt>
 <dd><p>Encode binary data to ascii text in base64. Data must be bytes.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.b85decode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b85decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b85decode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b85decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b85decode" title="Link to this definition">¶</a></dt>
 <dd><p>Decode payload - must be ascii text.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.b85encode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b85encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b85encode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">b85encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.b85encode" title="Link to this definition">¶</a></dt>
 <dd><p>Encode binary data to ascii text in base85. Data must be bytes.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.has_method">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">has_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.has_method" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">has_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.has_method" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.has_reduce">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">has_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.has_reduce" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">has_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.has_reduce" title="Link to this definition">¶</a></dt>
 <dd><p>Tests if __reduce__ or __reduce_ex__ exists in the object dict or
 in the class dicts of every class in the MRO <em>except object</em>.</p>
 <p>Returns a tuple of booleans (has_reduce, has_reduce_ex)</p>
@@ -1431,7 +1517,7 @@ in the class dicts of every class in the MRO <em>except object</em>.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.importable_name">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">importable_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.importable_name" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">importable_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.importable_name" title="Link to this definition">¶</a></dt>
 <dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">pass</span>
 </pre></div>
@@ -1453,21 +1539,21 @@ in the class dicts of every class in the MRO <em>except object</em>.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.in_dict">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">in_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.in_dict" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">in_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.in_dict" title="Link to this definition">¶</a></dt>
 <dd><p>Returns true if key exists in obj.__dict__; false if not in.
 If obj.__dict__ is absent, return default</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.in_slots">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">in_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.in_slots" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">in_slots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.in_slots" title="Link to this definition">¶</a></dt>
 <dd><p>Returns true if key exists in obj.__slots__; false if not in.
 If obj.__slots__ is absent, return default</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_bytes">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_bytes" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_bytes" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a bytestring.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1477,18 +1563,18 @@ If obj.__slots__ is absent, return default</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_collections">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_collections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_collections" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_collections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_collections" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_cython_function">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_cython_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_cython_function" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_cython_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_cython_function" title="Link to this definition">¶</a></dt>
 <dd><p>Returns true if the object is a reference to a Cython function</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_dictionary">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_dictionary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_dictionary" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_dictionary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_dictionary" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method for testing if the object is a dictionary.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_dictionary</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">})</span>
 <span class="go">True</span>
@@ -1498,7 +1584,7 @@ If obj.__slots__ is absent, return default</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_dictionary_subclass">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_dictionary_subclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_dictionary_subclass" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_dictionary_subclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_dictionary_subclass" title="Link to this definition">¶</a></dt>
 <dd><p>Returns True if <em>obj</em> is a subclass of the dict type. <em>obj</em> must be
 a subclass and not the actual builtin dict.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Temp</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="k">pass</span>
@@ -1510,13 +1596,13 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_enum">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_enum" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_enum" title="Link to this definition">¶</a></dt>
 <dd><p>Is the object an enum?</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_function">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_function" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_function" title="Link to this definition">¶</a></dt>
 <dd><p>Returns true if passed a function</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_function</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1539,7 +1625,7 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_installed">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_installed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_installed" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_installed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_installed" title="Link to this definition">¶</a></dt>
 <dd><p>Tests to see if <code class="docutils literal notranslate"><span class="pre">module</span></code> is available on the sys.path</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_installed</span><span class="p">(</span><span class="s1">&#39;sys&#39;</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1551,12 +1637,12 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_iterator">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_iterator" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_iterator" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_list">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_list" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_list" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a Python list.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_list</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
 <span class="go">True</span>
@@ -1566,12 +1652,12 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_list_like">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_list_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_list_like" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_list_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_list_like" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_module">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_module" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_module" title="Link to this definition">¶</a></dt>
 <dd><p>Returns True if passed a module</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_module</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
@@ -1582,7 +1668,7 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_module_function">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_module_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_module_function" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_module_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_module_function" title="Link to this definition">¶</a></dt>
 <dd><p>Return True if <cite>obj</cite> is a module-global function</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_module_function</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">)</span>
@@ -1597,7 +1683,7 @@ a subclass and not the actual builtin dict.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_noncomplex">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_noncomplex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_noncomplex" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_noncomplex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_noncomplex" title="Link to this definition">¶</a></dt>
 <dd><p>Returns True if <em>obj</em> is a special (weird) class, that is more complex
 than primitive data types, but is not a full object. Including:</p>
 <blockquote>
@@ -1609,14 +1695,14 @@ than primitive data types, but is not a full object. Including:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_not_class">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_not_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_not_class" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_not_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_not_class" title="Link to this definition">¶</a></dt>
 <dd><p>Determines if the object is not a class or a class instance.
 Used for serializing properties.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_object">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_object" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_object</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_object" title="Link to this definition">¶</a></dt>
 <dd><p>Returns True is obj is a reference to an object instance.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_object</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">True</span>
@@ -1634,7 +1720,7 @@ Used for serializing properties.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_picklable">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_picklable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_picklable" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_picklable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_picklable" title="Link to this definition">¶</a></dt>
 <dd><p>Return True if an object can be pickled</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_picklable</span><span class="p">(</span><span class="s1">&#39;os&#39;</span><span class="p">,</span> <span class="n">os</span><span class="p">)</span>
@@ -1654,7 +1740,7 @@ Used for serializing properties.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_primitive">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_primitive" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_primitive" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a basic data type. Unicode strings,
 integers, longs, floats, booleans, and None are considered primitive
 and will return True when passed into <em>is_primitive()</em></p>
@@ -1668,24 +1754,24 @@ and will return True when passed into <em>is_primitive()</em></p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_readonly">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_readonly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_readonly" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_readonly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_readonly" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_reducible">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_reducible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_reducible" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_reducible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_reducible" title="Link to this definition">¶</a></dt>
 <dd><p>Returns false if of a type which have special casing,
 and should not have their __reduce__ methods used</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_reducible_sequence_subclass">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_reducible_sequence_subclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_reducible_sequence_subclass" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_reducible_sequence_subclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_reducible_sequence_subclass" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_sequence">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_sequence" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_sequence" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a sequence (list, set, or tuple).</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_sequence</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
 <span class="go">True</span>
@@ -1695,7 +1781,7 @@ and should not have their __reduce__ methods used</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_sequence_subclass">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_sequence_subclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_sequence_subclass" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_sequence_subclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_sequence_subclass" title="Link to this definition">¶</a></dt>
 <dd><p>Returns True if <em>obj</em> is a subclass of list, set or tuple.</p>
 <p><em>obj</em> must be a subclass and not the actual builtin, such
 as list, set, tuple, etc..</p>
@@ -1708,7 +1794,7 @@ as list, set, tuple, etc..</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_set">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_set" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_set" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a Python set.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_set</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span>
 <span class="go">True</span>
@@ -1718,7 +1804,7 @@ as list, set, tuple, etc..</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_tuple">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_tuple" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_tuple" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a Python tuple.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_tuple</span><span class="p">((</span><span class="mi">1</span><span class="p">,))</span>
 <span class="go">True</span>
@@ -1728,7 +1814,7 @@ as list, set, tuple, etc..</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_type">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_type" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_type" title="Link to this definition">¶</a></dt>
 <dd><p>Returns True is obj is a reference to a type.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">False</span>
@@ -1747,24 +1833,24 @@ as list, set, tuple, etc..</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.is_unicode">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_unicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_unicode" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">is_unicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.is_unicode" title="Link to this definition">¶</a></dt>
 <dd><p>Helper method to see if the object is a unicode string</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.itemgetter">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">itemgetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">operator.itemgetter(0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.itemgetter" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">itemgetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">operator.itemgetter(0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.itemgetter" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.items">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.items" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.items" title="Link to this definition">¶</a></dt>
 <dd><p>TODO: Replace all calls to this with plain dict.items()</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.translate_module_name">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">translate_module_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.translate_module_name" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">translate_module_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.translate_module_name" title="Link to this definition">¶</a></dt>
 <dd><p>Rename builtin modules to a consistent module name.</p>
 <p>Prefer the more modern naming.</p>
 <p>This is used so that references to Python’s <cite>builtins</cite> module can
@@ -1778,7 +1864,7 @@ available in <cite>exceptions</cite>, which makes the translation simpler.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="jsonpickle.util.untranslate_module_name">
-<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">untranslate_module_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.untranslate_module_name" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">jsonpickle.util.</span></span><span class="sig-name descname"><span class="pre">untranslate_module_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.util.untranslate_module_name" title="Link to this definition">¶</a></dt>
 <dd><p>Rename module names mention in JSON to names that we can import</p>
 <p>This reverses the translation applied by translate_module_name() to
 a module name available to the current version of Python.</p>
@@ -1938,6 +2024,7 @@ a module name available to the current version of Python.</p>
 <li><a class="reference internal" href="#jsonpickle.unpickler.has_tag"><code class="docutils literal notranslate"><span class="pre">has_tag()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.has_tag_dict"><code class="docutils literal notranslate"><span class="pre">has_tag_dict()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.loadclass"><code class="docutils literal notranslate"><span class="pre">loadclass()</span></code></a></li>
+<li><a class="reference internal" href="#jsonpickle.unpickler.loadmodule"><code class="docutils literal notranslate"><span class="pre">loadmodule()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.loadrepr"><code class="docutils literal notranslate"><span class="pre">loadrepr()</span></code></a></li>
 <li><a class="reference internal" href="#jsonpickle.unpickler.make_blank_classic"><code class="docutils literal notranslate"><span class="pre">make_blank_classic()</span></code></a></li>
 </ul>
@@ -2015,8 +2102,8 @@ a module name available to the current version of Python.</p>
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/scripts/furo.js?v=4e2eecee"></script>
     </body>
 </html>
