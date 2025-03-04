@@ -250,33 +250,9 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="jsonpickle-api">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">jsonpickle API</a><a class="headerlink" href="#jsonpickle-api" title="Link to this heading">¶</a></h1>
-<nav class="contents" id="contents">
-<p class="topic-title">Contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#jsonpickle-api" id="id2">jsonpickle API</a></p>
-<ul>
-<li><p><a class="reference internal" href="#jsonpickle-high-level-api" id="id3"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle</span></code></a> – High Level API</a></p>
-<ul>
-<li><p><a class="reference internal" href="#choosing-and-loading-backends" id="id4">Choosing and Loading Backends</a></p></li>
-<li><p><a class="reference internal" href="#customizing-json-output" id="id5">Customizing JSON output</a></p></li>
-<li><p><a class="reference internal" href="#jsonpickle-handlers-custom-serialization-handlers" id="id6"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code></a> – Custom Serialization Handlers</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#low-level-api" id="id7">Low Level API</a></p>
-<ul>
-<li><p><a class="reference internal" href="#module-jsonpickle.pickler" id="id8"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code></a> – Python to JSON-compatible dict</a></p></li>
-<li><p><a class="reference internal" href="#module-jsonpickle.unpickler" id="id9"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code></a> – JSON-compatible dict to Python</a></p></li>
-<li><p><a class="reference internal" href="#module-jsonpickle.backend" id="id10"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code></a> – JSON Backend Management</a></p></li>
-<li><p><a class="reference internal" href="#module-jsonpickle.util" id="id11"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.util</span></code></a> – Helper functions</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
+<span id="id1"></span><h1>jsonpickle API<a class="headerlink" href="#jsonpickle-api" title="Link to this heading">¶</a></h1>
 <section id="jsonpickle-high-level-api">
-<span id="api-docs"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink"><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle</span></code></a> – High Level API</a><a class="headerlink" href="#jsonpickle-high-level-api" title="Link to this heading">¶</a></h2>
+<span id="api-docs"></span><h2><a class="reference internal" href="index.html#module-jsonpickle" title="jsonpickle"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle</span></code></a> – High Level API<a class="headerlink" href="#jsonpickle-high-level-api" title="Link to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For performance and compatibility reasons, jsonpickle does not preserve
@@ -462,7 +438,7 @@ with ‘handle_readonly’ set to True.</p></li>
 </dd></dl>
 
 <section id="choosing-and-loading-backends">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Choosing and Loading Backends</a><a class="headerlink" href="#choosing-and-loading-backends" title="Link to this heading">¶</a></h3>
+<h3>Choosing and Loading Backends<a class="headerlink" href="#choosing-and-loading-backends" title="Link to this heading">¶</a></h3>
 <p>jsonpickle allows the user to specify what JSON backend to use
 when encoding and decoding. By default, jsonpickle will try to use, in
 the following order: <code class="docutils literal notranslate"><span class="pre">simplejson</span></code> and <a class="reference external" href="https://docs.python.org/3/library/json.html#module-json" title="(in Python v3.13)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a>.
@@ -575,7 +551,7 @@ the supported arguments and keyword arguments.</p>
 
 </section>
 <section id="customizing-json-output">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Customizing JSON output</a><a class="headerlink" href="#customizing-json-output" title="Link to this heading">¶</a></h3>
+<h3>Customizing JSON output<a class="headerlink" href="#customizing-json-output" title="Link to this heading">¶</a></h3>
 <p>jsonpickle supports the standard <a class="reference external" href="https://docs.python.org/3/library/pickle.html#module-pickle" title="(in Python v3.13)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></a> <cite>__getstate__</cite> and <cite>__setstate__</cite>
 protocol for representing object instances.</p>
 <dl class="py method">
@@ -609,7 +585,7 @@ the names of attributes of that class to exclude from being pickled.</p>
 
 </section>
 <section id="jsonpickle-handlers-custom-serialization-handlers">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code></a> – Custom Serialization Handlers</a><a class="headerlink" href="#jsonpickle-handlers-custom-serialization-handlers" title="Link to this heading">¶</a></h3>
+<h3><a class="reference internal" href="#module-jsonpickle.handlers" title="jsonpickle.handlers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.handlers</span></code></a> – Custom Serialization Handlers<a class="headerlink" href="#jsonpickle-handlers-custom-serialization-handlers" title="Link to this heading">¶</a></h3>
 <p>The <cite>jsonpickle.handlers</cite> module allows plugging in custom
 serialization handlers at run-time.  This feature is useful when
 jsonpickle is unable to serialize objects that are not
@@ -973,12 +949,12 @@ by omitting the <cite>handler</cite> argument:</p>
 </section>
 </section>
 <section id="low-level-api">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Low Level API</a><a class="headerlink" href="#low-level-api" title="Link to this heading">¶</a></h2>
+<h2>Low Level API<a class="headerlink" href="#low-level-api" title="Link to this heading">¶</a></h2>
 <p>Typically this low level functionality is not needed by clients.</p>
 <p>Note that arguments like <code class="docutils literal notranslate"><span class="pre">safe=True</span></code> do not make it safe to load an untrusted
 jsonpickle string.</p>
 <section id="module-jsonpickle.pickler">
-<span id="jsonpickle-pickler-python-to-json-compatible-dict"></span><h3><a class="toc-backref" href="#id8" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code></a> – Python to JSON-compatible dict</a><a class="headerlink" href="#module-jsonpickle.pickler" title="Link to this heading">¶</a></h3>
+<span id="jsonpickle-pickler-python-to-json-compatible-dict"></span><h3><a class="reference internal" href="#module-jsonpickle.pickler" title="jsonpickle.pickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.pickler</span></code></a> – Python to JSON-compatible dict<a class="headerlink" href="#module-jsonpickle.pickler" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.pickler.Pickler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.pickler.</span></span><span class="sig-name descname"><span class="pre">Pickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unpicklable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_refs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_base85</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fail_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.pickler.Pickler" title="Link to this definition">¶</a></dt>
@@ -1138,7 +1114,7 @@ this flag set to <code class="docutils literal notranslate"><span class="pre">Tr
 
 </section>
 <section id="module-jsonpickle.unpickler">
-<span id="jsonpickle-unpickler-json-compatible-dict-to-python"></span><h3><a class="toc-backref" href="#id9" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code></a> – JSON-compatible dict to Python</a><a class="headerlink" href="#module-jsonpickle.unpickler" title="Link to this heading">¶</a></h3>
+<span id="jsonpickle-unpickler-json-compatible-dict-to-python"></span><h3><a class="reference internal" href="#module-jsonpickle.unpickler" title="jsonpickle.unpickler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.unpickler</span></code></a> – JSON-compatible dict to Python<a class="headerlink" href="#module-jsonpickle.unpickler" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.unpickler.Unpickler">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.unpickler.</span></span><span class="sig-name descname"><span class="pre">Unpickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1_decode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle_readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.unpickler.Unpickler" title="Link to this definition">¶</a></dt>
@@ -1321,7 +1297,7 @@ take parameters</p>
 
 </section>
 <section id="module-jsonpickle.backend">
-<span id="jsonpickle-backend-json-backend-management"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code></a> – JSON Backend Management</a><a class="headerlink" href="#module-jsonpickle.backend" title="Link to this heading">¶</a></h3>
+<span id="jsonpickle-backend-json-backend-management"></span><h3><a class="reference internal" href="#module-jsonpickle.backend" title="jsonpickle.backend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.backend</span></code></a> – JSON Backend Management<a class="headerlink" href="#module-jsonpickle.backend" title="Link to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="jsonpickle.backend.JSONBackend">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jsonpickle.backend.</span></span><span class="sig-name descname"><span class="pre">JSONBackend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fallthrough</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jsonpickle.backend.JSONBackend" title="Link to this definition">¶</a></dt>
@@ -1465,7 +1441,7 @@ prior to calling set_preferred_backend.</p>
 
 </section>
 <section id="module-jsonpickle.util">
-<span id="jsonpickle-util-helper-functions"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink"><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.util</span></code></a> – Helper functions</a><a class="headerlink" href="#module-jsonpickle.util" title="Link to this heading">¶</a></h3>
+<span id="jsonpickle-util-helper-functions"></span><h3><a class="reference internal" href="#module-jsonpickle.util" title="jsonpickle.util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">jsonpickle.util</span></code></a> – Helper functions<a class="headerlink" href="#module-jsonpickle.util" title="Link to this heading">¶</a></h3>
 <p>Helper functions for pickling and unpickling.  Most functions assist in
 determining the type of an object.</p>
 <dl class="py function">
