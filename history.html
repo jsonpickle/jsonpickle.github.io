@@ -261,6 +261,20 @@ You can re-enable yaml support using <code class="docutils literal notranslate">
 </ul>
 </div></blockquote>
 </section>
+<section id="v4-0-4">
+<h2>v4.0.4<a class="headerlink" href="#v4-0-4" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>29 Mar 2025</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> was updated to avoid specifying the license file.
+This avoids breaking older setuptools versions while also avoiding
+the deprecated <code class="docutils literal notranslate"><span class="pre">tool.setuptools.license-files</span></code> field.
+<code class="docutils literal notranslate"><span class="pre">setuptools</span></code> will find our <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file automatically,
+so there is no need to specify it.
+(<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/558">#558</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 <section id="v4-0-3">
 <h2>v4.0.3<a class="headerlink" href="#v4-0-3" title="Link to this heading">¶</a></h2>
 <dl class="simple">
@@ -938,8 +952,8 @@ in 0.4.0.  This can be disabled by passing <cite>make_refs=False</cite> to
 </ul>
 </div></blockquote>
 </section>
-<section id="id162">
-<h2>0.4.0<a class="headerlink" href="#id162" title="Link to this heading">¶</a></h2>
+<section id="id163">
+<h2>0.4.0<a class="headerlink" href="#id163" title="Link to this heading">¶</a></h2>
 <p>21 Jun 2011</p>
 <blockquote>
 <div><ul class="simple">
@@ -963,8 +977,8 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 </div>
 </div></blockquote>
 </section>
-<section id="id165">
-<h2>0.3.1<a class="headerlink" href="#id165" title="Link to this heading">¶</a></h2>
+<section id="id166">
+<h2>0.3.1<a class="headerlink" href="#id166" title="Link to this heading">¶</a></h2>
 <p>12 Dec 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -972,8 +986,8 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 </ul>
 </div></blockquote>
 </section>
-<section id="id166">
-<h2>0.3.0<a class="headerlink" href="#id166" title="Link to this heading">¶</a></h2>
+<section id="id167">
+<h2>0.3.0<a class="headerlink" href="#id167" title="Link to this heading">¶</a></h2>
 <p>11 Dec 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -1006,8 +1020,8 @@ for their assistance!</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id167">
-<h2>0.2.0<a class="headerlink" href="#id167" title="Link to this heading">¶</a></h2>
+<section id="id168">
+<h2>0.2.0<a class="headerlink" href="#id168" title="Link to this heading">¶</a></h2>
 <p>10 Jan 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -1026,8 +1040,8 @@ Roberto Saccon, Faber Fedor,
 </ul>
 </div></blockquote>
 </section>
-<section id="id168">
-<h2>0.1.0<a class="headerlink" href="#id168" title="Link to this heading">¶</a></h2>
+<section id="id169">
+<h2>0.1.0<a class="headerlink" href="#id169" title="Link to this heading">¶</a></h2>
 <p>22 Aug 2008</p>
 <blockquote>
 <div><ul class="simple">
@@ -1039,8 +1053,8 @@ simplejson’s load/loads/dump/dumps</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id169">
-<h2>0.0.5<a class="headerlink" href="#id169" title="Link to this heading">¶</a></h2>
+<section id="id170">
+<h2>0.0.5<a class="headerlink" href="#id170" title="Link to this heading">¶</a></h2>
 <p>22 Jul 2008</p>
 <blockquote>
 <div><ul class="simple">
@@ -1051,16 +1065,16 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id170">
-<h2>0.0.3<a class="headerlink" href="#id170" title="Link to this heading">¶</a></h2>
+<section id="id171">
+<h2>0.0.3<a class="headerlink" href="#id171" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Convert back to setup.py from pavement.py (issue found by spidaman)</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id171">
-<h2>0.0.2<a class="headerlink" href="#id171" title="Link to this heading">¶</a></h2>
+<section id="id172">
+<h2>0.0.2<a class="headerlink" href="#id172" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Handle feedparser’s FeedParserDict</p></li>
@@ -1070,8 +1084,8 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id172">
-<h2>0.0.1<a class="headerlink" href="#id172" title="Link to this heading">¶</a></h2>
+<section id="id173">
+<h2>0.0.1<a class="headerlink" href="#id173" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><p>Initial release</p>
 </div></blockquote>
@@ -1127,6 +1141,7 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
             <ul>
 <li><a class="reference internal" href="#">History</a><ul>
 <li><a class="reference internal" href="#upcoming">Upcoming</a></li>
+<li><a class="reference internal" href="#v4-0-4">v4.0.4</a></li>
 <li><a class="reference internal" href="#v4-0-3">v4.0.3</a></li>
 <li><a class="reference internal" href="#v4-0-2">v4.0.2</a></li>
 <li><a class="reference internal" href="#v4-0-1">v4.0.1</a></li>
@@ -1171,15 +1186,15 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 <li><a class="reference internal" href="#v0-6-1">v0.6.1</a></li>
 <li><a class="reference internal" href="#v0-6-0">v0.6.0</a></li>
 <li><a class="reference internal" href="#v0-5-0">v0.5.0</a></li>
-<li><a class="reference internal" href="#id162">0.4.0</a></li>
-<li><a class="reference internal" href="#id165">0.3.1</a></li>
-<li><a class="reference internal" href="#id166">0.3.0</a></li>
-<li><a class="reference internal" href="#id167">0.2.0</a></li>
-<li><a class="reference internal" href="#id168">0.1.0</a></li>
-<li><a class="reference internal" href="#id169">0.0.5</a></li>
-<li><a class="reference internal" href="#id170">0.0.3</a></li>
-<li><a class="reference internal" href="#id171">0.0.2</a></li>
-<li><a class="reference internal" href="#id172">0.0.1</a></li>
+<li><a class="reference internal" href="#id163">0.4.0</a></li>
+<li><a class="reference internal" href="#id166">0.3.1</a></li>
+<li><a class="reference internal" href="#id167">0.3.0</a></li>
+<li><a class="reference internal" href="#id168">0.2.0</a></li>
+<li><a class="reference internal" href="#id169">0.1.0</a></li>
+<li><a class="reference internal" href="#id170">0.0.5</a></li>
+<li><a class="reference internal" href="#id171">0.0.3</a></li>
+<li><a class="reference internal" href="#id172">0.0.2</a></li>
+<li><a class="reference internal" href="#id173">0.0.1</a></li>
 </ul>
 </li>
 </ul>
