@@ -5,9 +5,9 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="jsonpickle API" href="api.html" />
 
-    <!-- Generated with Sphinx 8.1.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>jsonpickle documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     
@@ -279,15 +279,15 @@ Additionally, it can reconstitute the object back into Python.</p>
 <p>The object must be accessible globally via a module and must
 inherit from object (AKA new-style classes).</p>
 <p>Create an object:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Thing</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Thing</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Thing</span><span class="p">(</span><span class="s1">&#39;Awesome&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Use jsonpickle to transform the object into a JSON string:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jsonpickle</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">jsonpickle</span>
 <span class="n">frozen</span> <span class="o">=</span> <span class="n">jsonpickle</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -550,6 +550,8 @@ You can send email to <em>jsonpickle&#64;googlegroups.com</em>.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="history.html">History</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="history.html#upcoming">Upcoming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v4-1-1">v4.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#v4-1-0">v4.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="history.html#v4-0-5">v4.0.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="history.html#v4-0-4">v4.0.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="history.html#v4-0-3">v4.0.3</a></li>
@@ -596,15 +598,15 @@ You can send email to <em>jsonpickle&#64;googlegroups.com</em>.</p>
 <li class="toctree-l2"><a class="reference internal" href="history.html#v0-6-1">v0.6.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="history.html#v0-6-0">v0.6.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="history.html#v0-5-0">v0.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id163">0.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id166">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id167">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id168">0.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id169">0.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id170">0.0.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id171">0.0.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id172">0.0.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="history.html#id173">0.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id165">0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id168">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id169">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id170">0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id171">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id172">0.0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id173">0.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id174">0.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="history.html#id175">0.0.1</a></li>
 </ul>
 </li>
 </ul>

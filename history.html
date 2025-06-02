@@ -5,9 +5,9 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Contributing to jsonpickle" href="contrib.html" />
 
-    <!-- Generated with Sphinx 8.1.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>History - jsonpickle documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     
@@ -260,6 +260,31 @@ You can re-enable yaml support using <code class="docutils literal notranslate">
 (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/issues/550">#550</a>) (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/551">+551</a>)</p></li>
 </ul>
 </div></blockquote>
+</section>
+<section id="v4-1-1">
+<h2>v4.1.1<a class="headerlink" href="#v4-1-1" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Maintenance release to omit upcoming breaking changes.</p></li>
+<li><p>An error in the jsonpickle pandas extension when decoding objects that were encoded
+before jsonpickle v3.4.0 was fixed, and warnings were added. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/562">+562</a>)</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">jsonpickle.ext.yaml</span></code> for forwards-compatibility, but the <code class="docutils literal notranslate"><span class="pre">yaml</span></code> module
+continues to be registered by default. <code class="docutils literal notranslate"><span class="pre">v5.0.0</span></code> will no longer register
+<code class="docutils literal notranslate"><span class="pre">jsonpickle.ext.yaml</span></code> by default.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="v4-1-0">
+<h2>v4.1.0<a class="headerlink" href="#v4-1-0" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>21 May 2025</dt><dd><ul class="simple">
+<li><p>Deprecation warnings were added to certain simple functions in <code class="docutils literal notranslate"><span class="pre">jsonpickle/util.py</span></code>.
+These functions will be removed in 5.0.0 to ease the transition into typing everything.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">test_multindex_dataframe_roundtrip</span></code> test in the pandas extension had been failing
+on 32-bit architectures in Debian’s test suite. This has been resolved. (<a class="reference external" href="https://github.com/jsonpickle/jsonpickle/pull/560">+560</a>)</p></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section id="v4-0-5">
 <h2>v4.0.5<a class="headerlink" href="#v4-0-5" title="Link to this heading">¶</a></h2>
@@ -962,8 +987,8 @@ in 0.4.0.  This can be disabled by passing <cite>make_refs=False</cite> to
 </ul>
 </div></blockquote>
 </section>
-<section id="id163">
-<h2>0.4.0<a class="headerlink" href="#id163" title="Link to this heading">¶</a></h2>
+<section id="id165">
+<h2>0.4.0<a class="headerlink" href="#id165" title="Link to this heading">¶</a></h2>
 <p>21 Jun 2011</p>
 <blockquote>
 <div><ul class="simple">
@@ -987,8 +1012,8 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 </div>
 </div></blockquote>
 </section>
-<section id="id166">
-<h2>0.3.1<a class="headerlink" href="#id166" title="Link to this heading">¶</a></h2>
+<section id="id168">
+<h2>0.3.1<a class="headerlink" href="#id168" title="Link to this heading">¶</a></h2>
 <p>12 Dec 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -996,8 +1021,8 @@ unable to read data encoded by jsonpickle 0.4.0.</p>
 </ul>
 </div></blockquote>
 </section>
-<section id="id167">
-<h2>0.3.0<a class="headerlink" href="#id167" title="Link to this heading">¶</a></h2>
+<section id="id169">
+<h2>0.3.0<a class="headerlink" href="#id169" title="Link to this heading">¶</a></h2>
 <p>11 Dec 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -1030,8 +1055,8 @@ for their assistance!</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id168">
-<h2>0.2.0<a class="headerlink" href="#id168" title="Link to this heading">¶</a></h2>
+<section id="id170">
+<h2>0.2.0<a class="headerlink" href="#id170" title="Link to this heading">¶</a></h2>
 <p>10 Jan 2009</p>
 <blockquote>
 <div><ul class="simple">
@@ -1050,8 +1075,8 @@ Roberto Saccon, Faber Fedor,
 </ul>
 </div></blockquote>
 </section>
-<section id="id169">
-<h2>0.1.0<a class="headerlink" href="#id169" title="Link to this heading">¶</a></h2>
+<section id="id171">
+<h2>0.1.0<a class="headerlink" href="#id171" title="Link to this heading">¶</a></h2>
 <p>22 Aug 2008</p>
 <blockquote>
 <div><ul class="simple">
@@ -1063,8 +1088,8 @@ simplejson’s load/loads/dump/dumps</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id170">
-<h2>0.0.5<a class="headerlink" href="#id170" title="Link to this heading">¶</a></h2>
+<section id="id172">
+<h2>0.0.5<a class="headerlink" href="#id172" title="Link to this heading">¶</a></h2>
 <p>22 Jul 2008</p>
 <blockquote>
 <div><ul class="simple">
@@ -1075,16 +1100,16 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id171">
-<h2>0.0.3<a class="headerlink" href="#id171" title="Link to this heading">¶</a></h2>
+<section id="id173">
+<h2>0.0.3<a class="headerlink" href="#id173" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Convert back to setup.py from pavement.py (issue found by spidaman)</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id172">
-<h2>0.0.2<a class="headerlink" href="#id172" title="Link to this heading">¶</a></h2>
+<section id="id174">
+<h2>0.0.2<a class="headerlink" href="#id174" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Handle feedparser’s FeedParserDict</p></li>
@@ -1094,8 +1119,8 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 </ul>
 </div></blockquote>
 </section>
-<section id="id173">
-<h2>0.0.1<a class="headerlink" href="#id173" title="Link to this heading">¶</a></h2>
+<section id="id175">
+<h2>0.0.1<a class="headerlink" href="#id175" title="Link to this heading">¶</a></h2>
 <blockquote>
 <div><p>Initial release</p>
 </div></blockquote>
@@ -1151,6 +1176,8 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
             <ul>
 <li><a class="reference internal" href="#">History</a><ul>
 <li><a class="reference internal" href="#upcoming">Upcoming</a></li>
+<li><a class="reference internal" href="#v4-1-1">v4.1.1</a></li>
+<li><a class="reference internal" href="#v4-1-0">v4.1.0</a></li>
 <li><a class="reference internal" href="#v4-0-5">v4.0.5</a></li>
 <li><a class="reference internal" href="#v4-0-4">v4.0.4</a></li>
 <li><a class="reference internal" href="#v4-0-3">v4.0.3</a></li>
@@ -1197,15 +1224,15 @@ requirements (Thanks Dean Landolt). Break backwards compatibility.</p></li>
 <li><a class="reference internal" href="#v0-6-1">v0.6.1</a></li>
 <li><a class="reference internal" href="#v0-6-0">v0.6.0</a></li>
 <li><a class="reference internal" href="#v0-5-0">v0.5.0</a></li>
-<li><a class="reference internal" href="#id163">0.4.0</a></li>
-<li><a class="reference internal" href="#id166">0.3.1</a></li>
-<li><a class="reference internal" href="#id167">0.3.0</a></li>
-<li><a class="reference internal" href="#id168">0.2.0</a></li>
-<li><a class="reference internal" href="#id169">0.1.0</a></li>
-<li><a class="reference internal" href="#id170">0.0.5</a></li>
-<li><a class="reference internal" href="#id171">0.0.3</a></li>
-<li><a class="reference internal" href="#id172">0.0.2</a></li>
-<li><a class="reference internal" href="#id173">0.0.1</a></li>
+<li><a class="reference internal" href="#id165">0.4.0</a></li>
+<li><a class="reference internal" href="#id168">0.3.1</a></li>
+<li><a class="reference internal" href="#id169">0.3.0</a></li>
+<li><a class="reference internal" href="#id170">0.2.0</a></li>
+<li><a class="reference internal" href="#id171">0.1.0</a></li>
+<li><a class="reference internal" href="#id172">0.0.5</a></li>
+<li><a class="reference internal" href="#id173">0.0.3</a></li>
+<li><a class="reference internal" href="#id174">0.0.2</a></li>
+<li><a class="reference internal" href="#id175">0.0.1</a></li>
 </ul>
 </li>
 </ul>

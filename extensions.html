@@ -5,9 +5,9 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Contributing to jsonpickle" href="contrib.html" /><link rel="prev" title="jsonpickle API" href="api.html" />
 
-    <!-- Generated with Sphinx 8.1.2 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>jsonpickle extensions - jsonpickle documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     
@@ -256,7 +256,7 @@
 <p>jsonpickle includes a built-in numpy extension.  If would like to encode
 sklearn models, numpy arrays, and other numpy-based data then you must
 enable the numpy extension by registering its handlers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">jsonpickle.ext.numpy</span> <span class="k">as</span> <span class="nn">jsonpickle_numpy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">jsonpickle.ext.numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jsonpickle_numpy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">jsonpickle_numpy</span><span class="o">.</span><span class="n">register_handlers</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -266,7 +266,7 @@ enable the numpy extension by registering its handlers:</p>
 <p>For the ecdsa module’s keys, when trying to serialize them with
 <code class="docutils literal notranslate"><span class="pre">gmpy2</span></code> installed, jsonpickle will error unless the <code class="docutils literal notranslate"><span class="pre">gmpy</span></code>
 handlers are registered:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">jsonpickle.ext.gmpy</span> <span class="k">as</span> <span class="nn">jsonpickle_gmpy</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">jsonpickle.ext.gmpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jsonpickle_gmpy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">jsonpickle_gmpy</span><span class="o">.</span><span class="n">register_handlers</span><span class="p">()</span>
 </pre></div>
 </div>
